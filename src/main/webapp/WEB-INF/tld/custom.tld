@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib version="2.1"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>ctg</short-name>
+    <uri>customtags</uri>
+    <tag>
+        <name>info-category</name>
+        <tag-class>com.example.finalproject.mytags.InfoCategoryTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>categoryId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>info-goods</name>
+        <tag-class>com.example.finalproject.mytags.InfoGoodsTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>goodsId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>info-order-status</name>
+        <tag-class>com.example.finalproject.mytags.InfoOrderStatusTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>orderStatusId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>info-user</name>
+        <tag-class>com.example.finalproject.mytags.InfoUserTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>userId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

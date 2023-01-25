@@ -1,0 +1,145 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema shop
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema shop
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema shop
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema shop
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8mb3 ;
+USE `shop` ;
+
+-- -----------------------------------------------------
+-- Table `shop`.`categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`categories` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`orders_status`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`orders_status` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+USE `shop` ;
+
+-- -----------------------------------------------------
+-- Table `shop`.`categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`categories` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`goods`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`goods` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `description` LONGTEXT NULL DEFAULT NULL,
+  `photo` VARCHAR(1000) NULL DEFAULT NULL,
+  `price` DOUBLE NOT NULL,
+  `categories_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE,
+  INDEX `fk_goods_categories1_idx` (`categories_id` ASC) VISIBLE,
+  CONSTRAINT `fk_goods_categories1`
+    FOREIGN KEY (`categories_id`)
+    REFERENCES `shop`.`categories` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 9
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`roles`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`roles` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `surname` VARCHAR(100) NOT NULL,
+  `login` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `roles_id` INT NOT NULL,
+  `status_blocked` TINYINT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE,
+  INDEX `fk_users_roles1_idx` (`roles_id` ASC) VISIBLE,
+  CONSTRAINT `fk_users_roles1`
+    FOREIGN KEY (`roles_id`)
+    REFERENCES `shop`.`roles` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 7
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`orders`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`orders` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `goods_id` INT NOT NULL,
+  `users_id` INT NOT NULL,
+  `orders_status_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_orders_goods_idx` (`goods_id` ASC) VISIBLE,
+  INDEX `fk_orders_users1_idx` (`users_id` ASC) VISIBLE,
+  INDEX `fk_orders_orders_status1_idx` (`orders_status_id` ASC) VISIBLE,
+  CONSTRAINT `fk_orders_goods`
+    FOREIGN KEY (`goods_id`)
+    REFERENCES `shop`.`goods` (`id`),
+  CONSTRAINT `fk_orders_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `shop`.`users` (`id`),
+  CONSTRAINT `fk_orders_orders_status1`
+    FOREIGN KEY (`orders_status_id`)
+    REFERENCES `shop`.`orders_status` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
