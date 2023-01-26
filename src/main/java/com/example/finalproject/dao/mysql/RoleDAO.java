@@ -33,11 +33,9 @@ public class RoleDAO extends GenericDAO<Role> implements IRoleDAO {
             while (rs.next()){
                 id = rs.getInt("id");
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return id;
     }
@@ -51,11 +49,9 @@ public class RoleDAO extends GenericDAO<Role> implements IRoleDAO {
             while (rs.next()){
                 id = rs.getInt("id");
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return id;
     }

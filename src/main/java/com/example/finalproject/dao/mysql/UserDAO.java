@@ -42,17 +42,15 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             preparedStatement.setString(2, login.getPassword());
             ResultSet rs = preparedStatement.executeQuery();
             status = rs.next();
-        } catch (SQLException e) {
+        } catch (SQLException | NamingException e) {
             logger.error(e);
-            JDBCUtils.printSQLException(e);
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return status;
     }
 
     @Override
-    public int getUserId(Login loginBean){
+    public int getUserId(Login loginBean) throws NamingException, ClassNotFoundException {
         int userId = 0;
         try (Connection connection = JDBCUtils.getConnection();
              PreparedStatement preparedStatement = connection
@@ -67,46 +65,48 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
         } catch (SQLException e) {
             logger.error(e);
             JDBCUtils.printSQLException(e);
-        } catch (ClassNotFoundException e) {
-            logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            logger.error(e);
-            throw new RuntimeException(e);
         }
         return userId;
     }
 
     @Override
-    public boolean createUser(User user) {
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement statement = connection.prepareStatement(DBQuery.INSERT_USER)) {
+    public boolean createUser(User user) throws SQLException, NamingException, ClassNotFoundException {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(DBQuery.INSERT_USER);
             mapFromEntity(statement, user);
             statement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
+            connection.rollback();
             return false;
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return true;
     }
 
     @Override
-    public boolean createOrder(int userId, int goodsId){
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement statement = connection.prepareStatement(DBQuery.INSERT_ORDER)) {
+    public boolean createOrder(int userId, int goodsId) throws SQLException, NamingException, ClassNotFoundException {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(DBQuery.INSERT_ORDER);
             statement.setInt(1, goodsId);
             statement.setInt(2, userId);
             statement.setInt(3, getOrderStatusIdRegistered());
             statement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
+            connection.rollback();
             return false;
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return true;
     }
@@ -122,96 +122,113 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
                 ordersList.add(new Order(rs.getInt("id"), rs.getInt("goods_id"),
                         rs.getInt("users_id"), rs.getInt("orders_status_id")));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
 
     @Override
-    public boolean updateName(int id, String name){
+    public boolean updateName(int id, String name) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_NAME)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_NAME);
             preparedStatement.setString(1, name);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean updateSurname(int id, String surname){
+    public boolean updateSurname(int id, String surname) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_SURNAME)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_SURNAME);
             preparedStatement.setString(1, surname);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean updateLogin(int id, String login){
+    public boolean updateLogin(int id, String login) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_LOGIN)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_LOGIN);
             preparedStatement.setString(1, login);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean updatePassword(int id, String password){
+    public boolean updatePassword(int id, String password) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_PASSWORD)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_PASSWORD);
             preparedStatement.setString(1, password);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean updateEmail(int id, String email){
+    public boolean updateEmail(int id, String email) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_EMAIL)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_EMAIL);
             preparedStatement.setString(1, email);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
@@ -226,11 +243,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 id = rs.getInt("id");
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return id;
     }
@@ -252,7 +267,6 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
         return id;
     }
 
-    //TODO
     @Override
     public List<User> getUserById(Integer id) {
         List<User> userList = new ArrayList<>();
@@ -263,20 +277,20 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()) {
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | NamingException e) {
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
 
     @Override
-    public boolean updateUser(User user) {
+    public boolean updateUser(User user) throws SQLException, NamingException, ClassNotFoundException {
         boolean rowUpdated = false;
-        try (Connection connection = JDBCUtils.getConnection();
-            PreparedStatement statement = connection.prepareStatement(DBQuery.UPDATE_USER)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(DBQuery.UPDATE_USER);
             statement.setString(1, user.getName());
             statement.setString(2, user.getSurname());
             statement.setString(3, user.getLogin());
@@ -284,41 +298,51 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             statement.setString(5, user.getEmail());
             statement.setInt(6, user.getId());
             rowUpdated = statement.executeUpdate() > 0;
-        } catch (SQLException | ClassNotFoundException | NamingException e) {
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return rowUpdated;
     }
 
     @Override
-    public boolean deleteUser(User user) {
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement statement = connection.prepareStatement(DBQuery.DELETE_USER_BY_LOGIN)) {
+    public boolean deleteUser(User user) throws SQLException, NamingException, ClassNotFoundException {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(DBQuery.DELETE_USER_BY_LOGIN);
             statement.setString(1, user.getLogin());
             statement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+            connection.commit();
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-            return false;
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return true;
     }
 
     @Override
-    public boolean deleteUserById(int id) {
+    public boolean deleteUserById(int id) throws SQLException, NamingException, ClassNotFoundException {
         boolean rowDeleted = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement statement = connection.prepareStatement(DBQuery.DELETE_USER_BY_ID)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(DBQuery.DELETE_USER_BY_ID);
             statement.setInt(1, id);
             rowDeleted = statement.executeUpdate() > 0;
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return rowDeleted;
     }
@@ -333,11 +357,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()) {
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | NamingException e) {
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
@@ -351,18 +373,13 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | NamingException e) {
             logger.error(e);
             e.printStackTrace();
-            throw new RuntimeException(e);
-        } catch (NamingException e) {
             throw new RuntimeException(e);
         }
         return userList;
     }
-
-    //TODO refactoring
 
     @Override
     public List<User> showAllUsers(){
@@ -373,11 +390,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
@@ -394,11 +409,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
@@ -416,11 +429,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
@@ -434,11 +445,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
@@ -452,11 +461,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return userList;
     }
@@ -471,11 +478,9 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return count;
     }
@@ -491,43 +496,49 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return count;
     }
 
     @Override
-    public boolean blockUser(int id){
+    public boolean blockUser(int id) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_STATUS_BLOCKED_TRUE)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_STATUS_BLOCKED_TRUE);
             preparedStatement.setInt(1, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean unblockUser(int id){
+    public boolean unblockUser(int id) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_STATUS_BLOCKED_FALSE)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_USER_STATUS_BLOCKED_FALSE);
             preparedStatement.setInt(1, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }

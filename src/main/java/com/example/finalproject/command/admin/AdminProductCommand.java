@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -64,7 +65,7 @@ public class AdminProductCommand implements ICommand {
                     dispatcher.forward(request, response);
                     break;
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NamingException | ClassNotFoundException e) {
             logger.error(e);
             e.printStackTrace();
         }
@@ -80,7 +81,7 @@ public class AdminProductCommand implements ICommand {
         dispatcher.forward(request, response);
     }
 
-    private void deleteGoods(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void deleteGoods(HttpServletRequest request, HttpServletResponse response) throws SQLException, NamingException, ClassNotFoundException {
         logger.info("The method deleteGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         if(!goodsDAO.deleteGoods(goodsId)){

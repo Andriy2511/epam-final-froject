@@ -12,6 +12,7 @@ import jakarta.servlet.http.Part;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.naming.NamingException;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -30,11 +31,11 @@ public class AdminChangeProductCommand implements ICommand {
     }
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException, NamingException, ClassNotFoundException {
         changeProduct(request, response);
     }
 
-    private void changeProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void changeProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, NamingException, ClassNotFoundException {
         logger.info("Method AddProduct");
         double price = 0;
         int id = 0;
@@ -90,14 +91,14 @@ public class AdminChangeProductCommand implements ICommand {
         part.write(path);
     }
 
-    private void updateGoods(int id, String name, String description, String photo, double price, int categoryId) {
+    private void updateGoods(int id, String name, String description, String photo, double price, int categoryId) throws SQLException, NamingException, ClassNotFoundException {
         if(goodsDAO.changeGoods(id, name, description, photo, price, categoryId)){
             notification = "Goods changed successful";
         } else {
             notification = "Goods must contain unique name!";
         }
     }
-    private void addCategory(String name){
+    private void addCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
         categoryDAO.addCategory(name);
     }
     private boolean isCategoryExist(String name){

@@ -4,41 +4,42 @@ import com.example.finalproject.models.Login;
 import com.example.finalproject.models.Order;
 import com.example.finalproject.models.User;
 
+import javax.naming.NamingException;
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserDAO {
     boolean validate(Login login) throws ClassNotFoundException;
 
-    int getUserId(Login loginBean);
+    int getUserId(Login loginBean) throws NamingException, ClassNotFoundException;
 
-    boolean createUser(User user);
+    boolean createUser(User user) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean createOrder(int userId, int goodsId);
+    boolean createOrder(int userId, int goodsId) throws SQLException, NamingException, ClassNotFoundException;
 
     List<Order> showOrdersByUser(int id);
 
-    boolean updateName(int id, String name);
+    boolean updateName(int id, String name) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean updateSurname(int id, String surname);
+    boolean updateSurname(int id, String surname) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean updateLogin(int id, String login);
+    boolean updateLogin(int id, String login) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean updatePassword(int id, String password);
+    boolean updatePassword(int id, String password) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean updateEmail(int id, String email);
+    boolean updateEmail(int id, String email) throws SQLException, NamingException, ClassNotFoundException;
 
     int getRoleIdUser();
 
     int getOrderStatusIdRegistered();
 
-    //TODO
     List<User> getUserById(Integer id);
 
-    boolean updateUser(User user);
+    boolean updateUser(User user) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean deleteUser(User user);
+    boolean deleteUser(User user) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean deleteUserById(int id);
+    boolean deleteUserById(int id) throws SQLException, NamingException, ClassNotFoundException;
 
     List<User> readUserByLogin(String login);
 
@@ -58,7 +59,7 @@ public interface IUserDAO {
 
     int showCountOfUsersByBlockedStatus(boolean statusBlocked);
 
-    boolean blockUser(int id);
+    boolean blockUser(int id) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean unblockUser(int id);
+    boolean unblockUser(int id) throws SQLException, NamingException, ClassNotFoundException;
 }

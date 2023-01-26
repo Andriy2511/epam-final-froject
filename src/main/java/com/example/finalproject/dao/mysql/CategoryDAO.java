@@ -17,7 +17,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-//https://stackoverflow.com/questions/15761791/transaction-rollback-on-sqlexception-using-new-try-with-resources-block
 public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
     private static final Logger logger = LogManager.getLogger(CategoryDAO.class);
     private CategoryDAO(){}
@@ -37,12 +36,9 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
             while (rs.next()){
                 categoriesList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            logger.error(e);
-            throw new RuntimeException(e);
         }
         return categoriesList;
     }
@@ -82,39 +78,41 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
     }
 
     @Override
-    public boolean addCategory(String name){
+    public boolean addCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection()){
+        Connection connection = JDBCUtils.getConnection();
+        try{
             connection.setAutoCommit(false);
-            try(PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_CATEGORY)) {
-                preparedStatement.setString(1, name);
-                result = preparedStatement.executeUpdate() == 1;
-            } catch (SQLException e){
-                connection.rollback();
-                connection.setAutoCommit(false);
-                e.printStackTrace();
-            }
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_CATEGORY);
+            preparedStatement.setString(1, name);
+            result = preparedStatement.executeUpdate() == 1;
             connection.commit();
-            connection.setAutoCommit(true);
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean deleteCategory(String name){
+    public boolean deleteCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.DELETE_CATEGORY)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.DELETE_CATEGORY);
             preparedStatement.setString(1, name);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
+            connection.rollback();
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }

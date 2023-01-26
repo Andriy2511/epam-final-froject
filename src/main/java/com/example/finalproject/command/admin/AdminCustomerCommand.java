@@ -11,6 +11,7 @@ import jakarta.servlet.http.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -34,11 +35,11 @@ public class AdminCustomerCommand implements ICommand {
     }
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException, NamingException, ClassNotFoundException {
         showList(request, response);
     }
 
-    private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException, ClassNotFoundException {
         logger.info("The showList method is started");
         String action = request.getParameter("action");
         try {
@@ -65,12 +66,12 @@ public class AdminCustomerCommand implements ICommand {
         }
     }
 
-    private void blockUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void blockUser(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, NamingException, ClassNotFoundException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.blockUser(userId);
     }
 
-    private void unblockUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void unblockUser(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, NamingException, ClassNotFoundException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.unblockUser(userId);
     }

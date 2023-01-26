@@ -41,11 +41,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -62,11 +60,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -81,11 +77,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return count;
     }
@@ -100,11 +94,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return count;
     }
@@ -119,11 +111,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 id = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return id;
     }
@@ -138,11 +128,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -156,11 +144,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -175,11 +161,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -194,11 +178,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -213,11 +195,9 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return ordersList;
     }
@@ -234,12 +214,12 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             preparedStatement.setInt(3, userDAO.getOrderStatusIdRegistered());
             result = preparedStatement.executeUpdate() == 1;
             connection.commit();
-            connection.setAutoCommit(true);
         } catch (SQLException e){
             logger.error(e);
             connection.rollback();
+        } finally {
             connection.setAutoCommit(true);
-            e.printStackTrace();
+            connection.close();
         }
         return result;
     }

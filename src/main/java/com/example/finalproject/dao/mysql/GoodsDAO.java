@@ -40,11 +40,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -75,12 +73,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-            //convertResultSetToList(goodsList, rs);
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -96,12 +91,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-            //convertResultSetToList(goodsList, rs);
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -115,11 +107,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -135,11 +125,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -153,11 +141,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -171,11 +157,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -191,11 +175,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -211,11 +193,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -231,11 +211,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -252,11 +230,9 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return goodsList;
     }
@@ -270,77 +246,60 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
-        }
-        return count;
-    }
-
-    //TODO
-    @Override
-    public int showCountOfGoodsByUser(){
-        int count = 0;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SELECT_NUMBER_OF_GOODS)) {
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()){
-                count = rs.getInt(1);
-            }
-        } catch (SQLException | ClassNotFoundException e){
-            logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return count;
     }
 
     @Override
-    public boolean addGoods(Goods goods){
+    public boolean addGoods(Goods goods) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_GOODS)) {
-//            preparedStatement.setString(1, goods.getName());
-//            preparedStatement.setString(2, goods.getDescription());
-//            preparedStatement.setString(3, goods.getPhoto());
-//            preparedStatement.setDouble(4, goods.getPrice());
-//            preparedStatement.setInt(5, goods.getCategoryId());
-//            preparedStatement.setString(6, getCurrentTime());
+        Connection connection = JDBCUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_GOODS);
             mapFromEntity(preparedStatement, goods);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean deleteGoods(int id){
+    public boolean deleteGoods(int id) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.DELETE_GOODS_BY_ID)) {
+        Connection connection = JDBCUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.DELETE_GOODS_BY_ID);
             preparedStatement.setInt(1, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId){
+    public boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS);
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, description);
             preparedStatement.setString(3, photo);
@@ -348,96 +307,118 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             preparedStatement.setInt(5, categoryId);
             preparedStatement.setInt(6, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean changeGoodsName(int id, String name){
+    public boolean changeGoodsName(int id, String name) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_NAME)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_NAME);
             preparedStatement.setString(1, name);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean changeGoodsPrice(int id, Double price){
+    public boolean changeGoodsPrice(int id, Double price) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_PRICE)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_PRICE);
             preparedStatement.setDouble(1, price);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean changeGoodsPhoto(int id, String photo){
+    public boolean changeGoodsPhoto(int id, String photo) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_PROTO)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_PROTO);
             preparedStatement.setString(1, photo);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean changeGoodsDescription(int id, String description){
+    public boolean changeGoodsDescription(int id, String description) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_DESCRIPTION)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_DESCRIPTION);
             preparedStatement.setString(1, description);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }
 
     @Override
-    public boolean changeGoodsCategory(int id, int categoryId){
+    public boolean changeGoodsCategory(int id, int categoryId) throws SQLException, NamingException, ClassNotFoundException {
         boolean result = false;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_CATEGORY)) {
+        Connection connection = JDBCUtils.getConnection();
+        try{
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.UPDATE_GOODS_CATEGORY);
             preparedStatement.setInt(1, categoryId);
             preparedStatement.setInt(2, id);
             result = preparedStatement.executeUpdate() == 1;
-        } catch (SQLException | ClassNotFoundException e){
+            connection.commit();
+        } catch (SQLException e){
             logger.error(e);
-            e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
         }
         return result;
     }

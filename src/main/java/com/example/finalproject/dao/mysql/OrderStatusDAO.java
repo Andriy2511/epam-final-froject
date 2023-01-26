@@ -37,11 +37,9 @@ public class OrderStatusDAO extends GenericDAO<OrderStatus> implements IOrderSta
             while (rs.next()){
                 orderStatusList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException e){
+        } catch (SQLException | ClassNotFoundException | NamingException e){
             logger.error(e);
             e.printStackTrace();
-        } catch (NamingException e) {
-            throw new RuntimeException(e);
         }
         return orderStatusList;
     }
@@ -59,8 +57,9 @@ public class OrderStatusDAO extends GenericDAO<OrderStatus> implements IOrderSta
         } catch (SQLException e){
             logger.error(e);
             connection.rollback();
+        } finally {
             connection.setAutoCommit(true);
-            e.printStackTrace();
+            connection.close();
         }
         return result;
     }

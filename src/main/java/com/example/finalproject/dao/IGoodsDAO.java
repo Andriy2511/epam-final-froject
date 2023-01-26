@@ -2,6 +2,8 @@ package com.example.finalproject.dao;
 
 import com.example.finalproject.models.Goods;
 
+import javax.naming.NamingException;
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IGoodsDAO {
@@ -39,21 +41,19 @@ public interface IGoodsDAO {
 
     int showCountOfGoods();
 
-    int showCountOfGoodsByUser();
+    boolean addGoods(Goods goods) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean addGoods(Goods goods);
+    boolean deleteGoods(int id) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean deleteGoods(int id);
+    boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId);
+    boolean changeGoodsName(int id, String name) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean changeGoodsName(int id, String name);
+    boolean changeGoodsPrice(int id, Double price) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean changeGoodsPrice(int id, Double price);
+    boolean changeGoodsPhoto(int id, String photo) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean changeGoodsPhoto(int id, String photo);
+    boolean changeGoodsDescription(int id, String description) throws SQLException, NamingException, ClassNotFoundException;
 
-    boolean changeGoodsDescription(int id, String description);
-
-    boolean changeGoodsCategory(int id, int categoryId);
+    boolean changeGoodsCategory(int id, int categoryId) throws SQLException, NamingException, ClassNotFoundException;
 }

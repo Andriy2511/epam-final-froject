@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -73,7 +74,7 @@ public class LoginCommand implements ICommand {
 			} else {
 				writeNotification(request, response, "Invalid login or password!");
 			}
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | NamingException e) {
 			logger.error(e);
 			e.printStackTrace();
 		}

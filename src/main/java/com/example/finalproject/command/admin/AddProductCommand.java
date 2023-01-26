@@ -11,6 +11,7 @@ import jakarta.servlet.http.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.naming.NamingException;
 import java.io.*;
 import java.sql.SQLException;
 
@@ -28,11 +29,11 @@ public class AddProductCommand implements ICommand {
     }
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException, NamingException, ClassNotFoundException {
         addProduct(request, response);
     }
 
-    private void addProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    private void addProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException, NamingException, ClassNotFoundException {
         logger.info("The showList addProduct is started");
         double price = 0;
         String name = request.getParameter("name");
@@ -83,7 +84,7 @@ public class AddProductCommand implements ICommand {
         part.write(path);
     }
 
-    private void addGoods(String name, String description, String photo, double price, String categoryName) {
+    private void addGoods(String name, String description, String photo, double price, String categoryName) throws SQLException, NamingException, ClassNotFoundException {
         Goods goods = new Goods(name, description, photo, price, getCategoryId(categoryName));
         if(goodsDAO.addGoods(goods)){
             notification = "Goods added successful";
@@ -96,7 +97,7 @@ public class AddProductCommand implements ICommand {
         return categoryDAO.showCategoryByName(name).size() == 1;
     }
 
-    private void addCategory(String name){
+    private void addCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
         categoryDAO.addCategory(name);
     }
 
