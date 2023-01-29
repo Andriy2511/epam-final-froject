@@ -1,6 +1,5 @@
 package com.example.finalproject.command.admin;
 
-import com.example.finalproject.Main;
 import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.ICategoryDAO;

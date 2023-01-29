@@ -42,7 +42,6 @@ public class AdminChangeProductCommand implements ICommand {
         String photo;
         String name = request.getParameter("name");
         String description = request.getParameter("description");
-        System.out.println(request.getParameter("photo"));
         String categoryName = request.getParameter("category");
         try {
             id = Integer.parseInt(request.getParameter("goodsId"));
@@ -62,8 +61,6 @@ public class AdminChangeProductCommand implements ICommand {
         }
 
         if(request.getPart("photo").getSize() > 0){
-            System.out.println(request.getPart("photo"));
-            System.out.println(request.getParameter("photo"));
             Part part = request.getPart("photo");
             photo = part.getSubmittedFileName();
             addPhoto(part, photo);
@@ -99,7 +96,7 @@ public class AdminChangeProductCommand implements ICommand {
         }
     }
     private void addCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
-        categoryDAO.addCategory(name);
+        System.out.println(categoryDAO.addCategory(name));
     }
     private boolean isCategoryExist(String name){
         return categoryDAO.showCategoryByName(name).size() == 1;

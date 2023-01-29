@@ -3855,3 +3855,649 @@
 2023-01-26 22:48:02,053 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] sendGoodsList
 2023-01-26 22:48:02,053 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method sendGoodsList is started
 2023-01-26 22:48:02,053 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 18:55:30,354 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 19:00:54,617 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 19:01:44,913 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 19:04:09,737 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Method authorization is started
+2023-01-29 19:04:10,206 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:04:10,220 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:04:10,221 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:04:10,236 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:04:10,236 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:04:10,757 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:04:19,294 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:04:19,294 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:04:19,301 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:04:19,301 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:04:19,323 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:04:21,898 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:04:21,898 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:04:21,904 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:04:21,904 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:04:21,914 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:04:23,416 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:04:23,416 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-01-29 19:04:23,422 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-01-29 19:04:23,422 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:04:23,440 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:04:24,257 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:04:24,257 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:04:24,263 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:04:24,263 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:04:24,271 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:04:25,517 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-01-29 19:04:25,517 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method changeGoods is started
+2023-01-29 19:04:25,519 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_change_product.jsp
+2023-01-29 19:04:30,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Method AddProduct
+2023-01-29 19:04:30,159 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:04:30,160 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:04:30,160 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:04:30,163 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:04:30,163 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:04:30,181 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:04:30,183 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:05:00,667 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:05:00,667 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method showGoods is started
+2023-01-29 19:05:00,673 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method sendGoodsList is started
+2023-01-29 19:05:00,673 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:05:00,690 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:05:01,570 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:05:01,571 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:05:01,574 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:05:01,574 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:05:01,583 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:05:05,761 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:05:05,761 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:05:05,763 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_change_product.jsp
+2023-01-29 19:05:10,517 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Method AddProduct
+2023-01-29 19:05:10,523 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:05:10,523 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:05:10,523 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:05:10,527 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:05:10,527 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:05:10,540 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:05:10,541 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:05:50,333 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList addProduct is started
+2023-01-29 19:05:50,345 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin_add_product.jsp
+2023-01-29 19:05:52,918 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:05:52,918 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:05:52,922 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:05:52,922 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:05:52,933 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:05:54,330 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:05:54,330 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method showGoods is started
+2023-01-29 19:05:54,335 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method sendGoodsList is started
+2023-01-29 19:05:54,335 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:05:54,343 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:05:55,163 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:05:55,163 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method showGoods is started
+2023-01-29 19:05:55,168 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method sendGoodsList is started
+2023-01-29 19:05:55,168 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:05:55,177 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:06:10,883 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:06:10,883 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:06:10,885 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_change_product.jsp
+2023-01-29 19:06:15,040 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Method AddProduct
+2023-01-29 19:06:15,050 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:06:15,050 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:06:15,050 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:06:15,054 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:06:15,054 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:06:15,067 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:06:15,068 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_change_product.jsp
+2023-01-29 19:09:30,739 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-01-29 19:09:31,112 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:09:31,118 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:09:31,118 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:09:31,130 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:09:31,130 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:09:31,715 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:09:35,074 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:09:35,074 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:09:35,079 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:09:35,080 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:09:35,090 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:09:35,993 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:09:35,993 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:09:35,997 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:09:35,998 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:09:36,014 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:09:37,416 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:09:37,416 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:09:37,419 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_change_product.jsp
+2023-01-29 19:09:40,940 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Method AddProduct
+2023-01-29 19:09:40,947 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:09:40,948 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:09:40,948 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-01-29 19:09:40,951 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-01-29 19:09:40,951 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:09:40,967 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:09:40,968 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_change_product.jsp
+2023-01-29 19:10:39,107 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-01-29 19:10:39,107 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method changeGoods is started
+2023-01-29 19:10:39,109 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_change_product.jsp
+2023-01-29 19:10:47,203 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Method AddProduct
+2023-01-29 19:10:47,212 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:10:47,212 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:10:47,212 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:10:47,216 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:10:47,216 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:10:47,235 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:10:47,237 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:11:02,589 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:11:02,589 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:11:02,591 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_change_product.jsp
+2023-01-29 19:11:04,917 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Method AddProduct
+2023-01-29 19:11:04,928 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:11:04,928 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:11:04,928 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:11:04,931 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:11:04,932 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:11:04,943 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:11:04,944 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_change_product.jsp
+2023-01-29 19:11:21,718 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-6] The showList addProduct is started
+2023-01-29 19:11:21,719 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-6] The showList showOrder is started
+2023-01-29 19:11:21,742 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-6] The showList sendOrderList is started
+2023-01-29 19:11:21,743 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-6] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:28,233 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList addProduct is started
+2023-01-29 19:11:28,233 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList showOrder is started
+2023-01-29 19:11:28,237 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList sendOrderList is started
+2023-01-29 19:11:28,237 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:29,270 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] The showList addProduct is started
+2023-01-29 19:11:29,271 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] The showList showOrder is started
+2023-01-29 19:11:29,274 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] The showList sendOrderList is started
+2023-01-29 19:11:29,274 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:30,266 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList addProduct is started
+2023-01-29 19:11:30,266 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList showOrder is started
+2023-01-29 19:11:30,270 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList sendOrderList is started
+2023-01-29 19:11:30,270 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:34,203 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] The showList addProduct is started
+2023-01-29 19:11:34,203 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] The showList showOrder is started
+2023-01-29 19:11:34,206 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] The showList sendOrderList is started
+2023-01-29 19:11:34,207 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:34,749 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList addProduct is started
+2023-01-29 19:11:34,749 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList showOrder is started
+2023-01-29 19:11:34,753 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList sendOrderList is started
+2023-01-29 19:11:34,754 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:35,379 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-2] The showList addProduct is started
+2023-01-29 19:11:35,379 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-2] The showList showOrder is started
+2023-01-29 19:11:35,382 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-2] The showList sendOrderList is started
+2023-01-29 19:11:35,382 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-2] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:35,992 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList addProduct is started
+2023-01-29 19:11:35,992 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList showOrder is started
+2023-01-29 19:11:35,997 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList sendOrderList is started
+2023-01-29 19:11:35,998 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:36,640 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-4] The showList addProduct is started
+2023-01-29 19:11:36,641 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-4] The showList showOrder is started
+2023-01-29 19:11:36,644 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-4] The showList sendOrderList is started
+2023-01-29 19:11:36,644 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-4] Forward to tho admin_order_list.jsp
+2023-01-29 19:11:47,763 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:11:47,763 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:11:47,768 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:11:47,768 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:11:47,783 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:11:49,525 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:11:49,525 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:11:49,528 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:11:49,529 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:11:49,533 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:11:50,060 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:11:50,060 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:11:50,063 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:11:50,063 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:11:50,069 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:11:59,038 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:11:59,038 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:11:59,040 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_change_product.jsp
+2023-01-29 19:12:47,746 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Method AddProduct
+2023-01-29 19:12:47,755 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:12:47,756 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:12:47,756 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:12:47,758 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:12:47,759 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:12:47,773 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:12:47,776 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:12:59,024 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:12:59,025 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:12:59,026 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_change_product.jsp
+2023-01-29 19:13:03,338 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Method AddProduct
+2023-01-29 19:13:03,343 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:13:03,344 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:13:03,344 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method showGoods is started
+2023-01-29 19:13:03,346 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method sendGoodsList is started
+2023-01-29 19:13:03,346 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:13:03,359 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:13:03,360 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_change_product.jsp
+2023-01-29 19:18:01,853 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Method authorization is started
+2023-01-29 19:18:02,213 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:18:02,221 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:18:02,221 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:18:02,234 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:18:02,234 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:02,745 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:18:10,811 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:18:10,811 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:18:10,817 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:18:10,817 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:10,833 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:18:11,958 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:18:11,958 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-01-29 19:18:11,963 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-01-29 19:18:11,963 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:11,972 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:18:16,446 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:18:16,446 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:18:16,451 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:18:16,451 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:16,470 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:18:18,516 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-01-29 19:18:18,517 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method changeGoods is started
+2023-01-29 19:18:18,518 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_change_product.jsp
+2023-01-29 19:18:25,805 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Method AddProduct
+2023-01-29 19:18:25,816 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:18:25,817 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:18:25,817 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:18:25,820 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:18:25,820 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:25,840 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:18:25,841 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:18:49,945 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:18:49,945 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method showGoods is started
+2023-01-29 19:18:49,951 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method sendGoodsList is started
+2023-01-29 19:18:49,951 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:49,970 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:18:51,157 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:18:51,157 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:18:51,161 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:18:51,161 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:51,168 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:18:52,547 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:18:52,547 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:18:52,549 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_change_product.jsp
+2023-01-29 19:18:58,317 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Method AddProduct
+2023-01-29 19:18:58,333 ERROR c.e.f.d.m.CategoryDAO [http-nio-8091-exec-7] java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Iphone' for key 'categories.name_UNIQUE'
+2023-01-29 19:18:58,336 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:18:58,337 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:18:58,337 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:18:58,340 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:18:58,340 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:18:58,354 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:18:58,355 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:20:39,914 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-6] Method authorization is started
+2023-01-29 19:20:40,268 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-6] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:20:40,275 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:20:40,275 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:20:40,288 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:20:40,288 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:20:40,776 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:20:46,493 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:20:46,493 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:20:46,498 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:20:46,499 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:20:46,516 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:20:48,570 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:20:48,570 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-01-29 19:20:48,577 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-01-29 19:20:48,577 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:20:48,585 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:20:49,719 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:20:49,719 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:20:49,725 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:20:49,725 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:20:49,733 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:20:50,240 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-01-29 19:20:50,240 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method showGoods is started
+2023-01-29 19:20:50,249 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method sendGoodsList is started
+2023-01-29 19:20:50,249 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:20:50,258 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method changeGoods is started
+2023-01-29 19:20:52,764 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:20:52,765 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:20:52,767 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:20:58,772 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Method AddProduct
+2023-01-29 19:20:58,786 ERROR c.e.f.d.m.CategoryDAO [http-nio-8091-exec-3] java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Iphone' for key 'categories.name_UNIQUE'
+2023-01-29 19:20:58,790 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:20:58,791 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:20:58,791 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method showGoods is started
+2023-01-29 19:20:58,795 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method sendGoodsList is started
+2023-01-29 19:20:58,795 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:20:58,811 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:20:58,812 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_change_product.jsp
+2023-01-29 19:22:09,956 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Method authorization is started
+2023-01-29 19:22:10,328 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:22:10,335 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:22:10,335 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:22:10,348 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:22:10,348 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:22:10,865 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:22:12,959 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:22:12,959 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:22:12,962 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:22:19,256 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Method AddProduct
+2023-01-29 19:22:19,271 ERROR c.e.f.d.m.CategoryDAO [http-nio-8091-exec-8] java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Iphone' for key 'categories.name_UNIQUE'
+2023-01-29 19:22:19,275 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:22:19,276 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:22:19,276 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:22:19,280 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:22:19,281 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:22:19,299 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:22:19,301 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_change_product.jsp
+2023-01-29 19:23:26,723 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-01-29 19:23:27,081 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:23:27,089 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:23:27,089 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:23:27,101 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:23:27,101 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:23:27,588 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:23:29,523 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:23:29,524 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:23:29,526 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_change_product.jsp
+2023-01-29 19:23:34,022 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Method AddProduct
+2023-01-29 19:23:34,042 ERROR c.e.f.d.m.CategoryDAO [http-nio-8091-exec-7] java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Iphone' for key 'categories.name_UNIQUE'
+2023-01-29 19:23:34,046 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:23:34,047 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:23:34,047 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:23:34,050 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:23:34,050 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:23:34,066 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:23:34,069 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:27:34,564 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-01-29 19:27:34,954 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:27:34,962 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:27:34,962 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:27:34,976 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:27:34,976 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:27:35,489 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:27:41,397 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:27:41,397 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:27:41,400 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_change_product.jsp
+2023-01-29 19:27:45,581 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Method AddProduct
+2023-01-29 19:27:45,595 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:27:45,596 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:27:45,596 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:27:45,600 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:27:45,600 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:27:45,615 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:27:45,617 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:29:55,618 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:29:55,618 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-01-29 19:29:55,623 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-01-29 19:29:55,624 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:29:55,644 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:29:56,452 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:29:56,452 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:29:56,457 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:29:56,457 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:29:56,466 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:30:48,208 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:30:48,209 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:30:48,211 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:30:51,408 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Method AddProduct
+2023-01-29 19:30:51,423 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:30:51,423 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:30:51,423 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method showGoods is started
+2023-01-29 19:30:51,427 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method sendGoodsList is started
+2023-01-29 19:30:51,427 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:30:51,441 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:30:51,443 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_change_product.jsp
+2023-01-29 19:30:54,043 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:30:54,043 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method showGoods is started
+2023-01-29 19:30:54,048 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method sendGoodsList is started
+2023-01-29 19:30:54,048 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:30:54,062 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:30:54,584 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:30:54,584 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:30:54,589 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:30:54,589 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:30:54,598 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:31:13,062 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:31:13,063 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:31:13,065 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_change_product.jsp
+2023-01-29 19:31:15,446 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Method AddProduct
+2023-01-29 19:31:15,457 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:31:15,457 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:31:15,457 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:31:15,461 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:31:15,462 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:31:15,473 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:31:15,475 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:32:16,184 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-01-29 19:32:16,555 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:32:16,563 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:32:16,563 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:32:16,576 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:32:16,576 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:17,107 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:32:18,982 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:32:18,983 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:32:18,987 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:32:18,988 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:18,998 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:32:20,321 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:32:20,322 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:32:20,328 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:32:20,328 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:20,337 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:32:21,956 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] The showList addProduct is started
+2023-01-29 19:32:21,957 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] The showList showOrder is started
+2023-01-29 19:32:21,980 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] The showList sendOrderList is started
+2023-01-29 19:32:21,980 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-8] Forward to tho admin_order_list.jsp
+2023-01-29 19:32:24,013 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList addProduct is started
+2023-01-29 19:32:24,013 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList showOrder is started
+2023-01-29 19:32:24,018 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList sendOrderList is started
+2023-01-29 19:32:24,018 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] Forward to tho admin_order_list.jsp
+2023-01-29 19:32:25,055 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] The showList addProduct is started
+2023-01-29 19:32:25,055 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] The showList showOrder is started
+2023-01-29 19:32:25,060 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] The showList sendOrderList is started
+2023-01-29 19:32:25,060 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-10] Forward to tho admin_order_list.jsp
+2023-01-29 19:32:27,602 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList addProduct is started
+2023-01-29 19:32:27,603 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList showOrder is started
+2023-01-29 19:32:27,607 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList sendOrderList is started
+2023-01-29 19:32:27,608 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] Forward to tho admin_order_list.jsp
+2023-01-29 19:32:28,517 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-2] The showList method is started
+2023-01-29 19:32:28,518 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-2] The showList method is started
+2023-01-29 19:32:28,522 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-2] The sendUserList method is started
+2023-01-29 19:32:28,523 DEBUG c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-2] Forward to tho admin_customer_list.jsp
+2023-01-29 19:32:30,419 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:32:30,419 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method showGoods is started
+2023-01-29 19:32:30,423 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method sendGoodsList is started
+2023-01-29 19:32:30,424 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:30,433 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:32:32,255 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The showList changeOrderStatus is started
+2023-01-29 19:32:32,255 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method showGoods is started
+2023-01-29 19:32:32,260 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method sendGoodsList is started
+2023-01-29 19:32:32,260 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:32,270 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-4] The method changeGoods is started
+2023-01-29 19:32:33,844 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:32:33,845 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:32:33,849 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:32:33,849 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:33,858 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:32:34,377 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:32:34,377 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:32:34,382 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:32:34,383 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:34,390 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:32:35,626 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:32:35,626 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:32:35,628 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-01-29 19:32:40,639 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Method AddProduct
+2023-01-29 19:32:40,649 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:32:40,650 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:32:40,650 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:32:40,653 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:32:40,653 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:32:40,669 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:32:40,670 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_change_product.jsp
+2023-01-29 19:32:41,943 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:32:41,943 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:32:41,945 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_change_product.jsp
+2023-01-29 19:32:43,809 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Method AddProduct
+2023-01-29 19:33:52,019 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-01-29 19:33:52,388 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:33:52,395 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:33:52,395 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:33:52,408 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:33:52,408 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:33:52,920 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:33:56,260 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:33:56,260 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:33:56,265 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:33:56,265 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:33:56,275 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:33:57,564 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:33:57,564 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:33:57,569 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:33:57,570 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:33:57,588 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:33:58,081 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:33:58,081 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:33:58,086 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:33:58,086 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:33:58,094 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:33:59,320 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:33:59,320 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:33:59,322 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_change_product.jsp
+2023-01-29 19:34:02,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Method AddProduct
+2023-01-29 19:34:02,903 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:34:02,903 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:34:02,904 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:34:02,907 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:34:02,907 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:34:02,923 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:34:02,924 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_change_product.jsp
+2023-01-29 19:34:04,880 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-01-29 19:34:04,880 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method changeGoods is started
+2023-01-29 19:34:04,882 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_change_product.jsp
+2023-01-29 19:34:07,686 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Method AddProduct
+2023-01-29 19:34:07,694 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:34:07,694 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:34:07,694 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:34:07,698 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:34:07,698 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:34:07,712 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:34:07,713 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:35:43,297 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-3] Method authorization is started
+2023-01-29 19:35:43,692 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-3] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:35:43,699 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:35:43,699 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:35:43,710 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:35:43,710 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:35:44,230 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:35:46,006 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:35:46,006 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:35:46,011 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:35:46,011 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:35:46,020 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:35:46,801 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:35:46,801 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:35:46,806 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:35:46,807 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:35:46,816 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:35:47,324 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:35:47,324 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:35:47,329 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:35:47,329 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:35:47,338 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:35:49,793 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:35:49,794 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:35:49,795 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_change_product.jsp
+2023-01-29 19:35:54,250 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Method AddProduct
+2023-01-29 19:35:54,259 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:35:54,260 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:35:54,260 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:35:54,263 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:35:54,263 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:35:54,280 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:35:54,282 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_change_product.jsp
+2023-01-29 19:37:44,530 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Method authorization is started
+2023-01-29 19:37:44,899 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:37:44,909 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:37:44,909 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:37:44,922 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:37:44,923 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:37:45,444 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:37:46,738 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:37:46,738 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:37:46,742 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:37:46,743 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:37:46,752 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:37:47,692 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:37:47,692 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:37:47,697 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:37:47,697 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:37:47,707 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:37:49,110 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:37:49,111 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method changeGoods is started
+2023-01-29 19:37:49,113 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_change_product.jsp
+2023-01-29 19:37:52,459 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Method AddProduct
+2023-01-29 19:37:52,468 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:37:52,468 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:37:52,468 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:37:52,473 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:37:52,473 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:37:52,486 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:37:52,488 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_change_product.jsp
+2023-01-29 19:39:02,481 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:39:02,481 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:39:02,483 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_change_product.jsp
+2023-01-29 19:39:13,105 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Method AddProduct
+2023-01-29 19:39:13,117 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-01-29 19:39:13,118 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:39:13,118 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method showGoods is started
+2023-01-29 19:39:13,123 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method sendGoodsList is started
+2023-01-29 19:39:13,123 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:39:13,142 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:39:13,144 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_change_product.jsp
+2023-01-29 19:40:47,627 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-01-29 19:40:48,005 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 19:40:48,013 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-01-29 19:40:48,013 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-01-29 19:40:48,026 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-01-29 19:40:48,026 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:48,592 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method changeGoods is started
+2023-01-29 19:40:50,711 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 19:40:50,711 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 19:40:50,718 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 19:40:50,718 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:50,727 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 19:40:51,722 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-01-29 19:40:51,723 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-01-29 19:40:51,728 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-01-29 19:40:51,728 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:51,738 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-01-29 19:40:52,474 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The showList changeOrderStatus is started
+2023-01-29 19:40:52,474 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method showGoods is started
+2023-01-29 19:40:52,480 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method sendGoodsList is started
+2023-01-29 19:40:52,480 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:52,497 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-8] The method changeGoods is started
+2023-01-29 19:40:55,709 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-01-29 19:40:55,709 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method deleteGoods is started
+2023-01-29 19:40:55,715 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-01-29 19:40:55,718 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-01-29 19:40:55,718 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:56,895 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The showList changeOrderStatus is started
+2023-01-29 19:40:56,895 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method showGoods is started
+2023-01-29 19:40:56,899 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method sendGoodsList is started
+2023-01-29 19:40:56,900 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:56,919 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-10] The method changeGoods is started
+2023-01-29 19:40:57,845 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-01-29 19:40:57,845 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method showGoods is started
+2023-01-29 19:40:57,850 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method sendGoodsList is started
+2023-01-29 19:40:57,850 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:57,859 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method changeGoods is started
+2023-01-29 19:40:58,794 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The showList changeOrderStatus is started
+2023-01-29 19:40:58,794 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method showGoods is started
+2023-01-29 19:40:58,799 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method sendGoodsList is started
+2023-01-29 19:40:58,799 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:58,808 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-2] The method changeGoods is started
+2023-01-29 19:40:59,493 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The showList changeOrderStatus is started
+2023-01-29 19:40:59,493 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method showGoods is started
+2023-01-29 19:40:59,498 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method sendGoodsList is started
+2023-01-29 19:40:59,498 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] Forward to admin/admin_goods_list.jsp
+2023-01-29 19:40:59,506 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-3] The method changeGoods is started
+2023-01-29 19:54:10,429 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 20:00:23,185 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 20:00:37,865 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 20:04:42,388 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 20:25:53,961 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+2023-01-29 20:25:53,973 INFO c.e.f.c.u.UserCardCommand [main] Method showList is started
