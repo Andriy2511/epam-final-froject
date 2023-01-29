@@ -4501,3 +4501,173 @@
 2023-01-29 20:04:42,388 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
 2023-01-29 20:25:53,961 ERROR c.e.f.d.m.CategoryDAO [main] javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
 2023-01-29 20:25:53,973 INFO c.e.f.c.u.UserCardCommand [main] Method showList is started
+2023-01-29 20:37:17,418 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-5] Method showList is started
+2023-01-29 20:37:19,474 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method showGoodsList is started
+2023-01-29 20:37:19,475 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method show Goods is started
+2023-01-29 20:37:19,828 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method sortList is started
+2023-01-29 20:37:19,836 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] sendGoodsList
+2023-01-29 20:37:19,836 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method sendGoodsList is started
+2023-01-29 20:37:19,836 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:21,469 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Method showList is started
+2023-01-29 20:37:21,469 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Method showGoods is started
+2023-01-29 20:37:21,469 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Redirect to the user/card_page.jsp, cardGoodsList = null
+2023-01-29 20:37:24,555 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-7] Method authorization is started
+2023-01-29 20:37:24,569 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-7] Redirection to the /finalProject_war_exploded/FrontController?command=CATALOG_COMMAND&action=showGoodsList, role user
+2023-01-29 20:37:24,574 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-8] Method showGoodsList is started
+2023-01-29 20:37:24,574 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-8] Method show Goods is started
+2023-01-29 20:37:24,576 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-8] Method sortList is started
+2023-01-29 20:37:24,579 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-8] sendGoodsList
+2023-01-29 20:37:24,579 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-8] Method sendGoodsList is started
+2023-01-29 20:37:24,579 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-8] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:26,343 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Method showList is started
+2023-01-29 20:37:26,343 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Method showGoods is started
+2023-01-29 20:37:26,343 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Redirect to the user/card_page.jsp, cardGoodsList = null
+2023-01-29 20:37:31,055 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-3] Method showGoodsList is started
+2023-01-29 20:37:31,056 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-3] Method show Goods is started
+2023-01-29 20:37:31,058 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-3] Method sortList is started
+2023-01-29 20:37:31,061 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-3] sendGoodsList
+2023-01-29 20:37:31,061 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-3] Method sendGoodsList is started
+2023-01-29 20:37:31,061 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-3] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:32,134 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-5] Method showList is started
+2023-01-29 20:37:32,140 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-5] Method sendOrderList is started
+2023-01-29 20:37:32,140 DEBUG c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-5] Forward to the user/user_order_list.jsp
+2023-01-29 20:37:34,804 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-2] Method showGoodsList is started
+2023-01-29 20:37:34,804 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-2] Method show Goods is started
+2023-01-29 20:37:34,806 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-2] Method sortList is started
+2023-01-29 20:37:34,808 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-2] sendGoodsList
+2023-01-29 20:37:34,809 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-2] Method sendGoodsList is started
+2023-01-29 20:37:34,809 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-2] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:36,331 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method showGoodsList is started
+2023-01-29 20:37:36,331 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method addToCard is started
+2023-01-29 20:37:36,333 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method show Goods is started
+2023-01-29 20:37:36,335 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method sortList is started
+2023-01-29 20:37:36,339 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] sendGoodsList
+2023-01-29 20:37:36,339 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method sendGoodsList is started
+2023-01-29 20:37:36,339 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:36,796 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] Method showGoodsList is started
+2023-01-29 20:37:36,796 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] Method addToCard is started
+2023-01-29 20:37:36,798 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] Method show Goods is started
+2023-01-29 20:37:36,800 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] Method sortList is started
+2023-01-29 20:37:36,802 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] sendGoodsList
+2023-01-29 20:37:36,802 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] Method sendGoodsList is started
+2023-01-29 20:37:36,802 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-9] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:37,330 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method showGoodsList is started
+2023-01-29 20:37:37,330 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method addToCard is started
+2023-01-29 20:37:37,332 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method show Goods is started
+2023-01-29 20:37:37,333 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method sortList is started
+2023-01-29 20:37:37,335 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] sendGoodsList
+2023-01-29 20:37:37,335 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method sendGoodsList is started
+2023-01-29 20:37:37,335 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:38,353 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-4] Method showList is started
+2023-01-29 20:37:38,353 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-4] Method showGoods is started
+2023-01-29 20:37:38,353 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-4] Method sendGoodsList is started
+2023-01-29 20:37:38,354 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-4] Forward to the user/card_page.jsp
+2023-01-29 20:37:39,407 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Method showList is started
+2023-01-29 20:37:39,429 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Method showGoods is started
+2023-01-29 20:37:39,429 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Method sendGoodsList is started
+2023-01-29 20:37:39,429 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Forward to the user/card_page.jsp
+2023-01-29 20:37:39,904 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-2] Method showList is started
+2023-01-29 20:37:39,910 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-2] Method showGoods is started
+2023-01-29 20:37:39,910 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-2] Method sendGoodsList is started
+2023-01-29 20:37:39,910 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-2] Forward to the user/card_page.jsp
+2023-01-29 20:37:41,243 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Method showList is started
+2023-01-29 20:37:41,243 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Method showGoods is started
+2023-01-29 20:37:41,243 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Method sendGoodsList is started
+2023-01-29 20:37:41,243 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-10] Forward to the user/card_page.jsp
+2023-01-29 20:37:42,308 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-1] Method showList is started
+2023-01-29 20:37:42,308 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-1] Case default, action showList, redirect to the user/card_page.jsp
+2023-01-29 20:37:42,580 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-3] Method showList is started
+2023-01-29 20:37:42,580 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-3] Case default, action showList, redirect to the user/card_page.jsp
+2023-01-29 20:37:43,873 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-4] Method showList is started
+2023-01-29 20:37:43,874 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-4] Case default, action showList, redirect to the user/card_page.jsp
+2023-01-29 20:37:44,937 INFO c.e.f.c.l.LanguageCommand [http-nio-8091-exec-5] Method buildRequest is started
+2023-01-29 20:37:44,937 DEBUG c.e.f.c.l.LanguageCommand [http-nio-8091-exec-5] stringBuilder is /finalProject_war_exploded/FrontController?command=USER_CARD_COMMAND&action=showList&page=next
+2023-01-29 20:37:44,943 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-2] Method showList is started
+2023-01-29 20:37:44,943 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-2] Case default, action showList, redirect to the user/card_page.jsp
+2023-01-29 20:37:46,051 INFO c.e.f.c.l.LanguageCommand [http-nio-8091-exec-9] Method buildRequest is started
+2023-01-29 20:37:46,051 DEBUG c.e.f.c.l.LanguageCommand [http-nio-8091-exec-9] stringBuilder is /finalProject_war_exploded/FrontController?command=USER_CARD_COMMAND&action=showList&page=next
+2023-01-29 20:37:46,056 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-7] Method showList is started
+2023-01-29 20:37:46,056 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-7] Case default, action showList, redirect to the user/card_page.jsp
+2023-01-29 20:37:48,365 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method showGoodsList is started
+2023-01-29 20:37:48,365 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method show Goods is started
+2023-01-29 20:37:48,368 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method sortList is started
+2023-01-29 20:37:48,370 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] sendGoodsList
+2023-01-29 20:37:48,370 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Method sendGoodsList is started
+2023-01-29 20:37:48,370 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-6] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:50,108 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method showGoodsList is started
+2023-01-29 20:37:50,108 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method addToCard is started
+2023-01-29 20:37:50,109 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method show Goods is started
+2023-01-29 20:37:50,111 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method sortList is started
+2023-01-29 20:37:50,113 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] sendGoodsList
+2023-01-29 20:37:50,113 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method sendGoodsList is started
+2023-01-29 20:37:50,113 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:37:51,706 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-3] Method showList is started
+2023-01-29 20:37:51,706 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-3] Method showGoods is started
+2023-01-29 20:37:51,706 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-3] Method sendGoodsList is started
+2023-01-29 20:37:51,706 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-3] Forward to the user/card_page.jsp
+2023-01-29 20:37:53,390 INFO c.e.f.c.l.LanguageCommand [http-nio-8091-exec-4] Method buildRequest is started
+2023-01-29 20:37:53,390 DEBUG c.e.f.c.l.LanguageCommand [http-nio-8091-exec-4] stringBuilder is /finalProject_war_exploded/FrontController?command=USER_CARD_COMMAND&action=showGoodsList
+2023-01-29 20:37:53,394 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Method showList is started
+2023-01-29 20:37:53,394 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Method showGoods is started
+2023-01-29 20:37:53,394 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Method sendGoodsList is started
+2023-01-29 20:37:53,395 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-5] Forward to the user/card_page.jsp
+2023-01-29 20:37:55,696 INFO c.e.f.c.l.LanguageCommand [http-nio-8091-exec-2] Method buildRequest is started
+2023-01-29 20:37:55,696 DEBUG c.e.f.c.l.LanguageCommand [http-nio-8091-exec-2] stringBuilder is /finalProject_war_exploded/FrontController?command=USER_CARD_COMMAND&action=showGoodsList
+2023-01-29 20:37:55,701 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-9] Method showList is started
+2023-01-29 20:37:55,701 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-9] Method showGoods is started
+2023-01-29 20:37:55,701 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-9] Method sendGoodsList is started
+2023-01-29 20:37:55,701 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-9] Forward to the user/card_page.jsp
+2023-01-29 20:38:01,084 INFO c.e.f.c.l.LogOutCommand [http-nio-8091-exec-7] Method execute is started
+2023-01-29 20:38:01,084 DEBUG c.e.f.c.l.LogOutCommand [http-nio-8091-exec-7] Redirect to the /finalProject_war_exploded/login/login.jsp
+2023-01-29 20:39:17,309 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Method authorization is started
+2023-01-29 20:39:17,683 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-5] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-01-29 20:39:17,690 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The showList changeOrderStatus is started
+2023-01-29 20:39:17,691 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method showGoods is started
+2023-01-29 20:39:17,703 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method sendGoodsList is started
+2023-01-29 20:39:17,703 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] Forward to admin/admin_goods_list.jsp
+2023-01-29 20:39:18,202 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-6] The method changeGoods is started
+2023-01-29 20:39:20,235 INFO c.e.f.c.l.LogOutCommand [http-nio-8091-exec-7] Method execute is started
+2023-01-29 20:39:20,236 DEBUG c.e.f.c.l.LogOutCommand [http-nio-8091-exec-7] Redirect to the /finalProject_war_exploded/login/login.jsp
+2023-01-29 20:39:23,866 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-9] Method authorization is started
+2023-01-29 20:39:23,874 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-9] Redirection to the /finalProject_war_exploded/FrontController?command=CATALOG_COMMAND&action=showGoodsList, role user
+2023-01-29 20:39:23,879 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method showGoodsList is started
+2023-01-29 20:39:23,879 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method show Goods is started
+2023-01-29 20:39:23,882 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method sortList is started
+2023-01-29 20:39:23,884 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] sendGoodsList
+2023-01-29 20:39:23,885 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Method sendGoodsList is started
+2023-01-29 20:39:23,885 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-10] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:39:25,802 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method showGoodsList is started
+2023-01-29 20:39:25,802 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method addToCard is started
+2023-01-29 20:39:25,804 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method show Goods is started
+2023-01-29 20:39:25,806 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method sortList is started
+2023-01-29 20:39:25,809 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] sendGoodsList
+2023-01-29 20:39:25,810 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Method sendGoodsList is started
+2023-01-29 20:39:25,810 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-1] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:39:27,469 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] Method showGoodsList is started
+2023-01-29 20:39:27,470 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] Method addToCard is started
+2023-01-29 20:39:27,472 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] Method show Goods is started
+2023-01-29 20:39:27,474 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] Method sortList is started
+2023-01-29 20:39:27,477 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] sendGoodsList
+2023-01-29 20:39:27,477 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] Method sendGoodsList is started
+2023-01-29 20:39:27,477 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-4] Send redirect to the catalog_goods/catalog.jsp
+2023-01-29 20:39:28,987 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Method showList is started
+2023-01-29 20:39:28,988 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Method showGoods is started
+2023-01-29 20:39:28,988 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Method sendGoodsList is started
+2023-01-29 20:39:28,988 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-6] Forward to the user/card_page.jsp
+2023-01-29 20:39:33,408 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-7] Method showList is started
+2023-01-29 20:39:33,429 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-7] Method showGoods is started
+2023-01-29 20:39:33,429 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-7] Method sendGoodsList is started
+2023-01-29 20:39:33,429 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-7] Forward to the user/card_page.jsp
+2023-01-29 20:39:34,205 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-8] Method showList is started
+2023-01-29 20:39:34,205 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-8] Method showGoods is started
+2023-01-29 20:39:34,205 INFO c.e.f.c.u.UserCardCommand [http-nio-8091-exec-8] Method sendGoodsList is started
+2023-01-29 20:39:34,205 DEBUG c.e.f.c.u.UserCardCommand [http-nio-8091-exec-8] Forward to the user/card_page.jsp
+2023-01-29 20:39:36,222 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-9] Method showList is started
+2023-01-29 20:39:36,227 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-9] Method sendOrderList is started
+2023-01-29 20:39:36,228 DEBUG c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-9] Forward to the user/user_order_list.jsp
+2023-01-29 20:39:37,613 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-10] Method showList is started
+2023-01-29 20:39:37,615 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-10] Method sendOrderList is started
+2023-01-29 20:39:37,616 DEBUG c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-10] Forward to the user/user_order_list.jsp
+2023-01-29 20:39:38,111 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-2] Method showList is started
+2023-01-29 20:39:38,114 INFO c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-2] Method sendOrderList is started
+2023-01-29 20:39:38,114 DEBUG c.e.f.c.u.UserOrderCommand [http-nio-8091-exec-2] Forward to the user/user_order_list.jsp

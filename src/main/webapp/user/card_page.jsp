@@ -48,12 +48,6 @@
       </c:forEach>
       </tbody>
     </table>
-    <div>
-      <a href="<%=request.getContextPath()%>/FrontController?command=USER_CARD_COMMAND&action=showList&page=previous"
-         class="btn btn-primary"><fmt:message key="locale.Previous" /></a>
-      <a href="<%=request.getContextPath()%>/FrontController?command=USER_CARD_COMMAND&action=showList&page=next"
-         class="btn btn-success"><fmt:message key="locale.Next" /></a>
-    </div>
     <div class="alert alert-success center" role="alert">
       <p>${NOTIFICATION}</p>
     </div>

@@ -25,11 +25,8 @@ public class UserCardCommand implements ICommand {
     IRoleDAO roleDAO;
     IGoodsDAO goodsDAO;
     IOrderDAO orderDAO;
-    int startPage = 1;
-    int recordsPerPage = 5;
     String listParam;
     private static final Logger logger = LogManager.getLogger(UserCardCommand.class);
-    List<Goods> goodsList;
     List<Goods> cardGoodsList;
 
     public UserCardCommand(){
@@ -93,43 +90,14 @@ public class UserCardCommand implements ICommand {
     @SuppressWarnings("unchecked")
     private void showGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         logger.info("Method showGoods is started");
-        int countOfGoods;
         cardGoodsList = (List<Goods>) request.getSession().getAttribute("cardGoodsList");
         if(cardGoodsList != null) {
-            countOfGoods = cardGoodsList.size();
-            startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-            request.setAttribute("noOfPages", startPage);
-            goodsList = cardGoodsList;
-            sendGoodsList(request, response, goodsList);
+            sendGoodsList(request, response, cardGoodsList);
         } else {
             logger.debug("Redirect to the user/card_page.jsp, cardGoodsList = null");
             response.sendRedirect("user/card_page.jsp");
         }
     }
-
-//    private int pagination(HttpServletRequest request, HttpServletResponse response, int numberOfRecords) {
-//        int numberOfPages = (int) Math.ceil(numberOfRecords * 1.0 / recordsPerPage);
-//        try {
-//            if(request.getParameter("page") != null){
-//                if(request.getParameter("page").equals("next")){
-//                    if(startPage < numberOfPages) {
-//                        startPage++;
-//                    }
-//                }else if(request.getParameter("page").equals("previous")){
-//                    if(startPage > 1) {
-//                        startPage--;
-//                    }
-//                }
-//            }
-//        } catch (NumberFormatException e){
-//            logger.error(e);
-//            startPage = 1;
-//        } catch (Exception e){
-//            logger.error(e);
-//            e.printStackTrace();
-//        }
-//        return startPage;
-//    }
 
     private Goods getGoodsById(List<Goods> goodsList, int id){
         Goods goods1 = new Goods();
@@ -145,7 +113,6 @@ public class UserCardCommand implements ICommand {
             throws ServletException, IOException {
         logger.info("Method sendGoodsList is started");
         request.setAttribute("goodsList", goodsList);
-        request.setAttribute("currentPage", startPage);
         logger.debug("Forward to the user/card_page.jsp");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/card_page.jsp");
         requestDispatcher.forward(request, response);
