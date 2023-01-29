@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +34,10 @@ public class LanguageCommand implements ICommand {
             List<String> valuesList = new ArrayList<>();
             stringBuilder.append(request.getServletPath());
             for (String key : paramsMap.keySet()) {
-                keysList.add(key);
-                valuesList.add(paramsMap.get(key)[0]);
+                if(!key.equals("page")) {
+                    keysList.add(key);
+                    valuesList.add(paramsMap.get(key)[0]);
+                }
             }
             if (!paramsMap.isEmpty()) {
                 stringBuilder.append("?");
