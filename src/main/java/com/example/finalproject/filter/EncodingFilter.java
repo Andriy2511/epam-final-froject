@@ -1,9 +1,13 @@
 package com.example.finalproject.filter;
 
+import jakarta.faces.application.Application;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.*;
+import jakarta.servlet.http.HttpServletRequest;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebFilter(filterName = "EncodingFilter")
 public class EncodingFilter implements Filter {

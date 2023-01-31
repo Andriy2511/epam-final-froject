@@ -4,7 +4,9 @@ import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.ICategoryDAO;
 import com.example.finalproject.dao.IGoodsDAO;
+import com.example.finalproject.path.PathBuilder;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -63,7 +65,7 @@ public class AdminChangeProductCommand implements ICommand {
         if(request.getPart("photo").getSize() > 0){
             Part part = request.getPart("photo");
             photo = part.getSubmittedFileName();
-            addPhoto(part, photo);
+            addPhoto(part, photo, request);
         } else {
             photo = goodsDAO.getGoodsById(id).get(0).getPhoto();
         }
@@ -81,10 +83,8 @@ public class AdminChangeProductCommand implements ICommand {
         dispatcher.forward(request, response);
     }
 
-    private void addPhoto(Part part, String photo) throws IOException {
-        String tempPath = "C:\\Users\\andri\\finalProject\\src\\main\\webapp\\image";
-//        String path = request.getServletContext().getRealPath("\\"+ "image"+ File.separator+photo);
-        String path = tempPath + File.separator+ photo;
+    private void addPhoto(Part part, String photo, HttpServletRequest request) throws IOException {
+        String path = PathBuilder.buildImagePath(request, photo);
         part.write(path);
     }
 
