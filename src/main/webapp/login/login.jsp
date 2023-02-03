@@ -32,7 +32,8 @@
 			</div>
 
 			<div class="alert alert-info" role="alert">
-				<p>${NOTIFICATION}</p>
+<%--				<p>${NOTIFICATION}</p>--%>
+				<p><%=request.getParameter("NOTIFICATION")%></p>
 			</div>
 
 			<button type="submit" class="btn btn-primary"><fmt:message key="locale.Submit" /></button>

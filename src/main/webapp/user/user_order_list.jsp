@@ -42,8 +42,6 @@
                 <c:set var = "orderStatusId" value="${order.getOrderStatusId()}" />
                 <tr>
                     <td><c:out value="${order.getId()}" /></td>
-<%--                    <td><c:out value="${order.getGoodsNameById()}" /></td>--%>
-<%--                    <td><c:out value="${order.getOrderStatusNameById()}" /></td>--%>
                     <td><ctg:info-goods goodsId="${order.getGoodsId()}"/></td>
                     <td><ctg:info-order-status orderStatusId="${order.getOrderStatusId()}"/></td>
                 </tr>

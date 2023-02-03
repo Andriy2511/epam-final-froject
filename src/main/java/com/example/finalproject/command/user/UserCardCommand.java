@@ -112,9 +112,10 @@ public class UserCardCommand implements ICommand {
     private void sendGoodsList(HttpServletRequest request, HttpServletResponse response, List<Goods> goodsList)
             throws ServletException, IOException {
         logger.info("Method sendGoodsList is started");
-        request.setAttribute("goodsList", goodsList);
-        logger.debug("Forward to the user/card_page.jsp");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/card_page.jsp");
-        requestDispatcher.forward(request, response);
+        //request.setAttribute("goodsList", goodsList);
+        logger.debug("Redirect to the user/card_page.jsp");
+        response.sendRedirect("user/card_page.jsp");
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/card_page.jsp");
+//        requestDispatcher.forward(request, response);
     }
 }

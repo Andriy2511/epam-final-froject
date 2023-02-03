@@ -36,6 +36,9 @@ public class AddProductCommand implements ICommand {
 
     private void addProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException, NamingException, ClassNotFoundException {
         logger.info("The showList addProduct is started");
+
+        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
+
         double price = 0;
         String name = request.getParameter("name");
         String description = request.getParameter("description");
@@ -70,10 +73,14 @@ public class AddProductCommand implements ICommand {
             addGoods(name, description, photo, price, categoryName);
         }
 
-        request.setAttribute("NOTIFICATION", notification);
+        //request.setAttribute("NOTIFICATION", notification);
+
         logger.debug("Forward to admin_add_product.jsp");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_add_product.jsp");
-        dispatcher.forward(request, response);
+        //request.getSession().setAttribute("NOTIFICATION", notification);
+        response.sendRedirect("admin/admin_add_product.jsp?NOTIFICATION=" + notification);
+//        response.sendRedirect("admin/admin_add_product.jsp");
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_add_product.jsp");
+//        dispatcher.forward(request, response);
     }
 
     private void addPhoto(Part part, String photo, HttpServletRequest request) throws IOException {

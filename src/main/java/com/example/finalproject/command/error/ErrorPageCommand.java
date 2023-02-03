@@ -18,7 +18,6 @@ public class ErrorPageCommand implements ICommand {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         logger.info("Method execute is started");
         logger.debug("Forward to the error/error_page.jsp");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("error/error_page.jsp");
-        dispatcher.forward(request, response);
+        response.sendRedirect("error/error_page.jsp");
     }
 }

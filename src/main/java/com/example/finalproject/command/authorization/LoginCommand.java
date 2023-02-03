@@ -83,8 +83,9 @@ public class LoginCommand implements ICommand {
 	private void writeNotification(HttpServletRequest request, HttpServletResponse response, String notification) throws ServletException, IOException {
 		request.setAttribute("NOTIFICATION", notification);
 		logger.debug("Forward to the login/login.jsp, notification {}", notification);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
-		dispatcher.forward(request, response);
+		response.sendRedirect("login/login.jsp" + "?NOTIFICATION=" + notification);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
+//		dispatcher.forward(request, response);
 	}
 
 	private boolean isUserBlocked(String username){

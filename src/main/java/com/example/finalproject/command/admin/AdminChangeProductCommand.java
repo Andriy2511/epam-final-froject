@@ -79,8 +79,9 @@ public class AdminChangeProductCommand implements ICommand {
 
         request.setAttribute("NOTIFICATION", notification);
         logger.debug("Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
-        dispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&NOTIFICATION=" + notification);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
+//        dispatcher.forward(request, response);
     }
 
     private void addPhoto(Part part, String photo, HttpServletRequest request) throws IOException {

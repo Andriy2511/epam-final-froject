@@ -58,7 +58,7 @@
 				<button type="submit" class="btn btn-success"><fmt:message key="locale.Save" /></button>
 				</form>
 				<div class="alert alert-success center" role="alert">
-					<p>${NOTIFICATION}</p>
+					<p><%=request.getParameter("NOTIFICATION")%></p>
 				</div>
 			</div>
 		</div>

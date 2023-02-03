@@ -14,8 +14,9 @@ public class Redirect {
     }
 
     public static void redirectToLoginPage(HttpServletRequest request, HttpServletResponse response, String notification) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/login/login.jsp");
-        request.setAttribute("NOTIFICATION", notification);
+//        response.sendRedirect("/login/login.jsp?NOTIFICATION" + notification);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/login/login.jsp?NOTIFICATION=" + notification);
+        //request.setAttribute("NOTIFICATION", notification);
         dispatcher.forward(request, response);
     }
 }

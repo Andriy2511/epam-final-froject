@@ -53,7 +53,7 @@ public class UserOrderCommand implements ICommand {
     private void sendOrderList(HttpServletRequest request, HttpServletResponse response, List<Order> ordersList)
             throws ServletException, IOException {
         logger.info("Method sendOrderList is started");
-        request.setAttribute("orderList", ordersList);
+        request.getSession().setAttribute("orderList", ordersList);
         request.setAttribute("currentPage", startPage);
         logger.debug("Forward to the user/user_order_list.jsp");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/user_order_list.jsp");

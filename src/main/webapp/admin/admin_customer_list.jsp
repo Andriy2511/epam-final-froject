@@ -24,7 +24,7 @@
 
 <div class="row">
     <div class="container">
-        <h3 class="text-center">List of users</h3>
+        <h3 class="text-center"><fmt:message key="locale.ListOfUsers" /></h3>
         <hr>
         <div class="container text-left">
             <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=fullList"

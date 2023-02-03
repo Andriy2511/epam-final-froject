@@ -60,7 +60,7 @@
         </div>
         <br>
         <div class="alert alert-success center" role="alert">
-            <p>${NOTIFICATION}</p>
+            <p><%=request.getParameter("NOTIFICATION")%></p>
         </div>
     </div>
 </div>

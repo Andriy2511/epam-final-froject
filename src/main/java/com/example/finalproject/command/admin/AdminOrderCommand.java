@@ -27,6 +27,8 @@ public class AdminOrderCommand implements ICommand {
     String listParam;
     String lastMenu;
     List<Order> orderList;
+    String notification;
+    String action;
     private static final Logger logger = LogManager.getLogger(AdminOrderCommand.class);
 
     public AdminOrderCommand(){
@@ -36,6 +38,8 @@ public class AdminOrderCommand implements ICommand {
         orderStatusDAO = daoFactory.getOrderStatusDAO();
         userDAO = daoFactory.getUserDAO();
         listParam = "";
+        notification = "";
+        action = "";
     }
 
     @Override
@@ -45,7 +49,11 @@ public class AdminOrderCommand implements ICommand {
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("The showList addProduct is started");
-        String action = request.getParameter("action");
+
+        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
+
+        notification = "";
+        action = request.getParameter("action");
         try {
             switch (action){
             case "showList":
@@ -78,7 +86,8 @@ public class AdminOrderCommand implements ICommand {
         if(orderName.equals("registered")){
             orderStatusDAO.changeOrderStatus(orderId, orderDAO.selectOrderIdByName(updatedStatus));
         } else {
-            request.setAttribute("NOTIFICATION", "You cannot change status for paid or canceled order");
+            notification = "You cannot change status for paid or canceled order";
+            //request.setAttribute("NOTIFICATION", "You cannot change status for paid or canceled order");
         }
     }
 
@@ -90,31 +99,13 @@ public class AdminOrderCommand implements ICommand {
         }
         switch (listParam){
             case "registeredList":
-                changeStartPageIfChangeMenu(listParam);
-                countOfOrders = orderDAO.showCountOfOrders("registered");
-                startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
-                request.setAttribute("noOfPages", startPage);
-                orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, "registered");
-                sendOrderList(request, response, orderList);
-                //formList(request, response, listParam, "registered");
+                formList(request, response, listParam, "registered");
                 break;
             case "paidList":
-                changeStartPageIfChangeMenu(listParam);
-                countOfOrders = orderDAO.showCountOfOrders("paid");
-                startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
-                request.setAttribute("noOfPages", startPage);
-                orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, "paid");
-                sendOrderList(request, response, orderList);
-                //formList(request, response, listParam, "paid");
+                formList(request, response, listParam, "paid");
                 break;
             case "canceledList":
-                changeStartPageIfChangeMenu(listParam);
-                countOfOrders = orderDAO.showCountOfOrders("canceled");
-                startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
-                request.setAttribute("noOfPages", startPage);
-                orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, "canceled");
-                sendOrderList(request, response, orderList);
-                //formList(request, response, listParam, "canceled");
+                formList(request, response, listParam, "canceled");
                 break;
             default:
                 logger.debug("Case default, listParam is {}, Forward to tho admin_order_list.jsp", listParam);
@@ -124,23 +115,26 @@ public class AdminOrderCommand implements ICommand {
         }
     }
 
-//    private void formList(HttpServletRequest request, HttpServletResponse response, String listParam, String orderStatus) throws ServletException, IOException {
-//        changeStartPageIfChangeMenu(listParam);
-//        int countOfOrders = orderDAO.showCountOfOrders("registered");
-//        startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
-//        request.setAttribute("noOfPages", startPage);
-//        orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, "registered");
-//        sendOrderList(request, response, orderList);
-//    }
+    private void formList(HttpServletRequest request, HttpServletResponse response, String listParam, String orderStatus) throws ServletException, IOException {
+        changeStartPageIfChangeMenu(listParam);
+        int countOfOrders = orderDAO.showCountOfOrders(orderStatus);
+        startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
+        request.setAttribute("noOfPages", startPage);
+        orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, orderStatus);
+        sendOrderList(request, response, orderList);
+    }
 
     private void sendOrderList(HttpServletRequest request, HttpServletResponse response, List<Order> ordersList)
             throws ServletException, IOException {
         logger.info("The showList sendOrderList is started");
-        request.setAttribute("orderList", ordersList);
-        request.setAttribute("currentPage", startPage);
+        request.getSession().setAttribute("orderList", ordersList);
         logger.debug("Forward to tho admin_order_list.jsp");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_order_list.jsp");
-        requestDispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() +
+                "/admin/admin_order_list.jsp?action=" + action +
+                "&" + "NOTIFICATION=" + notification + "&" + "noOfPages="
+                + startPage);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_order_list.jsp");
+//        requestDispatcher.forward(request, response);
     }
 
     private void changeStartPageIfChangeMenu(String currentMenu){

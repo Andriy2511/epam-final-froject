@@ -29,8 +29,8 @@ public class AdminProductCommand implements ICommand {
     int startPage = 1;
     int recordsPerPage = 5;
     String listParam;
-    String lastMenu;
     List<Goods> goodsList;
+    String notification;
 
     public AdminProductCommand(){
         daoFactory = DAOFactory.getDaoFactory("MYSQL");
@@ -38,6 +38,7 @@ public class AdminProductCommand implements ICommand {
         roleDAO = daoFactory.getRoleDAO();
         goodsDAO = daoFactory.getGoodsDAO();
         listParam = "";
+        notification = "";
     }
 
     @Override
@@ -47,11 +48,15 @@ public class AdminProductCommand implements ICommand {
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("The showList changeOrderStatus is started");
+
+        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
+
         String action = request.getParameter("action");
         try {
             switch (action){
                 case "showGoodsList":
                     showGoods(request, response);
+                    break;
                 case "change":
                     changeGoods(request, response);
                     break;
@@ -75,7 +80,7 @@ public class AdminProductCommand implements ICommand {
         logger.info("The method changeGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         Goods goods = goodsDAO.getGoodsById(goodsId).get(0);
-        request.setAttribute("goods", goods);
+        request.getSession().setAttribute("goods", goods);
         logger.debug("Forward to admin/admin_change_product.jsp");
         RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_change_product.jsp");
         dispatcher.forward(request, response);
@@ -85,7 +90,8 @@ public class AdminProductCommand implements ICommand {
         logger.info("The method deleteGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         if(!goodsDAO.deleteGoods(goodsId)){
-            request.setAttribute("NOTIFICATION", "This product cannot be deleted because the user has already placed an order for it");
+            notification = "This product cannot be deleted because the user has already placed an order for it";
+            //request.setAttribute("NOTIFICATION", "This product cannot be deleted because the user has already placed an order for it");
         }
     }
 
@@ -95,7 +101,7 @@ public class AdminProductCommand implements ICommand {
 //        changeStartPageIfChangeMenu(listParam);
         countOfGoods = goodsDAO.showCountOfGoods();
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-        request.setAttribute("noOfPages", startPage);
+        //request.setAttribute("noOfPages", startPage);
         goodsList = goodsDAO.showLimitGoods((startPage-1)*recordsPerPage, recordsPerPage);
         sendGoodsList(request, response, goodsList);
     }
@@ -103,10 +109,11 @@ public class AdminProductCommand implements ICommand {
     private void sendGoodsList(HttpServletRequest request, HttpServletResponse response, List<Goods> goodsList)
             throws ServletException, IOException {
         logger.info("The method sendGoodsList is started");
-        request.setAttribute("goodsList", goodsList);
-        request.setAttribute("currentPage", startPage);
+        request.getSession().setAttribute("goodsList", goodsList);
+        //request.setAttribute("currentPage", startPage);
         logger.debug("Forward to admin/admin_goods_list.jsp");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_goods_list.jsp");
-        requestDispatcher.forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/admin/admin_goods_list.jsp" + "?noOfPages=" + startPage + "&NOTIFICATION=" + notification);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_goods_list.jsp");
+//        requestDispatcher.forward(request, response);
     }
 }

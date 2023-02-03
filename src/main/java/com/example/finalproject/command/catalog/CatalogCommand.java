@@ -121,7 +121,6 @@ public class CatalogCommand implements ICommand {
         countOfGoods = goodsDAO.showCountOfGoods();
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
         request.setAttribute("noOfPages", startPage);
-        //goodsList = goodsDAO.showLimitGoods((startPage-1)*recordsPerPage, recordsPerPage);
         goodsList = sortList(request, response, (startPage-1)*recordsPerPage, recordsPerPage);
         logger.debug("sendGoodsList");
         sendGoodsList(request, response, goodsList);

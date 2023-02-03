@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Edit Product</h4>
+                <h4 class="header-line"><fmt:message key="locale.EditProduct" /></h4>
             </div>
         </div>
         <c:set var = "goods" value="${goods}" />
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="alert alert-success center" role="alert">
-                                <p>${NOTIFICATION}</p>
+                                <p><%=request.getParameter("NOTIFICATION")%></p>
                             </div>
 
                             <button type="submit" class="btn btn-success"><fmt:message key="locale.UpdateProduct" /></button>

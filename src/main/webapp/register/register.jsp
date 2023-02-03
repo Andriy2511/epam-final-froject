@@ -22,7 +22,7 @@
 	<h2><fmt:message key="locale.UserRegisterForm" /></h2>
 	<div class="col-md-6 col-md-offset-4">
 			<div class="alert alert-success center" role="alert">
-				<p>${NOTIFICATION}</p>
+				<p><%=request.getParameter("NOTIFICATION")%></p>
 			</div>
 			
 				<form action="<%=request.getContextPath()%>/FrontController?command=REGISTRATION_CONTROLLER" method="post">

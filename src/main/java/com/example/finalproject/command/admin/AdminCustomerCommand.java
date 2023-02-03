@@ -25,6 +25,7 @@ public class AdminCustomerCommand implements ICommand {
     String listParam;
     String lastMenu;
     List<User> userList;
+    String action;
     private static final Logger logger = LogManager.getLogger(AdminCustomerCommand.class);
 
     public AdminCustomerCommand() {
@@ -32,6 +33,7 @@ public class AdminCustomerCommand implements ICommand {
         userDAO = daoFactory.getUserDAO();
         roleDAO = daoFactory.getRoleDAO();
         listParam = "";
+        action = "";
     }
 
     @Override
@@ -41,11 +43,15 @@ public class AdminCustomerCommand implements ICommand {
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException, ClassNotFoundException {
         logger.info("The showList method is started");
-        String action = request.getParameter("action");
+
+        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
+
+        action = request.getParameter("action");
         try {
             switch (action){
             case "showList":
                 showUser(request, response);
+                break;
             case "block":
                 blockUser(request, response);
                 showUser(request, response);
@@ -86,29 +92,20 @@ public class AdminCustomerCommand implements ICommand {
             case "fullList":
                 changeStartPageIfChangeMenu(listParam);
                 countOfUsers = userDAO.showCountOfUsers();
-                //request.setAttribute("noOfPages", pagination(request, response, countOfUsers));
                 startPage = Pagination.pagination(request, countOfUsers, startPage, recordsPerPage);
                 request.setAttribute("noOfPages", startPage);
                 userList = userDAO.showLimitUsers((startPage-1)*recordsPerPage, recordsPerPage);
-                sendUserList(request, response, userList, countOfUsers);
+                sendUserList(request, response, userList);
                 break;
             case "blockedList":
                 changeStartPageIfChangeMenu(listParam);
                 countOfUsers = userDAO.showCountOfUsersByBlockedStatus(true);
-                startPage = Pagination.pagination(request, countOfUsers, startPage, recordsPerPage);
-                request.setAttribute("noOfPages", startPage);
-                //request.setAttribute("noOfPages", pagination(request, response, countOfUsers));
-                userList = userDAO.showLimitUsersByBlockedStatus((startPage-1)*recordsPerPage, recordsPerPage, true);
-                sendUserList(request, response, userList, countOfUsers);
+                formListOfUserByStatus(request, response, countOfUsers, true);
                 break;
             case "unblockedList":
                 changeStartPageIfChangeMenu(listParam);
                 countOfUsers = userDAO.showCountOfUsersByBlockedStatus(false);
-                //request.setAttribute("noOfPages", pagination(request, response, countOfUsers));
-                startPage = Pagination.pagination(request, countOfUsers, startPage, recordsPerPage);
-                request.setAttribute("noOfPages", startPage);
-                userList = userDAO.showLimitUsersByBlockedStatus((startPage-1)*recordsPerPage, recordsPerPage, false);
-                sendUserList(request, response, userList,  countOfUsers);
+                formListOfUserByStatus(request, response, countOfUsers, false);
                 break;
             default:
                 logger.debug("Case default, action {}, forward to tho admin_customer_list.jsp", listParam);
@@ -118,16 +115,30 @@ public class AdminCustomerCommand implements ICommand {
         }
     }
 
-    private void sendUserList(HttpServletRequest request, HttpServletResponse response, List<User> userList, int countOfUsers)
-            throws ServletException, IOException {
-        logger.info("The sendUserList method is started");
-        request.setAttribute("userList", userList);
-        request.setAttribute("currentPage", startPage);
-        logger.debug("Forward to tho admin_customer_list.jsp");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_customer_list.jsp");
-        requestDispatcher.forward(request, response);
+    private void formListOfUserByStatus(HttpServletRequest request, HttpServletResponse response, int countOfUsers, boolean statusBlocked) throws ServletException, IOException {
+        startPage = Pagination.pagination(request, countOfUsers, startPage, recordsPerPage);
+        request.setAttribute("noOfPages", startPage);
+        userList = userDAO.showLimitUsersByBlockedStatus((startPage-1)*recordsPerPage, recordsPerPage, statusBlocked);
+        sendUserList(request, response, userList);
     }
 
+    private void sendUserList(HttpServletRequest request, HttpServletResponse response, List<User> userList)
+            throws ServletException, IOException {
+        logger.info("The sendUserList method is started");
+        request.getSession().setAttribute("userList", userList);
+        logger.debug("Forward to tho admin_customer_list.jsp");
+        System.out.println(action);
+        System.out.println(listParam);
+        System.out.println(startPage);
+        response.sendRedirect(request.getContextPath() +
+                "/admin/admin_customer_list.jsp?action=" + action + "&list=" + listParam +
+                "&" + "noOfPages=" + startPage);
+        ///finalProject_war_exploded/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=blockedList
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_customer_list.jsp");
+//        requestDispatcher.forward(request, response);
+    }
+//http://localhost:8091/finalProject_war_exploded/admin/admin_order_list.jsp?action=showList&list=fullList&noOfPages=1
+//http://localhost:8091/finalProject_war_exploded/admin/admin_order_list.jsp?action=showList&NOTIFICATION=&noOfPages=1
     private void changeStartPageIfChangeMenu(String currentMenu){
         if(!currentMenu.equals(lastMenu)) {
             startPage = 1;
