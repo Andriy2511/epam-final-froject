@@ -1,6 +1,7 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.command.ICommand;
+import com.example.finalproject.command.error.ErrorPageCommand;
 import com.example.finalproject.command.factory.CommandFactory;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -15,7 +16,6 @@ import java.sql.SQLException;
         maxRequestSize = 1024 * 1024 * 1000)   	// 1 GB
 @WebServlet(name = "FrontController", value = "/FrontController")
 public class FrontController extends HttpServlet {
-    private String command;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         handleRequest(request, response);
