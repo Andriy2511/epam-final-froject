@@ -1,6 +1,7 @@
 <%@ page import="com.example.finalproject.command.language.LanguageCommand" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <fmt:setLocale value= "${sessionScope.lang}"/>
 <fmt:setBundle basename="locale" />
 <header>

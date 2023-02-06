@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="ctg" uri="customtags"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <%@ page isELIgnored="false" %>
 <fmt:setLocale value= "${sessionScope.lang}"/>
 <fmt:setBundle basename="locale" />
@@ -58,7 +59,7 @@
 				<button type="submit" class="btn btn-success"><fmt:message key="locale.Save" /></button>
 				</form>
 				<div class="alert alert-success center" role="alert">
-					<p><%=request.getParameter("NOTIFICATION")%></p>
+					<tf:notification/>
 				</div>
 			</div>
 		</div>

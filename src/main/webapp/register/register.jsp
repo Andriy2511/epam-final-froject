@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <%--<fmt:setBundle basename="locale"/>--%>
 <%--<fmt:setBundle basename="locale_ua"/>--%>
 <fmt:setLocale value= "${sessionScope.lang}"/>
@@ -22,7 +23,7 @@
 	<h2><fmt:message key="locale.UserRegisterForm" /></h2>
 	<div class="col-md-6 col-md-offset-4">
 			<div class="alert alert-success center" role="alert">
-				<p><%=request.getParameter("NOTIFICATION")%></p>
+				<tf:notification/>
 			</div>
 			
 				<form action="<%=request.getContextPath()%>/FrontController?command=REGISTRATION_CONTROLLER" method="post">

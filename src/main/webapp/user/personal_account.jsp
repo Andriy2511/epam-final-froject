@@ -2,6 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <%--<fmt:setBundle basename="locale"/>--%>
 <%--<fmt:setBundle basename="locale_ua"/>--%>
 <fmt:setLocale value= "${sessionScope.lang}"/>

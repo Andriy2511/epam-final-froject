@@ -1,6 +1,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value= "${sessionScope.lang}"/>
 <fmt:setBundle basename="locale" />
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark"
 		 style="background-color: tomato">

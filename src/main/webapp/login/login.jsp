@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <%--<fmt:setBundle basename="locale"/>--%>
 <%--<fmt:setBundle basename="locale_ua"/>--%>
 <fmt:setLocale value= "${sessionScope.lang}"/>
@@ -32,8 +33,7 @@
 			</div>
 
 			<div class="alert alert-info" role="alert">
-<%--				<p>${NOTIFICATION}</p>--%>
-				<p><%=request.getParameter("NOTIFICATION")%></p>
+				<tf:notification/>
 			</div>
 
 			<button type="submit" class="btn btn-primary"><fmt:message key="locale.Submit" /></button>
