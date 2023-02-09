@@ -15,11 +15,12 @@ public class LogOutCommand implements ICommand {
     private static final Logger logger = LogManager.getLogger(LogOutCommand.class);
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        logger.info("Method execute is started");
+        logger.info("Class LogOutCommand. Method execute is started");
         String language = (String) request.getSession().getAttribute("lang");
         request.getSession().invalidate();
         request.getSession().setAttribute("lang", language);
         logger.debug("Redirect to the {}/login/login.jsp", request.getContextPath());
-        response.sendRedirect(request.getContextPath() + "/login/login.jsp");
+        //response.sendRedirect(request.getContextPath() + "/login/login.jsp");
+        request.getRequestDispatcher("login/login.jsp").forward(request, response);
     }
 }

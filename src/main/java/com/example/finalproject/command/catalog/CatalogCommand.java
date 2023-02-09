@@ -32,7 +32,6 @@ public class CatalogCommand implements ICommand {
     String action;
     private static final Logger logger = LogManager.getLogger(CatalogCommand.class);
 
-
     public CatalogCommand(){
         daoFactory = DAOFactory.getDaoFactory("MYSQL");
         userDAO = daoFactory.getUserDAO();
@@ -60,11 +59,9 @@ public class CatalogCommand implements ICommand {
                     break;
                 case "addToCard":
                     addToCard(request, response);
-                    showGoods(request, response);
                     break;
                 case "buyNow":
                     buyNow(request, response);
-                    showGoods(request, response);
                     break;
                 case "showCard":
                     if(isUserRole(request)){
@@ -84,16 +81,16 @@ public class CatalogCommand implements ICommand {
         }
     }
 
-    private void addToCard(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    private void addToCard(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {
         logger.info("Method addToCard is started");
         if(isUserRole(request)) {
             int goodsId = Integer.parseInt(request.getParameter("goodsId"));
             cardGoodsList.add(goodsDAO.getGoodsById(goodsId).get(0));
             request.getSession().setAttribute("cardGoodsList", cardGoodsList);
+            showGoods(request, response);
         } else {
-            request.setAttribute("NOTIFICATION", "You have to log in to purchase products");
             logger.debug("Forward to the login/login.jsp, notification: You have to log in to purchase products");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp?NOTIFICATION=You have to log in to purchase products");
             dispatcher.forward(request, response);
         }
     }
@@ -101,12 +98,13 @@ public class CatalogCommand implements ICommand {
     private void buyNow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, NamingException, ClassNotFoundException {
         logger.info("Method buyNow is started");
         if(isUserRole(request)) {
+            System.out.println("true");
             int goodsId = Integer.parseInt(request.getParameter("goodsId"));
             orderDAO.addNewOrder(goodsId, (Integer) request.getSession().getAttribute("id"));
+            showGoods(request, response);
         } else {
-            request.setAttribute("NOTIFICATION", "You have to log in to purchase products");
             logger.debug("Forward to the login/login.jsp, notification: You have to log in to purchase products");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp?NOTIFICATION=You have to log in to purchase products");
             dispatcher.forward(request, response);
         }
     }

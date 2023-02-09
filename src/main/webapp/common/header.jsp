@@ -8,8 +8,6 @@
 		<div>
 			<a href="<%= request.getContextPath() %>/FrontController?command=USER_ORDER_COMMAND" class="navbar-brand"><fmt:message key="locale.MyOrders" /></a>
 			<a href="<%= request.getContextPath()%>/FrontController?command=CATALOG_COMMAND&action=showGoodsList" class="navbar-brand"><fmt:message key="locale.Catalog" /></a>
-<%--			<a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=en<%request.getSession().setAttribute("mapParam", request.getParameterMap());%><%request.getSession().setAttribute("servletPath", request.getServletPath());%>">ENG</a>--%>
-<%--			<a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=ua<%request.getSession().setAttribute("mapParam", request.getParameterMap()); request.getSession().setAttribute("servletPath", request.getServletPath());%>">UKR</a>--%>
 			<a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=en<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">ENG</a>
 			<a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=ua<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">UKR</a>
 		</div>
