@@ -1,4 +1,3 @@
-<%@ page import="com.example.finalproject.command.language.LanguageCommand" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
@@ -9,8 +8,9 @@
          style="background-color: tomato">
         <div>
             <a href="<%= request.getContextPath()%>/FrontController?command=CATALOG_COMMAND&action=showGoodsList" class="navbar-brand"><fmt:message key="locale.Catalog" /></a>
-            <a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=en<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">ENG</a>
-            <a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=ua<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">UKR</a>
+            <tf:language/>
+<%--            <a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=en<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">ENG</a>--%>
+<%--            <a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=ua<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">UKR</a>--%>
         </div>
         <ul class="navbar-nav navbar-collapse justify-content-end">
             <li><a href="<%= request.getContextPath() %>/admin/admin_add_product.jsp" class="navbar-brand"><fmt:message key="locale.AddProductPage" /></a></li>
