@@ -20,8 +20,6 @@ public class Redirect {
     public static void redirectToLoginPage(HttpServletRequest request, HttpServletResponse response, String notification) throws ServletException, IOException {
         logger.info("Method redirectToLoginPage is started. Forward to /login/login.jsp");
         RequestDispatcher dispatcher = request.getRequestDispatcher("/FrontController?command=LOGOUT_COMMAND&NOTIFICATION=" + notification);
-        //response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=" + notification);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/FrontController?command=LOGIN_CONTROLLER&NOTIFICATION=" + notification);
         dispatcher.forward(request, response);
     }
 }

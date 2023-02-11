@@ -98,10 +98,8 @@ public class AdminProductCommand implements ICommand {
     private void showGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         logger.info("The method showGoods is started");
         int countOfGoods;
-//        changeStartPageIfChangeMenu(listParam);
         countOfGoods = goodsDAO.showCountOfGoods();
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-        //request.setAttribute("noOfPages", startPage);
         goodsList = goodsDAO.showLimitGoods((startPage-1)*recordsPerPage, recordsPerPage);
         sendGoodsList(request, response, goodsList);
     }
@@ -110,10 +108,7 @@ public class AdminProductCommand implements ICommand {
             throws ServletException, IOException {
         logger.info("The method sendGoodsList is started");
         request.getSession().setAttribute("goodsList", goodsList);
-        //request.setAttribute("currentPage", startPage);
         logger.debug("Forward to admin/admin_goods_list.jsp");
         response.sendRedirect(request.getContextPath() + "/admin/admin_goods_list.jsp" + "?noOfPages=" + startPage + "&NOTIFICATION=" + notification);
-//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_goods_list.jsp");
-//        requestDispatcher.forward(request, response);
     }
 }

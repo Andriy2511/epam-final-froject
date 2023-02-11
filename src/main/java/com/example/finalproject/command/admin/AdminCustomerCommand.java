@@ -133,12 +133,8 @@ public class AdminCustomerCommand implements ICommand {
         response.sendRedirect(request.getContextPath() +
                 "/admin/admin_customer_list.jsp?action=" + action + "&list=" + listParam +
                 "&" + "noOfPages=" + startPage);
-        ///finalProject_war_exploded/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=blockedList
-//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_customer_list.jsp");
-//        requestDispatcher.forward(request, response);
     }
-//http://localhost:8091/finalProject_war_exploded/admin/admin_order_list.jsp?action=showList&list=fullList&noOfPages=1
-//http://localhost:8091/finalProject_war_exploded/admin/admin_order_list.jsp?action=showList&NOTIFICATION=&noOfPages=1
+
     private void changeStartPageIfChangeMenu(String currentMenu){
         if(!currentMenu.equals(lastMenu)) {
             startPage = 1;

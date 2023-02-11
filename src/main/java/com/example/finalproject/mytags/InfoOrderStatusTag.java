@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 public class InfoOrderStatusTag extends TagSupport {
-    //private static final Logger logger = LogManager.getLogger(InfoOrderStatusTag.class);
+    private static final Logger logger = LogManager.getLogger(InfoOrderStatusTag.class);
     private int orderStatusId;
 
     @Override
@@ -20,7 +20,7 @@ public class InfoOrderStatusTag extends TagSupport {
         try {
             jspWriter.print(getOrderStatusNameById());
         } catch (IOException e) {
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
             e.printStackTrace();
         }
 

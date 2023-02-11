@@ -59,6 +59,5 @@
     <a href="<%=request.getContextPath()%>/FrontController?command=CATALOG_COMMAND&action=showGoodsList&page=next"
        class="btn btn-success"><fmt:message key="locale.Next" /></a>
 </div>
-<%--<jsp:include page="../common/footer.jsp"></jsp:include>--%>
 </body>
 </html>

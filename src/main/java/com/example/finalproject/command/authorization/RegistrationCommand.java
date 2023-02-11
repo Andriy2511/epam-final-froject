@@ -52,14 +52,10 @@ public class RegistrationCommand implements ICommand {
                 request.setAttribute("NOTIFICATION", "User Registered Successfully!");
                 logger.debug("Forward to tho login/login.jsp, notification User Registered Successfully!");
                 response.sendRedirect("login/login.jsp?NOTIFICATION=User Registered Successfully!");
-//                RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
-//                dispatcher.forward(request, response);
             } else {
                 request.setAttribute("NOTIFICATION", "User must contain unique login and e-mail address!");
                 logger.debug("Forward to tho register/register.jsp, notification User must contain unique login and e-mail address!");
                 response.sendRedirect("register/register.jsp?NOTIFICATION=User must contain unique login and e-mail address!");
-//                RequestDispatcher dispatcher = request.getRequestDispatcher("register/register.jsp");
-//                dispatcher.forward(request, response);
             }
         } catch (Exception e) {
             logger.error(e);

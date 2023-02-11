@@ -76,11 +76,7 @@ public class AddProductCommand implements ICommand {
         //request.setAttribute("NOTIFICATION", notification);
 
         logger.debug("Forward to admin_add_product.jsp");
-        //request.getSession().setAttribute("NOTIFICATION", notification);
         response.sendRedirect("admin/admin_add_product.jsp?NOTIFICATION=" + notification);
-//        response.sendRedirect("admin/admin_add_product.jsp");
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_add_product.jsp");
-//        dispatcher.forward(request, response);
     }
 
     private void addPhoto(Part part, String photo, HttpServletRequest request) throws IOException {

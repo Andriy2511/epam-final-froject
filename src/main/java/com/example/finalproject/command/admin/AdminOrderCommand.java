@@ -87,7 +87,6 @@ public class AdminOrderCommand implements ICommand {
             orderStatusDAO.changeOrderStatus(orderId, orderDAO.selectOrderIdByName(updatedStatus));
         } else {
             notification = "You cannot change status for paid or canceled order";
-            //request.setAttribute("NOTIFICATION", "You cannot change status for paid or canceled order");
         }
     }
 
@@ -133,8 +132,6 @@ public class AdminOrderCommand implements ICommand {
                 "/admin/admin_order_list.jsp?action=" + action +
                 "&" + "NOTIFICATION=" + notification + "&" + "noOfPages="
                 + startPage);
-//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/admin_order_list.jsp");
-//        requestDispatcher.forward(request, response);
     }
 
     private void changeStartPageIfChangeMenu(String currentMenu){

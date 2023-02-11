@@ -20,7 +20,6 @@ public class LogOutCommand implements ICommand {
         request.getSession().invalidate();
         request.getSession().setAttribute("lang", language);
         logger.debug("Redirect to the {}/login/login.jsp", request.getContextPath());
-        //response.sendRedirect(request.getContextPath() + "/login/login.jsp");
         request.getRequestDispatcher("login/login.jsp").forward(request, response);
     }
 }

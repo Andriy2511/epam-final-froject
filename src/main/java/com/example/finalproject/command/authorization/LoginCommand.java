@@ -84,8 +84,6 @@ public class LoginCommand implements ICommand {
 		request.setAttribute("NOTIFICATION", notification);
 		logger.debug("Forward to the login/login.jsp, notification {}", notification);
 		response.sendRedirect("login/login.jsp" + "?NOTIFICATION=" + notification);
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
-//		dispatcher.forward(request, response);
 	}
 
 	private boolean isUserBlocked(String username){

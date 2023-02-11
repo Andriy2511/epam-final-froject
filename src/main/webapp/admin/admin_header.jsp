@@ -9,8 +9,6 @@
         <div>
             <a href="<%= request.getContextPath()%>/FrontController?command=CATALOG_COMMAND&action=showGoodsList" class="navbar-brand"><fmt:message key="locale.Catalog" /></a>
             <tf:language/>
-<%--            <a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=en<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">ENG</a>--%>
-<%--            <a href="<%= request.getContextPath()%>/FrontController?command=LANGUAGE_COMMAND&lang=ua<%request.getSession().setAttribute("MyURL", request.getRequestURL().append('?').append(request.getQueryString()));%>">UKR</a>--%>
         </div>
         <ul class="navbar-nav navbar-collapse justify-content-end">
             <li><a href="<%= request.getContextPath() %>/admin/admin_add_product.jsp" class="navbar-brand"><fmt:message key="locale.AddProductPage" /></a></li>

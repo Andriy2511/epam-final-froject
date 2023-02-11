@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IOrderStatusDAO {
-    //TODO refactoring
     List<OrderStatus> getOrderStatusById(int id);
 
     boolean changeOrderStatus(int id, int statusId) throws SQLException, NamingException, ClassNotFoundException;
