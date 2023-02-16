@@ -21,6 +21,7 @@ public class AuthorizationPageAdminFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         logger.info("AuthorizationPageAdminFilter is started");
+        boolean isRedirectedToLoginPage = false;
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse res = (HttpServletResponse) response;
         String page = req.getServletPath();
@@ -28,11 +29,13 @@ public class AuthorizationPageAdminFilter implements Filter {
             String userRole = Redirect.getUserRole(req, res);
             if(userRole == null || !userRole.equals("admin")) {
                 if(!req.getRequestURI().endsWith("login.jsp")) {
+                    isRedirectedToLoginPage = true;
                     logger.info("User role is " + userRole + ". Calling method Redirect.redirectToLoginPage");
                     Redirect.redirectToLoginPage(req, res, "Log in as admin to get access to this page");
                 }
             }
         }
-        chain.doFilter(request, response);
+        if (!isRedirectedToLoginPage)
+            chain.doFilter(request, response);
     }
 }

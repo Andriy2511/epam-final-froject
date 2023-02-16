@@ -14,9 +14,13 @@
           <element id="module-output" name="finalProject" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:5.0.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.17.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.17.1" />
+          <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:3.4.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">

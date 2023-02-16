@@ -26,6 +26,7 @@ public class AuthorizationCommandAdminFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         logger.info("AuthorizationCommandAdminFilter is started");
+        boolean isRedirectedToLoginPage = false;
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse res = (HttpServletResponse) response;
         String command = req.getParameter("command");
@@ -38,6 +39,7 @@ public class AuthorizationCommandAdminFilter implements Filter {
                 if (userRole == null || !userRole.equals("admin")){
                     logger.info("User hasn't access to this command");
                     if (!req.getRequestURI().endsWith("login.jsp")) {
+                        isRedirectedToLoginPage = true;
                         logger.info("Calling method Redirect.redirectToLoginPage");
                         Redirect.redirectToLoginPage(req, res, "Log in as admin to get access to this page");
                     }
@@ -45,7 +47,8 @@ public class AuthorizationCommandAdminFilter implements Filter {
             }
         }
 
-        chain.doFilter(request, response);
+        if (!isRedirectedToLoginPage)
+            chain.doFilter(request, response);
     }
 
     private List<String> getAdminListCommand(){

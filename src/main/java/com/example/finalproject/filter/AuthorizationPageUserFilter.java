@@ -22,6 +22,7 @@ public class AuthorizationPageUserFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         logger.info("AuthorizationPageUserFilter is started");
+        boolean isRedirectedToLoginPage = false;
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse res = (HttpServletResponse) response;
         String page = req.getServletPath();
@@ -29,11 +30,13 @@ public class AuthorizationPageUserFilter implements Filter {
             String userRole = Redirect.getUserRole(req, res);
             if(userRole == null || !userRole.equals("user")) {
                 if(!req.getRequestURI().endsWith("login.jsp")) {
+                    isRedirectedToLoginPage = true;
                     logger.info("User role is " + userRole + ". Calling method Redirect.redirectToLoginPage");
                     Redirect.redirectToLoginPage(req, res, "Log in as user to get access to this page");
                 }
             }
         }
-        chain.doFilter(request, response);
+        if (!isRedirectedToLoginPage)
+            chain.doFilter(request, response);
     }
 }

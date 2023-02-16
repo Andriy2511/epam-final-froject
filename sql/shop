@@ -7,11 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema shop
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema shop
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8 ;
 -- -----------------------------------------------------
 -- Schema shop
 -- -----------------------------------------------------
@@ -26,33 +21,13 @@ USE `shop` ;
 -- Table `shop`.`categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shop`.`categories` (
-  `id` INT NOT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `shop`.`orders_status`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `shop`.`orders_status` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-USE `shop` ;
-
--- -----------------------------------------------------
--- Table `shop`.`categories`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `shop`.`categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 6
+AUTO_INCREMENT = 43
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -66,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `shop`.`goods` (
   `photo` VARCHAR(1000) NULL DEFAULT NULL,
   `price` DOUBLE NOT NULL,
   `categories_id` INT NOT NULL,
+  `publication_date` DATETIME(6) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE,
   INDEX `fk_goods_categories1_idx` (`categories_id` ASC) VISIBLE,
@@ -73,7 +49,20 @@ CREATE TABLE IF NOT EXISTS `shop`.`goods` (
     FOREIGN KEY (`categories_id`)
     REFERENCES `shop`.`categories` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 9
+AUTO_INCREMENT = 104
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`orders_status`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`orders_status` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -86,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `shop`.`roles` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 6
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -104,12 +93,13 @@ CREATE TABLE IF NOT EXISTS `shop`.`users` (
   `status_blocked` TINYINT NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
   INDEX `fk_users_roles1_idx` (`roles_id` ASC) VISIBLE,
   CONSTRAINT `fk_users_roles1`
     FOREIGN KEY (`roles_id`)
     REFERENCES `shop`.`roles` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 7
+AUTO_INCREMENT = 52
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -128,15 +118,14 @@ CREATE TABLE IF NOT EXISTS `shop`.`orders` (
   CONSTRAINT `fk_orders_goods`
     FOREIGN KEY (`goods_id`)
     REFERENCES `shop`.`goods` (`id`),
-  CONSTRAINT `fk_orders_users1`
-    FOREIGN KEY (`users_id`)
-    REFERENCES `shop`.`users` (`id`),
   CONSTRAINT `fk_orders_orders_status1`
     FOREIGN KEY (`orders_status_id`)
-    REFERENCES `shop`.`orders_status` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `shop`.`orders_status` (`id`),
+  CONSTRAINT `fk_orders_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `shop`.`users` (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 89
 DEFAULT CHARACTER SET = utf8mb3;
 
 
