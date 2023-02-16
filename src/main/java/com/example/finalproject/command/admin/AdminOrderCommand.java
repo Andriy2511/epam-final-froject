@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * The AdminOrderCommand class is responsible for managing orders
+ */
 public class AdminOrderCommand implements ICommand {
     DAOFactory daoFactory;
     IUserDAO userDAO;
@@ -47,11 +50,14 @@ public class AdminOrderCommand implements ICommand {
         showList(request, response);
     }
 
+    /**
+     * This method determines what action the user performed and displays the corresponding list of orders.
+     * The method receives the "action" parameter from the request and passes control to appropriate methods.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("The showList addProduct is started");
-
-        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
-
         notification = "";
         action = request.getParameter("action");
         try {
@@ -60,11 +66,11 @@ public class AdminOrderCommand implements ICommand {
                 showOrder(request, response);
                 break;
             case "paid":
-                changeOrderStatus(request, response);
+                changeOrderStatus(request);
                 showOrder(request, response);
                 break;
             case "canceled":
-                changeOrderStatus(request, response);
+                changeOrderStatus(request);
                 showOrder(request, response);
                 break;
             default:
@@ -77,7 +83,11 @@ public class AdminOrderCommand implements ICommand {
         }
     }
 
-    private void changeOrderStatus(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, NamingException, ClassNotFoundException {
+    /**
+     * The method changes the status of the order from registered to paid or canceled. The status of a paid or canceled order cannot be changed.
+     * @param request - HttpServletRequest
+     */
+    private void changeOrderStatus(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
         logger.info("The showList changeOrderStatus is started");
         int orderId = Integer.parseInt(request.getParameter("orderId"));
         int ordersStatus = orderDAO.getOrderById(orderId).get(0).getOrderStatusId();
@@ -90,9 +100,13 @@ public class AdminOrderCommand implements ICommand {
         }
     }
 
+    /**
+     * The method show appropriate list of orders by parameter "list". If parameter "list" is null, forward to the admin_order_list.jsp.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         logger.info("The showList showOrder is started");
-        int countOfOrders;
         if(request.getParameter("list")!=null){
             listParam = request.getParameter("list");
         }
@@ -114,6 +128,14 @@ public class AdminOrderCommand implements ICommand {
         }
     }
 
+    /**
+     * Forms a list that will be shown to the administrator.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     * @param listParam - value of list parameters. Value may be registeredList, paidList, canceledList.
+     * @param orderStatus - value of order status. Value may be registered, paid, canceled.
+     * @see #showOrder(HttpServletRequest, HttpServletResponse)
+     */
     private void formList(HttpServletRequest request, HttpServletResponse response, String listParam, String orderStatus) throws ServletException, IOException {
         changeStartPageIfChangeMenu(listParam);
         int countOfOrders = orderDAO.showCountOfOrders(orderStatus);
@@ -122,9 +144,14 @@ public class AdminOrderCommand implements ICommand {
         orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, orderStatus);
         sendOrderList(request, response, orderList);
     }
-
+    /**
+     * This method send action, page of list and notification to the admin_order_list.jsp page.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     * @param ordersList - list of orders
+     */
     private void sendOrderList(HttpServletRequest request, HttpServletResponse response, List<Order> ordersList)
-            throws ServletException, IOException {
+            throws IOException {
         logger.info("The showList sendOrderList is started");
         request.getSession().setAttribute("orderList", ordersList);
         logger.debug("Forward to tho admin_order_list.jsp");
@@ -134,6 +161,10 @@ public class AdminOrderCommand implements ICommand {
                 + startPage);
     }
 
+    /**
+     * This method sets the first page if the admin change menu.
+     * @param currentMenu - current displayed menu
+     */
     private void changeStartPageIfChangeMenu(String currentMenu){
         if(!currentMenu.equals(lastMenu)) {
             startPage = 1;

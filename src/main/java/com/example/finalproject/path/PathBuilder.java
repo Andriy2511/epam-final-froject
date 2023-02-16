@@ -5,7 +5,17 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.File;
 
+/**
+ * The PathBuilder class response for building path for images
+ */
 public class PathBuilder {
+
+    /**
+     * This method gets the context from the request and then creates the path where the images are stored
+     * @param request - HttpServletRequest
+     * @param photo - name of the photo
+     * @return - String path
+     */
     public static String buildImagePath(HttpServletRequest request, String photo){
         String separator = File.separator;
         ServletContext c = request.getServletContext();

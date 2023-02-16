@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * This class is responsible for managing existing products.
+ */
 public class AdminProductCommand implements ICommand {
     DAOFactory daoFactory;
     IUserDAO userDAO;
@@ -46,11 +49,14 @@ public class AdminProductCommand implements ICommand {
         showList(request, response);
     }
 
+    /**
+     * This method determines what action the user performed.
+     * The method receives the "action" parameter from the request and passes control to appropriate methods.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("The showList changeOrderStatus is started");
-
-        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
-
         String action = request.getParameter("action");
         try {
             switch (action){
@@ -61,7 +67,7 @@ public class AdminProductCommand implements ICommand {
                     changeGoods(request, response);
                     break;
                 case "delete":
-                    deleteGoods(request, response);
+                    deleteGoods(request);
                     showGoods(request, response);
                     break;
                 default:
@@ -76,6 +82,11 @@ public class AdminProductCommand implements ICommand {
         }
     }
 
+    /**
+     * This method gets the ID of the selected product and redirects user to the admin_change_product.jsp page.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void changeGoods(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         logger.info("The method changeGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
@@ -86,15 +97,24 @@ public class AdminProductCommand implements ICommand {
         dispatcher.forward(request, response);
     }
 
-    private void deleteGoods(HttpServletRequest request, HttpServletResponse response) throws SQLException, NamingException, ClassNotFoundException {
+    /**
+     * This method gets goods id from the request and attempts to delete the product from the database.
+     * If product can't be deleted the method sends message about it.
+     * @param request - HttpServletRequest
+     */
+    private void deleteGoods(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
         logger.info("The method deleteGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         if(!goodsDAO.deleteGoods(goodsId)){
             notification = "This product cannot be deleted because the user has already placed an order for it";
-            //request.setAttribute("NOTIFICATION", "This product cannot be deleted because the user has already placed an order for it");
         }
     }
 
+    /**
+     * This method obtains the list of goods that should be shown to the user.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         logger.info("The method showGoods is started");
         int countOfGoods;
@@ -104,8 +124,14 @@ public class AdminProductCommand implements ICommand {
         sendGoodsList(request, response, goodsList);
     }
 
+    /**
+     * Method set the goods list to the session and send redirect to the admin_goods_list.jsp page
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     * @param goodsList - list of products
+     */
     private void sendGoodsList(HttpServletRequest request, HttpServletResponse response, List<Goods> goodsList)
-            throws ServletException, IOException {
+            throws IOException {
         logger.info("The method sendGoodsList is started");
         request.getSession().setAttribute("goodsList", goodsList);
         logger.debug("Forward to admin/admin_goods_list.jsp");

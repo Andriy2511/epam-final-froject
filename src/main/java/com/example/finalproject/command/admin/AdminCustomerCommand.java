@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * AdminCustomerCommand class is designed to manage users. This class is responsible for blocking/unblocking user and showing the list of users.
+ */
 public class AdminCustomerCommand implements ICommand {
     DAOFactory daoFactory;
     IUserDAO userDAO;
@@ -41,11 +44,14 @@ public class AdminCustomerCommand implements ICommand {
         showList(request, response);
     }
 
+    /**
+     * This method determines what action the user performed and show appropriate list.
+     * The method receives the "action" parameter from the request and passes control to appropriate methods.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException, ClassNotFoundException {
         logger.info("The showList method is started");
-
-        System.out.println(request.getRequestURL().append('?').append(request.getQueryString()));
-
         action = request.getParameter("action");
         try {
             switch (action){
@@ -53,11 +59,11 @@ public class AdminCustomerCommand implements ICommand {
                 showUser(request, response);
                 break;
             case "block":
-                blockUser(request, response);
+                blockUser(request);
                 showUser(request, response);
                 break;
             case "unblock":
-                unblockUser(request, response);
+                unblockUser(request);
                 showUser(request, response);
                 break;
             default:
@@ -72,16 +78,30 @@ public class AdminCustomerCommand implements ICommand {
         }
     }
 
-    private void blockUser(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, NamingException, ClassNotFoundException {
+    /**
+     * The method for blocking users
+     * @param request - HttpServletRequest
+     */
+    private void blockUser(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.blockUser(userId);
     }
 
-    private void unblockUser(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, NamingException, ClassNotFoundException {
+    /**
+     * The method for unblocking users
+     * @param request - HttpServletRequest
+     */
+    private void unblockUser(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.unblockUser(userId);
     }
 
+    /**
+     * This method determines which list should be shown. The parameter of the desired list is obtained from the request list.
+     * List can contain full, block or unblock users.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         logger.info("The showList method is started");
         int countOfUsers;
@@ -115,6 +135,13 @@ public class AdminCustomerCommand implements ICommand {
         }
     }
 
+    /**
+     * Form a user list by blocked status.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     * @param countOfUsers - count of users
+     * @param statusBlocked - user block status
+     */
     private void formListOfUserByStatus(HttpServletRequest request, HttpServletResponse response, int countOfUsers, boolean statusBlocked) throws ServletException, IOException {
         startPage = Pagination.pagination(request, countOfUsers, startPage, recordsPerPage);
         request.setAttribute("noOfPages", startPage);
@@ -122,8 +149,14 @@ public class AdminCustomerCommand implements ICommand {
         sendUserList(request, response, userList);
     }
 
+    /**
+     * This method send action, page of list and notification to the admin_order_list.jsp page.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     * @param userList - list of users
+     */
     private void sendUserList(HttpServletRequest request, HttpServletResponse response, List<User> userList)
-            throws ServletException, IOException {
+            throws IOException {
         logger.info("The sendUserList method is started");
         request.getSession().setAttribute("userList", userList);
         logger.debug("Forward to tho admin_customer_list.jsp");
@@ -135,6 +168,10 @@ public class AdminCustomerCommand implements ICommand {
                 "&" + "noOfPages=" + startPage);
     }
 
+    /**
+     * This method sets the first page if the admin change menu.
+     * @param currentMenu - current displayed menu
+     */
     private void changeStartPageIfChangeMenu(String currentMenu){
         if(!currentMenu.equals(lastMenu)) {
             startPage = 1;
