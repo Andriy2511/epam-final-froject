@@ -15,6 +15,9 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * The RegistrationCommand class implements the ICommand interface and is responsible for registration.
+ */
 public class RegistrationCommand implements ICommand {
 
     DAOFactory daoFactory;
@@ -31,7 +34,14 @@ public class RegistrationCommand implements ICommand {
         register(request, response);
     }
 
-    private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    /**
+     * The method receives the parameters from the request and attempts to register the user.
+     * After registration, the method sends a redirect to the login.jsp page if the user has successfully registered,
+     * and to the register.jsp page with a corresponding message if the registration has failed.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
+    private void register(HttpServletRequest request, HttpServletResponse response) {
         logger.info("Method register is started");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");

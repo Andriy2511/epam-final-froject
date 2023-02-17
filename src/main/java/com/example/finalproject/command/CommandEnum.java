@@ -26,7 +26,7 @@ public enum CommandEnum {
         }
 
     public ICommand getCommand() {
-            return command;
-        }
+        return command;
+    }
 
 }

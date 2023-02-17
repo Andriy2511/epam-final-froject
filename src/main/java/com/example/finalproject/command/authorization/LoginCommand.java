@@ -1,13 +1,11 @@
 package com.example.finalproject.command.authorization;
 
 import com.example.finalproject.command.ICommand;
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.models.Login;
 import com.example.finalproject.models.User;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,6 +17,9 @@ import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * The LoginCommand class is responsible for authentication and authorization.
+ */
 public class LoginCommand implements ICommand {
 
 	DAOFactory daoFactory;
@@ -37,6 +38,14 @@ public class LoginCommand implements ICommand {
 		authenticate(request, response);
 	}
 
+	/**
+	 * This method gets the username and password parameters from the request.The method then checks that the data is correct.
+	 * If the data is incorrect or the user is locked out by an administrator, the method transfer control to the writeNotification method,
+	 * which sends a redirect to the login.jsp page with the appropriate notification. If the data is correct and the user is unlocked,
+	 * the method determines the user's roles (admin or user) and redirects to the admin or user page.
+	 * @param request - HttpServletRequest
+	 * @param response - HttpServletResponse
+	 */
 	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		logger.info("Method authorization is started");
 		String username = request.getParameter("login");
@@ -80,16 +89,33 @@ public class LoginCommand implements ICommand {
 		}
 	}
 
+	/**
+	 * This method sends redirect to login.jsp page and records the notification as a parameter
+	 * @param request - HttpServletRequest
+	 * @param response - HttpServletResponse
+	 * @param notification - the notification that will be sent to the user
+	 */
 	private void writeNotification(HttpServletRequest request, HttpServletResponse response, String notification) throws ServletException, IOException {
-		request.setAttribute("NOTIFICATION", notification);
+//		request.setAttribute("NOTIFICATION", notification);
 		logger.debug("Forward to the login/login.jsp, notification {}", notification);
 		response.sendRedirect("login/login.jsp" + "?NOTIFICATION=" + notification);
 	}
 
+	/**
+	 * This method checks if the user is blocked by administrator
+	 * @param username - user login
+	 * @return - boolean result is user blocked or not
+	 */
 	private boolean isUserBlocked(String username){
 		User user = userDao.readUserByLogin(username).get(0);
 		return user.getStatusBlocked();
 	}
+
+	/**
+	 * This method gets user id by login
+	 * @param login - user login
+	 * @return - an integer value that indicates the role of the user
+	 */
 	private int getUserRole(String login){
 		User user = userDao.readUserByLogin(login).get(0);
 		return user.getRoleId();

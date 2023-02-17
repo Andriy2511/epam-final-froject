@@ -18,6 +18,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The CatalogCommand class implements ICommand interface and responsible for catalog managing.
+ */
 public class CatalogCommand implements ICommand {
     DAOFactory daoFactory;
     IUserDAO userDAO;
@@ -48,6 +51,12 @@ public class CatalogCommand implements ICommand {
         showGoodsList(request, response);
     }
 
+    /**
+     * The method receives the "action" parameter from the request and passes control to the corresponding method.
+     * If the "action" parameter is null, the method redirects to the catalog_goods/catalog.jsp page.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     */
     private void showGoodsList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException, ClassNotFoundException {
         logger.info("Method showGoodsList is started");
         if(request.getParameter("action") != null)
@@ -81,6 +90,12 @@ public class CatalogCommand implements ICommand {
         }
     }
 
+    /**
+     * This method makes an attempt to add product to the card.
+     * If user isn't authorized, the method redirects to the login.jsp page with message about it.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     */
     private void addToCard(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {
         logger.info("Method addToCard is started");
         if(isUserRole(request)) {
@@ -90,11 +105,16 @@ public class CatalogCommand implements ICommand {
             showGoods(request, response);
         } else {
             logger.debug("Forward to the login/login.jsp, notification: You have to log in to purchase products");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp?NOTIFICATION=You have to log in to purchase products");
-            dispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=You have to log in to purchase products");
         }
     }
 
+    /**
+     * This method makes an attempt to purchase product immediately without adding it to the card.
+     * If user isn't authorized, the method redirects to the login.jsp page with message about it.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     */
     private void buyNow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, NamingException, ClassNotFoundException {
         logger.info("Method buyNow is started");
         if(isUserRole(request)) {
@@ -104,26 +124,42 @@ public class CatalogCommand implements ICommand {
             showGoods(request, response);
         } else {
             logger.debug("Forward to the login/login.jsp, notification: You have to log in to purchase products");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp?NOTIFICATION=You have to log in to purchase products");
-            dispatcher.forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=You have to log in to purchase products");
         }
     }
 
+    /**
+     * The method checks is user role is "user".
+     * @param request HttpServletRequest
+     * @return if user role is "user" returns - true, otherwise - false.
+     */
     private boolean isUserRole(HttpServletRequest request){
         return request.getSession().getAttribute("userRole") != null && request.getSession().getAttribute("userRole").equals("user");
     }
 
+    /**
+     * The method forms a list with defined start page and records per page.
+     * @param request - HttpServletRequest
+     * @param response - HttpServletResponse
+     */
     private void showGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         logger.info("Method show Goods is started");
         int countOfGoods;
         countOfGoods = goodsDAO.showCountOfGoods();
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-        request.setAttribute("noOfPages", startPage);
         goodsList = sortList(request, response, (startPage-1)*recordsPerPage, recordsPerPage);
         logger.debug("sendGoodsList");
         sendGoodsList(request, response, goodsList);
     }
 
+    /**
+     * This method forms a sorted list by parameters: name, price, novelty or default order.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @param startPage the record number that will be the first
+     * @param recordsPerPage the number of records that will be shown
+     * @return sorted list
+     */
     private List<Goods> sortList(HttpServletRequest request, HttpServletResponse response, int startPage, int recordsPerPage) throws ServletException, IOException {
         logger.info("Method sortList is started");
         List<Goods> goodsList = new ArrayList<>();
@@ -152,11 +188,16 @@ public class CatalogCommand implements ICommand {
         return goodsList;
     }
 
+    /**
+     * The method writes the list of goods to the session as "goodsList". Then the method sends a redirect to the catalog.jsp page.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @param goodsList list of goods to be displayed
+     */
     private void sendGoodsList(HttpServletRequest request, HttpServletResponse response, List<Goods> goodsList)
             throws IOException {
         logger.info("Method sendGoodsList is started");
         request.getSession().setAttribute("goodsList", goodsList);
-        request.setAttribute("currentPage", startPage);
         logger.debug("Send redirect to the catalog_goods/catalog.jsp");
         response.sendRedirect("catalog_goods/catalog.jsp");
     }
