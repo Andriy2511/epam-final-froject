@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * The UserOrderCommand class implements the ICommand interface and is responsible for viewing orders by users. The user can view his orders and their status.
+ */
 public class UserOrderCommand implements ICommand {
     DAOFactory daoFactory;
     IUserDAO userDAO;
@@ -40,6 +43,11 @@ public class UserOrderCommand implements ICommand {
         showList(request, response);
     }
 
+    /**
+     * This method displays the user's orders
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     */
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("Method showList is started");
         int countOfOrders;
@@ -50,6 +58,12 @@ public class UserOrderCommand implements ICommand {
         sendOrderList(request, response, orderList);
     }
 
+    /**
+     * This method sets the order list to the session and redirects to user_order_list.jsp
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @param ordersList list of orders from database
+     */
     private void sendOrderList(HttpServletRequest request, HttpServletResponse response, List<Order> ordersList)
             throws ServletException, IOException {
         logger.info("Method sendOrderList is started");

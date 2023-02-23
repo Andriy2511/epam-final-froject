@@ -18,6 +18,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * UserCardCommand class implements ICommand interface and is responsible for adding orders to the card.
+ */
 public class UserCardCommand implements ICommand {
 
     DAOFactory daoFactory;
@@ -43,6 +46,11 @@ public class UserCardCommand implements ICommand {
         showList(request, response);
     }
 
+    /**
+     * This method receives an "action" parameter from the request that specifies what user wants to do. The user can confirm or delete his order.
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     */
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("Method showList is started");
         String action = request.getParameter("action");
@@ -52,12 +60,12 @@ public class UserCardCommand implements ICommand {
                     showGoods(request, response);
                     break;
                 case "confirm":
-                    confirmGoods(request, response);
-                    deleteGoods(request, response);
+                    confirmGoods(request);
+                    deleteGoods(request);
                     showGoods(request, response);
                     break;
                 case "delete":
-                    deleteGoods(request, response);
+                    deleteGoods(request);
                     showGoods(request, response);
                     break;
                 default:
@@ -72,14 +80,22 @@ public class UserCardCommand implements ICommand {
         }
     }
 
-    private void confirmGoods(HttpServletRequest request, HttpServletResponse response) throws SQLException, NamingException, ClassNotFoundException {
+    /**
+     * This method calls to confirm the user's order
+     * @param request HttpServletRequest
+     */
+    private void confirmGoods(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         Integer id = (Integer) request.getSession().getAttribute("id");
         orderDAO.addNewOrder(goodsId, id);
     }
 
+    /**
+     * Removes the order from the cart
+     * @param request HttpServletRequest
+     */
     @SuppressWarnings("unchecked")
-    private void deleteGoods(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void deleteGoods(HttpServletRequest request) {
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         cardGoodsList = (List<Goods>) request.getSession().getAttribute("cardGoodsList");
         cardGoodsList.remove(getGoodsById(cardGoodsList, goodsId));
@@ -87,32 +103,36 @@ public class UserCardCommand implements ICommand {
 
     }
 
+    /**
+     * Show all products that have been added to the card
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     */
     @SuppressWarnings("unchecked")
-    private void showGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
+    private void showGoods(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         logger.info("Method showGoods is started");
         cardGoodsList = (List<Goods>) request.getSession().getAttribute("cardGoodsList");
         if(cardGoodsList != null) {
-            sendGoodsList(request, response, cardGoodsList);
+            response.sendRedirect("user/card_page.jsp");
         } else {
             logger.debug("Redirect to the user/card_page.jsp, cardGoodsList = null");
             response.sendRedirect("user/card_page.jsp");
         }
     }
 
+    /**
+     * Get product from the list of products by id
+     * @param goodsList parameterized list with type "Goods"
+     * @param id id of the product which must be returned
+     * @return object with type "Goods" from the goods list
+     */
     private Goods getGoodsById(List<Goods> goodsList, int id){
-        Goods goods1 = new Goods();
+        Goods product = new Goods();
         for (Goods goods : goodsList){
             if(goods.getId() == id){
-                goods1 = goods;
+                product = goods;
             }
         }
-        return goods1;
-    }
-
-    private void sendGoodsList(HttpServletRequest request, HttpServletResponse response, List<Goods> goodsList)
-            throws ServletException, IOException {
-        logger.info("Method sendGoodsList is started");
-        logger.debug("Redirect to the user/card_page.jsp");
-        response.sendRedirect("user/card_page.jsp");
+        return product;
     }
 }
