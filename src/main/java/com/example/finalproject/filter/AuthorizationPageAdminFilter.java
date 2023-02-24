@@ -10,14 +10,25 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
+/**
+ * Checks whether the user has access to jsp pages
+ */
 @WebFilter(filterName = "AuthorizationPageAdminFilter")
 public class AuthorizationPageAdminFilter implements Filter {
     private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
-    public void init(FilterConfig config) throws ServletException {
+    public void init(FilterConfig config) {
     }
 
     public void destroy() {
     }
+
+    /**
+     * Checks if the user has access to the page. If the user's role isn't "admin", the method redirects to the authorization page.
+     * Admin pages are defined in the "admin" folder.
+     * @param request ServletRequest
+     * @param response ServletResponse
+     * @param chain FilterChain
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         logger.info("AuthorizationPageAdminFilter is started");
@@ -26,11 +37,11 @@ public class AuthorizationPageAdminFilter implements Filter {
         final HttpServletResponse res = (HttpServletResponse) response;
         String page = req.getServletPath();
         if(page.startsWith("/admin/")){
-            String userRole = Redirect.getUserRole(req, res);
+            String userRole = Redirect.getUserRole(req);
             if(userRole == null || !userRole.equals("admin")) {
                 if(!req.getRequestURI().endsWith("login.jsp")) {
                     isRedirectedToLoginPage = true;
-                    logger.info("User role is " + userRole + ". Calling method Redirect.redirectToLoginPage");
+                    logger.info("User role is {}. Calling method Redirect.redirectToLoginPage", userRole);
                     Redirect.redirectToLoginPage(req, res, "Log in as admin to get access to this page");
                 }
             }

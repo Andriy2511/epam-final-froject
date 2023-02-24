@@ -1,21 +1,21 @@
 package com.example.finalproject.mytags;
 
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.DAOFactory;
-import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.JspWriter;
 import jakarta.servlet.jsp.tagext.TagSupport;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.IOException;
 
+/**
+ * Print the textual representation of the order status
+ */
 public class InfoOrderStatusTag extends TagSupport {
     private static final Logger logger = LogManager.getLogger(InfoOrderStatusTag.class);
     private int orderStatusId;
 
     @Override
-    public int doStartTag() throws JspException {
+    public int doStartTag() {
         JspWriter jspWriter = pageContext.getOut();
         try {
             jspWriter.print(getOrderStatusNameById());
@@ -27,6 +27,10 @@ public class InfoOrderStatusTag extends TagSupport {
         return SKIP_BODY;
     }
 
+    /**
+     * Gets the order status name by id
+     * @return textual representation of the order status
+     */
     public String getOrderStatusNameById(){
         return DAOFactory.getDaoFactory("MYSQL").getOrderStatusDAO().getOrderStatusById(orderStatusId).get(0).getName();
     }

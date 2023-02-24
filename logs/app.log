@@ -24527,3 +24527,153 @@
 2023-02-23 23:25:01,251 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] command is null
 2023-02-23 23:25:01,251 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is user
 2023-02-23 23:25:01,251 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationPageUserFilter is started
+2023-02-24 21:34:56,292 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-24 21:34:56,306 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-24 21:34:56,306 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-24 21:34:56,306 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-24 21:34:56,318 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:34:56,318 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-24 21:34:56,318 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-24 21:34:56,318 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:34:59,268 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-24 21:34:59,268 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-24 21:34:59,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-24 21:34:59,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-24 21:34:59,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:34:59,270 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-24 21:34:59,270 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-24 21:34:59,270 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:35:00,566 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] EncodingFilter is started
+2023-02-24 21:35:00,566 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] LocaleFilter is started
+2023-02-24 21:35:00,566 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:00,566 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is CATALOG_COMMAND 
+2023-02-24 21:35:00,566 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is null 
+2023-02-24 21:35:00,567 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:00,567 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is CATALOG_COMMAND 
+2023-02-24 21:35:00,567 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is null 
+2023-02-24 21:35:00,618 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method showGoodsList is started
+2023-02-24 21:35:00,619 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method show Goods is started
+2023-02-24 21:35:01,094 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method sortList is started
+2023-02-24 21:35:01,103 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] sendGoodsList
+2023-02-24 21:35:01,103 INFO c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Method sendGoodsList is started
+2023-02-24 21:35:01,103 DEBUG c.e.f.c.c.CatalogCommand [http-nio-8091-exec-7] Send redirect to the catalog_goods/catalog.jsp
+2023-02-24 21:35:01,114 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] EncodingFilter is started
+2023-02-24 21:35:01,114 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] LocaleFilter is started
+2023-02-24 21:35:01,115 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:01,115 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-24 21:35:01,115 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is null 
+2023-02-24 21:35:01,115 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:01,115 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-24 21:35:01,115 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is null 
+2023-02-24 21:35:09,889 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is USER_ORDER_COMMAND 
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is null 
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Checking is user has access to this command (User command)
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User hasn't access to this command
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Calling method Redirect.redirectToLoginPage
+2023-02-24 21:35:09,890 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Method redirectToLoginPage is started. Forward to /login/login.jsp
+2023-02-24 21:35:09,891 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-24 21:35:09,891 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-24 21:35:09,891 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:09,891 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:09,892 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is null 
+2023-02-24 21:35:09,892 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:09,892 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:09,892 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is null 
+2023-02-24 21:35:09,892 INFO c.e.f.c.l.LogOutCommand [http-nio-8091-exec-8] Class LogOutCommand. Method execute is started
+2023-02-24 21:35:09,892 DEBUG c.e.f.c.l.LogOutCommand [http-nio-8091-exec-8] Redirect to the /finalProject_war_exploded/login/login.jsp
+2023-02-24 21:35:09,892 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is null 
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:09,893 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is null 
+2023-02-24 21:35:17,605 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-24 21:35:17,605 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-24 21:35:17,605 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:17,605 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is USER_CARD_COMMAND 
+2023-02-24 21:35:17,605 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is null 
+2023-02-24 21:35:17,606 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Checking is user has access to this command (User command)
+2023-02-24 21:35:17,606 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User hasn't access to this command
+2023-02-24 21:35:17,606 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Calling method Redirect.redirectToLoginPage
+2023-02-24 21:35:17,606 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Method redirectToLoginPage is started. Forward to /login/login.jsp
+2023-02-24 21:35:17,606 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-24 21:35:17,606 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-24 21:35:17,607 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:17,607 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:17,607 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is null 
+2023-02-24 21:35:17,607 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:17,607 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:17,607 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is null 
+2023-02-24 21:35:17,607 INFO c.e.f.c.l.LogOutCommand [http-nio-8091-exec-9] Class LogOutCommand. Method execute is started
+2023-02-24 21:35:17,608 DEBUG c.e.f.c.l.LogOutCommand [http-nio-8091-exec-9] Redirect to the /finalProject_war_exploded/login/login.jsp
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is null 
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:17,608 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is null 
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-24 21:35:26,150 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationPageUserFilter is started
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null. Calling method Redirect.redirectToLoginPage
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Method redirectToLoginPage is started. Forward to /login/login.jsp
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:26,151 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:26,152 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:35:26,152 INFO c.e.f.c.l.LogOutCommand [http-nio-8091-exec-1] Class LogOutCommand. Method execute is started
+2023-02-24 21:35:26,152 DEBUG c.e.f.c.l.LogOutCommand [http-nio-8091-exec-1] Redirect to the /finalProject_war_exploded/login/login.jsp
+2023-02-24 21:35:26,152 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is LOGOUT_COMMAND 
+2023-02-24 21:35:26,153 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationPageUserFilter is started
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null. Calling method Redirect.redirectToLoginPage
+2023-02-24 21:36:45,670 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Method redirectToLoginPage is started. Forward to /login/login.jsp
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGOUT_COMMAND 
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGOUT_COMMAND 
+2023-02-24 21:36:45,671 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:36:45,671 INFO c.e.f.c.l.LogOutCommand [http-nio-8091-exec-4] Class LogOutCommand. Method execute is started
+2023-02-24 21:36:45,671 DEBUG c.e.f.c.l.LogOutCommand [http-nio-8091-exec-4] Redirect to the /finalProject_war_exploded/login/login.jsp
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGOUT_COMMAND 
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGOUT_COMMAND 
+2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 

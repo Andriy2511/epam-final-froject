@@ -5,18 +5,26 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
+/**
+ * The JDBCUtils class is responsible for connecting to the database
+ */
 public class JDBCUtils {
-
 	private static volatile DataSource ds;
 
+	/**
+	 * Gets a database connection
+	 * @return connection to the database
+	 */
 	public static Connection getConnection() throws ClassNotFoundException, SQLException, NamingException {
 		return getDatabase().getConnection();
 	}
 
+	/**
+	 * Receives DataSource to the database
+	 * @return DataSource
+	 */
 	public static DataSource getDatabase() throws ClassNotFoundException, SQLException, NamingException{
 		synchronized (JDBCUtils.class) {
 			if(ds == null) {
@@ -28,6 +36,10 @@ public class JDBCUtils {
 		return ds;
 	}
 
+	/**
+	 * Outputs an SQL exception to the console
+	 * @param ex SQL exception
+	 */
 	public static void printSQLException(SQLException ex) {
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
@@ -42,13 +54,5 @@ public class JDBCUtils {
 				}
 			}
 		}
-	}
-
-	public static Date getSQLDate(LocalDate date) {
-		return Date.valueOf(date);
-	}
-
-	public static LocalDate getUtilDate(Date sqlDate) {
-		return sqlDate.toLocalDate();
 	}
 }

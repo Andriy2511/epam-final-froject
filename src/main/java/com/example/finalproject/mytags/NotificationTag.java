@@ -3,6 +3,9 @@ package com.example.finalproject.mytags;
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.tagext.TagSupport;
 
+/**
+ * Print the notification to the page
+ */
 public class NotificationTag extends TagSupport {
     String notification;
     @Override

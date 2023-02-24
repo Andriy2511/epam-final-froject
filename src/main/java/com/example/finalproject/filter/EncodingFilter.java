@@ -12,10 +12,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Sets the default character encoding to "UTF-8".
+ */
 @WebFilter(filterName = "EncodingFilter")
 public class EncodingFilter implements Filter {
     private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
-    public void init(FilterConfig config) throws ServletException {
+    public void init(FilterConfig config) {
     }
 
     public void destroy() {

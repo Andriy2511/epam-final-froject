@@ -10,6 +10,9 @@ import java.sql.SQLException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Set the default language to English
+ */
 @WebListener
 public class SessionListener implements HttpSessionListener {
 

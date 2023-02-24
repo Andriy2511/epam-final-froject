@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
+/**
+ * Print the textual representation of the user's name
+ */
 public class InfoUserTag extends TagSupport {
     private static final Logger logger = LogManager.getLogger(InfoUserTag.class);
     private int userId;
@@ -24,6 +27,11 @@ public class InfoUserTag extends TagSupport {
 
         return SKIP_BODY;
     }
+
+    /**
+     * Gets the user's name by id
+     * @return textual representation of the user's name
+     */
     public String getUserNameById(){
         return DAOFactory.getDaoFactory("MYSQL").getUserDAO().getUserById(userId).get(0).getName();
     }

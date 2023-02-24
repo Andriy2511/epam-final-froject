@@ -12,15 +12,26 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+/**
+ * Defines the language of the page
+ */
 @WebFilter(filterName = "LocaleFilter")
 public class LocaleFilter implements Filter {
     private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
-    public void init(FilterConfig config) throws ServletException {
+    public void init(FilterConfig config) {
     }
 
     public void destroy() {
     }
 
+    /**
+     * Gets the "lang" parameter from the request.
+     * If the parameter is "en", the method sets the English language,
+     * if the parameter is "ua", the method sets the Ukrainian language.
+     * @param request ServletRequest
+     * @param response ServletResponse
+     * @param chain FilterChain
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         logger.info("LocaleFilter is started");

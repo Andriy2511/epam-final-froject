@@ -10,7 +10,9 @@ import com.example.finalproject.command.logout.LogOutCommand;
 import com.example.finalproject.command.user.UserCardCommand;
 import com.example.finalproject.command.user.UserOrderCommand;
 
-
+/**
+ * Enum CommandEnum contains commands that determine which class will be process the request
+ */
 public enum CommandEnum {
 
     ADMIN_ADD_PRODUCT(new AddProductCommand()), ADMIN_CUSTOMER_CONTROLLER(new AdminCustomerCommand()), ADMIN_ORDER_CONTROLLER(new AdminOrderCommand()),
@@ -23,10 +25,9 @@ public enum CommandEnum {
 
     CommandEnum(ICommand command) {
             this.command = command;
-        }
+    }
 
     public ICommand getCommand() {
         return command;
     }
-
 }
