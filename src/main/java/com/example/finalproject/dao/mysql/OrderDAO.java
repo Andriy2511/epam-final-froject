@@ -1,6 +1,5 @@
 package com.example.finalproject.dao.mysql;
 
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.*;
 import com.example.finalproject.dao.query.DBQuery;
 import com.example.finalproject.models.Order;
@@ -231,11 +230,10 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
     }
 
     @Override
-    protected PreparedStatement mapFromEntity(PreparedStatement preparedStatement, Order order) throws SQLException {
+    protected void mapFromEntity(PreparedStatement preparedStatement, Order order) throws SQLException {
         preparedStatement.setInt(1, order.getId());
         preparedStatement.setInt(2, order.getGoodsId());
         preparedStatement.setInt(3, order.getUserId());
         preparedStatement.setInt(4, order.getOrderStatusId());
-        return preparedStatement;
     }
 }

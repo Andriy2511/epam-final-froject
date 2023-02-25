@@ -3,8 +3,16 @@ package com.example.finalproject.dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * Abstract DAO factory
+ */
 public abstract class DAOFactory {
 
+    /**
+     * The method gets a name with database type and returns its instance
+     * @param db type of the database
+     * @return an instance of the database
+     */
     public static DAOFactory getDaoFactory(String db) {
         switch (db) {
             case "MYSQL":

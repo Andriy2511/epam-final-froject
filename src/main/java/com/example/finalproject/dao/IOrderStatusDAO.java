@@ -6,6 +6,9 @@ import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Contains OrderStatusDAO methods
+ */
 public interface IOrderStatusDAO {
     List<OrderStatus> getOrderStatusById(int id);
 

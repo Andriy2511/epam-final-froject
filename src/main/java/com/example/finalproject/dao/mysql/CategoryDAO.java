@@ -1,6 +1,5 @@
 package com.example.finalproject.dao.mysql;
 
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.GenericDAO;
 import com.example.finalproject.dao.ICategoryDAO;
 import com.example.finalproject.dao.query.DBQuery;
@@ -123,9 +122,8 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
     }
 
     @Override
-    protected PreparedStatement mapFromEntity(PreparedStatement preparedStatement, Category category) throws SQLException {
+    protected void mapFromEntity(PreparedStatement preparedStatement, Category category) throws SQLException {
         preparedStatement.setInt(1, category.getId());
         preparedStatement.setString(2, category.getName());
-        return preparedStatement;
     }
 }

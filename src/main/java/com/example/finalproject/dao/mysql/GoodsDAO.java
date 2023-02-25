@@ -1,6 +1,5 @@
 package com.example.finalproject.dao.mysql;
 
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.GenericDAO;
 import com.example.finalproject.dao.IGoodsDAO;
 import com.example.finalproject.dao.query.DBQuery;
@@ -437,13 +436,12 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    protected PreparedStatement mapFromEntity(PreparedStatement preparedStatement, Goods goods) throws SQLException {
+    protected void mapFromEntity(PreparedStatement preparedStatement, Goods goods) throws SQLException {
         preparedStatement.setString(1, goods.getName());
         preparedStatement.setString(2, goods.getDescription());
         preparedStatement.setString(3, goods.getPhoto());
         preparedStatement.setDouble(4, goods.getPrice());
         preparedStatement.setInt(5, goods.getCategoryId());
         preparedStatement.setString(6, getCurrentTime());
-        return preparedStatement;
     }
 }

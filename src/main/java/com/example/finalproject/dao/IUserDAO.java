@@ -8,6 +8,9 @@ import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Contains UserDAO methods
+ */
 public interface IUserDAO {
     boolean validate(Login login) throws ClassNotFoundException;
 

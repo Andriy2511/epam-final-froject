@@ -1,6 +1,5 @@
 package com.example.finalproject.dao.mysql;
 
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.GenericDAO;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.query.DBQuery;
@@ -62,9 +61,8 @@ public class RoleDAO extends GenericDAO<Role> implements IRoleDAO {
     }
 
     @Override
-    protected PreparedStatement mapFromEntity(PreparedStatement preparedStatement, Role role) throws SQLException {
+    protected void mapFromEntity(PreparedStatement preparedStatement, Role role) throws SQLException {
         preparedStatement.setInt(1, role.getId());
         preparedStatement.setString(2, role.getName());
-        return preparedStatement;
     }
 }

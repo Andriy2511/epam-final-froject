@@ -1,5 +1,8 @@
 package com.example.finalproject.dao.query;
 
+/**
+ * DBQuery interface contains commands for database
+ */
 public interface DBQuery {
 
     //Roles

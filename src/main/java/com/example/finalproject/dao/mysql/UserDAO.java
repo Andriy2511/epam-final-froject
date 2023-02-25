@@ -1,6 +1,5 @@
 package com.example.finalproject.dao.mysql;
 
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.GenericDAO;
 import com.example.finalproject.dao.IRoleDAO;
@@ -551,13 +550,12 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    protected PreparedStatement mapFromEntity(PreparedStatement preparedStatement, User user) throws SQLException {
+    protected void mapFromEntity(PreparedStatement preparedStatement, User user) throws SQLException {
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getSurname());
         preparedStatement.setString(3, user.getLogin());
         preparedStatement.setString(4, user.getPassword());
         preparedStatement.setString(5, user.getEmail());
         preparedStatement.setInt(6, getRoleIdUser());
-        return preparedStatement;
     }
 }
