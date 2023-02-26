@@ -26,3 +26,7 @@ The system administrator has the rights:
 - додавання/видалення товару, зміна інформації про товар;
 - блокування / розблокування - користувача;
 - переведення замовлення з «зареєстрованого» в «оплачений» або «скасований».
+
+
+!!!
+Before starting the program, it is necessary to create a database with standard values. The scripts are located in the sql folder.

@@ -1,0 +1,8 @@
+INSERT INTO roles(id, name) VALUE (1, 'admin');
+INSERT INTO roles(id, name) VALUE (2, 'user');
+
+INSERT INTO users(name, surname, login, password, email, roles_id, status_blocked) VALUE ('Admin', 'Admin', 'Admin', 'Admin', 'admin@gmail.com', 1, 0);
+
+INSERT INTO orders_status(name) VALUE ('registered');
+INSERT INTO orders_status(name) VALUE ('paid');
+INSERT INTO orders_status(name) VALUE ('canceled');
