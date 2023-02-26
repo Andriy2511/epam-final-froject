@@ -24677,3 +24677,421 @@
 2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
 2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGOUT_COMMAND 
 2023-02-24 21:36:45,672 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-26 11:48:38,261 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-26 11:48:38,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-26 11:48:38,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:38,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-26 11:48:38,287 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-26 11:48:38,287 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:38,287 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-26 11:48:38,287 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-26 11:48:41,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-26 11:48:41,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-26 11:48:41,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:41,275 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-26 11:48:41,276 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-26 11:48:41,276 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:41,276 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-26 11:48:41,276 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-26 11:48:44,816 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] EncodingFilter is started
+2023-02-26 11:48:44,816 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] LocaleFilter is started
+2023-02-26 11:48:44,817 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:44,817 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is LOGIN_CONTROLLER 
+2023-02-26 11:48:44,817 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is null 
+2023-02-26 11:48:44,817 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:44,818 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is LOGIN_CONTROLLER 
+2023-02-26 11:48:44,818 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is null 
+2023-02-26 11:48:44,873 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-6] Method authorization is started
+2023-02-26 11:48:45,324 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-6] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] EncodingFilter is started
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] LocaleFilter is started
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 11:48:45,335 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 11:48:45,336 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Checking is user has access to this command (Admin command)
+2023-02-26 11:48:45,336 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-02-26 11:48:45,336 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method showGoods is started
+2023-02-26 11:48:45,349 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method sendGoodsList is started
+2023-02-26 11:48:45,350 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_goods_list.jsp
+2023-02-26 11:48:45,355 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is null 
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is null 
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 11:48:45,356 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationPageAdminFilter is started
+2023-02-26 11:48:48,377 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-26 11:48:48,377 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-26 11:48:48,377 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:48,377 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_CUSTOMER_CONTROLLER 
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_CUSTOMER_CONTROLLER 
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Checking is user has access to this command (Admin command)
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-9] The showList method is started
+2023-02-26 11:48:48,378 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-9] The showList method is started
+2023-02-26 11:48:48,404 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-9] The sendUserList method is started
+2023-02-26 11:48:48,404 DEBUG c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-9] Forward to tho admin_customer_list.jsp
+2023-02-26 11:48:48,409 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] EncodingFilter is started
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] LocaleFilter is started
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 11:48:48,410 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationPageAdminFilter is started
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is ADMIN_CUSTOMER_CONTROLLER 
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is admin 
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is ADMIN_CUSTOMER_CONTROLLER 
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is admin 
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Checking is user has access to this command (Admin command)
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-1] The showList method is started
+2023-02-26 11:48:51,955 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-1] The showList method is started
+2023-02-26 11:48:51,962 INFO c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-1] The sendUserList method is started
+2023-02-26 11:48:51,962 DEBUG c.e.f.c.a.AdminCustomerCommand [http-nio-8091-exec-1] Forward to tho admin_customer_list.jsp
+2023-02-26 11:48:51,967 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] EncodingFilter is started
+2023-02-26 11:48:51,967 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] LocaleFilter is started
+2023-02-26 11:48:51,967 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationCommandUserFilter is started
+2023-02-26 11:48:51,967 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Command is null 
+2023-02-26 11:48:51,967 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is admin 
+2023-02-26 11:48:51,968 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationCommandAdminFilter is started
+2023-02-26 11:48:51,968 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Command is null 
+2023-02-26 11:48:51,968 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is admin 
+2023-02-26 11:48:51,968 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:08,686 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-26 12:03:08,699 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-26 12:03:08,700 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:08,700 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-26 12:03:08,712 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-26 12:03:08,712 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:08,712 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is null 
+2023-02-26 12:03:08,712 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is null 
+2023-02-26 12:03:10,373 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] EncodingFilter is started
+2023-02-26 12:03:10,374 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] LocaleFilter is started
+2023-02-26 12:03:10,374 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:10,375 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Command is null 
+2023-02-26 12:03:10,376 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] User role is null 
+2023-02-26 12:03:10,376 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:10,377 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Command is null 
+2023-02-26 12:03:10,377 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] User role is null 
+2023-02-26 12:03:13,839 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-26 12:03:13,839 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-26 12:03:13,840 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:13,840 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGIN_CONTROLLER 
+2023-02-26 12:03:13,840 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-26 12:03:13,840 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:13,840 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is LOGIN_CONTROLLER 
+2023-02-26 12:03:13,841 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is null 
+2023-02-26 12:03:13,892 INFO c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Method authorization is started
+2023-02-26 12:03:14,263 DEBUG c.e.f.c.a.LoginCommand [http-nio-8091-exec-4] Redirection to the /finalProject_war_exploded/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin
+2023-02-26 12:03:14,268 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] EncodingFilter is started
+2023-02-26 12:03:14,268 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] LocaleFilter is started
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] User role is admin 
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] User role is admin 
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-02-26 12:03:14,269 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method showGoods is started
+2023-02-26 12:03:14,283 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] The method sendGoodsList is started
+2023-02-26 12:03:14,283 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-5] Forward to admin/admin_goods_list.jsp
+2023-02-26 12:03:14,288 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] EncodingFilter is started
+2023-02-26 12:03:14,288 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] LocaleFilter is started
+2023-02-26 12:03:14,288 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:14,288 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-26 12:03:14,289 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is admin 
+2023-02-26 12:03:14,289 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:14,289 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-26 12:03:14,289 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is admin 
+2023-02-26 12:03:14,289 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:16,948 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] EncodingFilter is started
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] LocaleFilter is started
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The showList changeOrderStatus is started
+2023-02-26 12:03:16,949 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] The method changeGoods is started
+2023-02-26 12:03:16,952 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-7] Forward to admin/admin_change_product.jsp
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] EncodingFilter is started
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] LocaleFilter is started
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:16,953 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:18,284 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-26 12:03:18,284 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is ADMIN_CHANGE_PRODUCT 
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is ADMIN_CHANGE_PRODUCT 
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:18,298 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Method changeProduct
+2023-02-26 12:03:18,307 DEBUG c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:18,312 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:18,313 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 12:03:18,313 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:18,313 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-02-26 12:03:18,313 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method showGoods is started
+2023-02-26 12:03:18,317 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] The method sendGoodsList is started
+2023-02-26 12:03:18,318 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-9] Forward to admin/admin_goods_list.jsp
+2023-02-26 12:03:18,322 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] EncodingFilter is started
+2023-02-26 12:03:18,322 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] LocaleFilter is started
+2023-02-26 12:03:18,322 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:18,323 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 12:03:18,323 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 12:03:18,323 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:18,323 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 12:03:18,323 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 12:03:18,323 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:19,710 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is admin 
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is ADMIN_PRODUCT_CONTROLLER 
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is admin 
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-02-26 12:03:19,711 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method showGoods is started
+2023-02-26 12:03:19,716 INFO c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] The method sendGoodsList is started
+2023-02-26 12:03:19,716 DEBUG c.e.f.c.a.AddProductCommand [http-nio-8091-exec-1] Forward to admin/admin_goods_list.jsp
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] EncodingFilter is started
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] LocaleFilter is started
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Command is null 
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is admin 
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Command is null 
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is admin 
+2023-02-26 12:03:19,721 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:21,077 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] EncodingFilter is started
+2023-02-26 12:03:21,077 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] LocaleFilter is started
+2023-02-26 12:03:21,077 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:21,077 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:21,077 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] User role is admin 
+2023-02-26 12:03:21,078 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:21,078 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:21,078 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] User role is admin 
+2023-02-26 12:03:21,078 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:21,078 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList addProduct is started
+2023-02-26 12:03:21,078 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList showOrder is started
+2023-02-26 12:03:21,102 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList sendOrderList is started
+2023-02-26 12:03:21,102 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is admin 
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is admin 
+2023-02-26 12:03:21,107 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:22,591 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] EncodingFilter is started
+2023-02-26 12:03:22,591 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] LocaleFilter is started
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] User role is admin 
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] User role is admin 
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList addProduct is started
+2023-02-26 12:03:22,592 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList showOrder is started
+2023-02-26 12:03:22,596 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList sendOrderList is started
+2023-02-26 12:03:22,596 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:22,601 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] EncodingFilter is started
+2023-02-26 12:03:22,601 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] LocaleFilter is started
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is admin 
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is admin 
+2023-02-26 12:03:22,602 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:23,223 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] EncodingFilter is started
+2023-02-26 12:03:23,223 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] LocaleFilter is started
+2023-02-26 12:03:23,223 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:23,223 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList addProduct is started
+2023-02-26 12:03:23,224 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList showOrder is started
+2023-02-26 12:03:23,228 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList sendOrderList is started
+2023-02-26 12:03:23,228 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:23,232 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-26 12:03:23,232 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is null 
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is null 
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 12:03:23,233 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:23,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-26 12:03:23,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-26 12:03:23,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList addProduct is started
+2023-02-26 12:03:23,785 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList showOrder is started
+2023-02-26 12:03:23,790 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList sendOrderList is started
+2023-02-26 12:03:23,790 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] EncodingFilter is started
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] LocaleFilter is started
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 12:03:23,794 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 12:03:23,795 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:25,560 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] EncodingFilter is started
+2023-02-26 12:03:25,560 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] LocaleFilter is started
+2023-02-26 12:03:25,560 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:25,560 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:25,560 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is admin 
+2023-02-26 12:03:25,560 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:25,561 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:25,561 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] User role is admin 
+2023-02-26 12:03:25,561 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-1] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:25,561 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList addProduct is started
+2023-02-26 12:03:25,561 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList changeOrderStatus is started
+2023-02-26 12:03:25,571 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList showOrder is started
+2023-02-26 12:03:25,574 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] The showList sendOrderList is started
+2023-02-26 12:03:25,574 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-1] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:25,578 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] EncodingFilter is started
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] LocaleFilter is started
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Command is null 
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is admin 
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] Command is null 
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] User role is admin 
+2023-02-26 12:03:25,579 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-2] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] EncodingFilter is started
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] LocaleFilter is started
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] User role is admin 
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] User role is admin 
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-3] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList addProduct is started
+2023-02-26 12:03:26,120 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList showOrder is started
+2023-02-26 12:03:26,126 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] The showList sendOrderList is started
+2023-02-26 12:03:26,126 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-3] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:26,130 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] EncodingFilter is started
+2023-02-26 12:03:26,130 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] LocaleFilter is started
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is admin 
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] Command is null 
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] User role is admin 
+2023-02-26 12:03:26,131 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-4] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:26,997 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] EncodingFilter is started
+2023-02-26 12:03:26,997 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] LocaleFilter is started
+2023-02-26 12:03:26,997 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:26,997 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] User role is admin 
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] User role is admin 
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-5] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList addProduct is started
+2023-02-26 12:03:26,998 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList changeOrderStatus is started
+2023-02-26 12:03:27,000 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList showOrder is started
+2023-02-26 12:03:27,002 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] The showList sendOrderList is started
+2023-02-26 12:03:27,003 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-5] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:27,008 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] EncodingFilter is started
+2023-02-26 12:03:27,008 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] LocaleFilter is started
+2023-02-26 12:03:27,008 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:27,009 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-26 12:03:27,009 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is admin 
+2023-02-26 12:03:27,009 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:27,009 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] Command is null 
+2023-02-26 12:03:27,009 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] User role is admin 
+2023-02-26 12:03:27,009 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-6] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] EncodingFilter is started
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] LocaleFilter is started
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] User role is admin 
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-7] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList addProduct is started
+2023-02-26 12:03:27,784 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList showOrder is started
+2023-02-26 12:03:27,787 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] The showList sendOrderList is started
+2023-02-26 12:03:27,787 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-7] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] EncodingFilter is started
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] LocaleFilter is started
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is null 
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] Command is null 
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] User role is admin 
+2023-02-26 12:03:27,793 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-8] AuthorizationPageAdminFilter is started
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] EncodingFilter is started
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] LocaleFilter is started
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Command is ADMIN_ORDER_CONTROLLER 
+2023-02-26 12:03:28,359 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] User role is admin 
+2023-02-26 12:03:28,360 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-9] Checking is user has access to this command (Admin command)
+2023-02-26 12:03:28,360 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList addProduct is started
+2023-02-26 12:03:28,360 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList changeOrderStatus is started
+2023-02-26 12:03:28,362 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList showOrder is started
+2023-02-26 12:03:28,365 INFO c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] The showList sendOrderList is started
+2023-02-26 12:03:28,365 DEBUG c.e.f.c.a.AdminOrderCommand [http-nio-8091-exec-9] Forward to tho admin_order_list.jsp
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] EncodingFilter is started
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] LocaleFilter is started
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandUserFilter is started
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationCommandAdminFilter is started
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] Command is null 
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] User role is admin 
+2023-02-26 12:03:28,370 INFO c.e.f.c.a.AdminChangeProductCommand [http-nio-8091-exec-10] AuthorizationPageAdminFilter is started

@@ -6,7 +6,6 @@ import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.dao.query.DBQuery;
 import com.example.finalproject.models.Login;
-import com.example.finalproject.models.Order;
 import com.example.finalproject.models.User;
 import com.example.finalproject.utils.JDBCUtils;
 import org.apache.logging.log4j.LogManager;
@@ -86,46 +85,6 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             connection.close();
         }
         return true;
-    }
-
-    @Override
-    public boolean createOrder(int userId, int goodsId) throws SQLException, NamingException, ClassNotFoundException {
-        Connection connection = JDBCUtils.getConnection();
-        try{
-            connection.setAutoCommit(false);
-            PreparedStatement statement = connection.prepareStatement(DBQuery.INSERT_ORDER);
-            statement.setInt(1, goodsId);
-            statement.setInt(2, userId);
-            statement.setInt(3, getOrderStatusIdRegistered());
-            statement.executeUpdate();
-            connection.commit();
-        } catch (SQLException e) {
-            logger.error(e);
-            connection.rollback();
-            return false;
-        } finally {
-            connection.setAutoCommit(true);
-            connection.close();
-        }
-        return true;
-    }
-
-    @Override
-    public List<Order> showOrdersByUser(int id){
-        List<Order> ordersList = new ArrayList<>();
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SELECT_ORDER_BY_USER)) {
-            preparedStatement.setInt(1, id);
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()){
-                ordersList.add(new Order(rs.getInt("id"), rs.getInt("goods_id"),
-                        rs.getInt("users_id"), rs.getInt("orders_status_id")));
-            }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
-            logger.error(e);
-            e.printStackTrace();
-        }
-        return ordersList;
     }
 
     @Override
@@ -250,23 +209,6 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public int getOrderStatusIdRegistered(){
-        int id = 0;
-        try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SELECT_STATUS_ID_BY_NAME)) {
-            preparedStatement.setString(1, "registered");
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()){
-                id = rs.getInt("id");
-            }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
-            logger.error(e);
-            e.printStackTrace();
-        }
-        return id;
-    }
-
-    @Override
     public List<User> getUserById(Integer id) {
         List<User> userList = new ArrayList<>();
         try(Connection connection = JDBCUtils.getConnection()) {
@@ -359,23 +301,6 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
         } catch (SQLException | ClassNotFoundException | NamingException e) {
             logger.error(e);
             e.printStackTrace();
-        }
-        return userList;
-    }
-
-    @Override
-    public List<User> selectAllUsers() {
-        List<User> userList = new ArrayList<>();
-        try(Connection connection = JDBCUtils.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(DBQuery.SELECT_ALL_FROM_USERS)) {
-            while (rs.next()){
-                userList.add(mapToEntity(rs));
-            }
-        } catch (SQLException | ClassNotFoundException | NamingException e) {
-            logger.error(e);
-            e.printStackTrace();
-            throw new RuntimeException(e);
         }
         return userList;
     }

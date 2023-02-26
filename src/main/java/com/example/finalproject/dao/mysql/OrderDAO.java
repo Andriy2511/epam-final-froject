@@ -26,7 +26,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
     }
 
     DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
-    IUserDAO userDAO = daoFactory.getUserDAO();
+    IOrderStatusDAO orderStatusDAO = daoFactory.getOrderStatusDAO();
 
     @Override
     public List<Order> showLimitOrders(int from, int numberOfRecords, String orderStatus){
@@ -210,7 +210,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_ORDER);
             preparedStatement.setInt(1, goodsId);
             preparedStatement.setInt(2, userId);
-            preparedStatement.setInt(3, userDAO.getOrderStatusIdRegistered());
+            preparedStatement.setInt(3, orderStatusDAO.getOrderStatusIdRegistered());
             result = preparedStatement.executeUpdate() == 1;
             connection.commit();
         } catch (SQLException e){

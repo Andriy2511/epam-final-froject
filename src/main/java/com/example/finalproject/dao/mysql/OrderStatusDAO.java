@@ -64,6 +64,23 @@ public class OrderStatusDAO extends GenericDAO<OrderStatus> implements IOrderSta
     }
 
     @Override
+    public int getOrderStatusIdRegistered(){
+        int id = 0;
+        try(Connection connection = JDBCUtils.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SELECT_STATUS_ID_BY_NAME)) {
+            preparedStatement.setString(1, "registered");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                id = rs.getInt("id");
+            }
+        } catch (SQLException | ClassNotFoundException | NamingException e){
+            logger.error(e);
+            e.printStackTrace();
+        }
+        return id;
+    }
+
+    @Override
     protected OrderStatus mapToEntity(ResultSet rs) throws SQLException {
         return new OrderStatus(rs.getInt("id"), rs.getString("name"));
     }
