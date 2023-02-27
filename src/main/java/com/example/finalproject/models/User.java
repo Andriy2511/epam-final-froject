@@ -1,5 +1,7 @@
 package com.example.finalproject.models;
 
+import java.util.Objects;
+
 public class User {
     private int id;
     private String name;
@@ -106,9 +108,16 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object user) {
-        User comparedUser = (User) user;
-        return comparedUser.getLogin().equals(this.getLogin());
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(login, user.login) || Objects.equals(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login, email);
     }
 
     @Override

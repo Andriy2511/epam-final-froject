@@ -1,4 +1,4 @@
-package com.example.finalproject.models;
+package com.example.finalproject.command.authorization.login;
 
 import java.io.Serializable;
 

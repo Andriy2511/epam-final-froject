@@ -1,7 +1,6 @@
 package com.example.finalproject.dao;
 
-import com.example.finalproject.models.Login;
-import com.example.finalproject.models.Order;
+import com.example.finalproject.command.authorization.login.Login;
 import com.example.finalproject.models.User;
 
 import javax.naming.NamingException;

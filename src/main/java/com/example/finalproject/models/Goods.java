@@ -2,6 +2,8 @@ package com.example.finalproject.models;
 
 import com.example.finalproject.dao.DAOFactory;
 
+import java.util.Objects;
+
 public class Goods {
     private int id;
     private String name;
@@ -95,6 +97,19 @@ public class Goods {
 
     public void setPublicationTime(String publicationTime) {
         this.publicationTime = publicationTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Goods goods = (Goods) o;
+        return name.equals(goods.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override

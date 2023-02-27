@@ -4,7 +4,7 @@ import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
-import com.example.finalproject.models.Login;
+import com.example.finalproject.command.authorization.login.Login;
 import com.example.finalproject.models.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

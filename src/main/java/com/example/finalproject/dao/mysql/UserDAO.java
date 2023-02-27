@@ -5,7 +5,7 @@ import com.example.finalproject.dao.GenericDAO;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.dao.query.DBQuery;
-import com.example.finalproject.models.Login;
+import com.example.finalproject.command.authorization.login.Login;
 import com.example.finalproject.models.User;
 import com.example.finalproject.utils.JDBCUtils;
 import org.apache.logging.log4j.LogManager;
