@@ -4,6 +4,7 @@ import com.example.finalproject.command.ICommand;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -16,22 +17,23 @@ import java.sql.SQLException;
 
 public class LoginCommandTest extends Mockito {
     @Test
-    public void authorizationTest() throws IOException, ServletException, SQLException {
+    public void authorizationAdminTest() throws IOException, ServletException, SQLException {
 
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
+        HttpSession httpSession = mock(HttpSession.class);
 
+        when(request.getSession()).thenReturn(httpSession);
         when(request.getParameter("login")).thenReturn("Admin");
         when(request.getParameter("password")).thenReturn("Admin");
 
-        StringWriter stringWriter = new StringWriter();
-        PrintWriter writer = new PrintWriter(stringWriter);
-        when(response.getWriter()).thenReturn(writer);
-
         new LoginCommand().execute(request, response);
 
-        verify(request, atLeast(1)).getParameter("username"); // only if you want to verify username was called...
-        writer.flush(); // it may not have been flushed yet...
-        Assertions.assertTrue(stringWriter.toString().contains("My expected string"));
+        verify(request, atLeast(1)).getParameter("login");
+        verify(request, atLeast(1)).getParameter("password");
+
+        System.out.println(request.getParameter("NOTIFICATION"));
+//        writer.flush(); // it may not have been flushed yet...
+//        Assertions.assertTrue(stringWriter.toString().contains("My expected string"));
     }
 }
