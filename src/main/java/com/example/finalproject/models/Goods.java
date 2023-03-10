@@ -24,15 +24,6 @@ public class Goods {
         this.categoryId = categoryId;
     }
 
-    public Goods(int id, String name, String description, String photo, double price, int categoryId) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.photo = photo;
-        this.price = price;
-        this.categoryId = categoryId;
-    }
-
     public Goods(int id, String name, String description, String photo, double price, int categoryId, String publicationTime) {
         this.id = id;
         this.name = name;
