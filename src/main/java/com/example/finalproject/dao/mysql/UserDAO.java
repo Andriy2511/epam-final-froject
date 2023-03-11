@@ -5,13 +5,10 @@ import com.example.finalproject.dao.GenericDAO;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.dao.query.DBQuery;
-import com.example.finalproject.command.authorization.login.Login;
 import com.example.finalproject.models.User;
 import com.example.finalproject.utils.JDBCUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.naming.NamingException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,16 +28,16 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean validate(Login login) throws ClassNotFoundException {
+    public boolean validate(User user) {
         boolean status = false;
         try (Connection connection = JDBCUtils.getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(DBQuery.SELECT_USER_BY_LOGIN_AND_PASSWORD)) {
-            preparedStatement.setString(1, login.getUsername());
-            preparedStatement.setString(2, login.getPassword());
+            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setString(2, user.getPassword());
             ResultSet rs = preparedStatement.executeQuery();
             status = rs.next();
-        } catch (SQLException | NamingException e) {
+        } catch (SQLException e) {
             logger.error(e);
             e.printStackTrace();
         }
@@ -48,13 +45,13 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public int getUserId(Login loginBean) throws NamingException, ClassNotFoundException {
+    public int getUserId(User user) {
         int userId = 0;
         try (Connection connection = JDBCUtils.getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(DBQuery.SELECT_USER_ID_BY_LOGIN_AND_PASSWORD)) {
-            preparedStatement.setString(1, loginBean.getUsername());
-            preparedStatement.setString(2, loginBean.getPassword());
+            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setString(2, user.getPassword());
 
             ResultSet rs = preparedStatement.executeQuery();
             if(rs.next()) {
@@ -62,13 +59,13 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             }
         } catch (SQLException e) {
             logger.error(e);
-            JDBCUtils.printSQLException(e);
+            e.printStackTrace();
         }
         return userId;
     }
 
     @Override
-    public boolean createUser(User user) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean createUser(User user) throws SQLException {
         Connection connection = JDBCUtils.getConnection();
         try{
             connection.setAutoCommit(false);
@@ -88,7 +85,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean updateName(int id, String name) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean updateName(int id, String name) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -109,7 +106,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean updateSurname(int id, String surname) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean updateSurname(int id, String surname) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -130,7 +127,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean updateLogin(int id, String login) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean updateLogin(int id, String login) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -151,7 +148,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean updatePassword(int id, String password) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean updatePassword(int id, String password) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -171,7 +168,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean updateEmail(int id, String email) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean updateEmail(int id, String email) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -201,7 +198,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 id = rs.getInt("id");
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -218,7 +215,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()) {
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e) {
+        } catch (SQLException e) {
             logger.error(e);
             e.printStackTrace();
         }
@@ -226,7 +223,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean updateUser(User user) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -251,13 +248,14 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean deleteUser(User user) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean deleteUser(String login) throws SQLException {
         Connection connection = JDBCUtils.getConnection();
+        boolean result = false;
         try{
             connection.setAutoCommit(false);
             PreparedStatement statement = connection.prepareStatement(DBQuery.DELETE_USER_BY_LOGIN);
-            statement.setString(1, user.getLogin());
-            statement.executeUpdate();
+            statement.setString(1, login);
+            result = statement.executeUpdate() == 1;
             connection.commit();
         } catch (SQLException e) {
             logger.error(e);
@@ -266,11 +264,11 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             connection.setAutoCommit(true);
             connection.close();
         }
-        return true;
+        return result;
     }
 
     @Override
-    public boolean deleteUserById(int id) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean deleteUserById(int id) throws SQLException {
         boolean rowDeleted = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -298,7 +296,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()) {
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e) {
+        } catch (SQLException e) {
             logger.error(e);
             e.printStackTrace();
         }
@@ -314,7 +312,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -333,7 +331,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -353,7 +351,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -369,7 +367,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -385,7 +383,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 userList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -402,7 +400,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -420,7 +418,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -428,7 +426,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean blockUser(int id) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean blockUser(int id) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -448,7 +446,7 @@ public class UserDAO extends GenericDAO<User> implements IUserDAO {
     }
 
     @Override
-    public boolean unblockUser(int id) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean unblockUser(int id) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{

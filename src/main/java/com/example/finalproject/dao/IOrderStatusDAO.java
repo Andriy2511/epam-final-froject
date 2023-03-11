@@ -1,8 +1,6 @@
 package com.example.finalproject.dao;
 
 import com.example.finalproject.models.OrderStatus;
-
-import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,11 +21,18 @@ public interface IOrderStatusDAO {
      * @param statusId order status id
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeOrderStatus(int id, int statusId) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeOrderStatus(int id, int statusId) throws SQLException;
 
     /**
      * Shows the order status id
      * @return order status id
      */
     int getOrderStatusIdRegistered();
+
+    /**
+     * Adds new order status
+     * @param name order name
+     * @return the result of successful or unsuccessful ending
+     */
+    boolean addNewOrderStatus(String name) throws SQLException;
 }

@@ -105,7 +105,7 @@ public class AdminOrderCommand implements ICommand {
      * @param request - HttpServletRequest
      * @param response - HttpServletResponse
      */
-    private void showOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
+    private void showOrder(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         logger.info("The showList showOrder is started");
         if(request.getParameter("list")!=null){
             listParam = request.getParameter("list");
@@ -136,7 +136,7 @@ public class AdminOrderCommand implements ICommand {
      * @param orderStatus - value of order status. Value may be registered, paid, canceled.
      * @see #showOrder(HttpServletRequest, HttpServletResponse)
      */
-    private void formList(HttpServletRequest request, HttpServletResponse response, String listParam, String orderStatus) throws ServletException, IOException {
+    private void formList(HttpServletRequest request, HttpServletResponse response, String listParam, String orderStatus) throws IOException {
         changeStartPageIfChangeMenu(listParam);
         int countOfOrders = orderDAO.showCountOfOrders(orderStatus);
         startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);

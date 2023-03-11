@@ -21,15 +21,8 @@ public class SessionListener implements HttpSessionListener {
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        ServletContext servletContext = se.getSession().getServletContext();
-
         if (se.getSession().getAttribute("lang") == null) {
             se.getSession().setAttribute("lang", "en");
-        }
-        try {
-            servletContext.setAttribute("database", JDBCUtils.getDatabase());
-        } catch (ClassNotFoundException | SQLException | NamingException e) {
-            e.printStackTrace();
         }
     }
 

@@ -2,9 +2,6 @@ package com.example.finalproject.dao;
 
 import com.example.finalproject.dao.mysql.*;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 /**
  * Factory for MySQL database
  */

@@ -32,7 +32,7 @@ public class RoleDAO extends GenericDAO<Role> implements IRoleDAO {
             while (rs.next()){
                 id = rs.getInt("id");
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -48,11 +48,31 @@ public class RoleDAO extends GenericDAO<Role> implements IRoleDAO {
             while (rs.next()){
                 id = rs.getInt("id");
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
         return id;
+    }
+
+    @Override
+    public boolean addNewRole(String role) throws SQLException {
+        boolean result = false;
+        Connection connection = JDBCUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_ROLE);
+            preparedStatement.setString(1, role);
+            result = preparedStatement.executeUpdate() == 1;
+            connection.commit();
+        } catch (SQLException e){
+            logger.error(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
+        }
+        return result;
     }
 
     @Override

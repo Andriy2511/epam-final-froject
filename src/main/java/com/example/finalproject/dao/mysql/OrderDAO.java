@@ -8,10 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.naming.NamingException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +37,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -59,7 +56,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -76,7 +73,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -93,7 +90,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -110,7 +107,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 id = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -127,7 +124,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -143,7 +140,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -160,7 +157,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -177,7 +174,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -194,7 +191,7 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             while (rs.next()){
                 ordersList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -202,19 +199,47 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
     }
 
     @Override
-    public boolean addNewOrder(int goodsId, int userId) throws SQLException, NamingException, ClassNotFoundException {
-        boolean result = false;
+    public int addNewOrder(int goodsId, int userId) throws SQLException {
+        int id = 0;
         Connection connection = JDBCUtils.getConnection();
         try{
             connection.setAutoCommit(false);
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_ORDER);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.INSERT_ORDER, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, goodsId);
             preparedStatement.setInt(2, userId);
             preparedStatement.setInt(3, orderStatusDAO.getOrderStatusIdRegistered());
+            preparedStatement.executeUpdate();
+            ResultSet rs = preparedStatement.getGeneratedKeys();
+            while (rs.next()) {
+                java.math.BigDecimal idColVar = rs.getBigDecimal(1);
+                id = idColVar.intValue();
+            }
+            connection.commit();
+        } catch (SQLException e){
+            System.out.println("exception");
+            e.printStackTrace();
+            logger.error(e);
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+            connection.close();
+        }
+        return id;
+    }
+
+    @Override
+    public boolean deleteOrder(int id) throws SQLException {
+        boolean result = false;
+        Connection connection = JDBCUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.DELETE_ORDER_BY_ID);
+            preparedStatement.setInt(1, id);
             result = preparedStatement.executeUpdate() == 1;
             connection.commit();
         } catch (SQLException e){
             logger.error(e);
+            e.printStackTrace();
             connection.rollback();
         } finally {
             connection.setAutoCommit(true);

@@ -6,16 +6,12 @@ import com.example.finalproject.dao.ICategoryDAO;
 import com.example.finalproject.dao.IGoodsDAO;
 import com.example.finalproject.path.PathBuilder;
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.naming.NamingException;
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -36,7 +32,7 @@ public class AdminChangeProductCommand implements ICommand {
     }
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException, NamingException, ClassNotFoundException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         changeProduct(request, response);
     }
 
@@ -46,7 +42,7 @@ public class AdminChangeProductCommand implements ICommand {
      * @param request - HttpServletRequest
      * @param response - HttpServletResponse
      */
-    private void changeProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, NamingException, ClassNotFoundException {
+    private void changeProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         logger.info("Method changeProduct");
         double price = 0;
         int id = 0;
@@ -64,13 +60,6 @@ public class AdminChangeProductCommand implements ICommand {
             response.sendRedirect("admin/admin_change_product.jsp");
         }
 
-        if(price<0) {
-            notification = "Price must be higher or equal than 0";
-            request.setAttribute("NOTIFICATION", notification);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_change_product.jsp");
-            dispatcher.forward(request, response);
-        }
-
         if(request.getPart("photo").getSize() > 0){
             Part part = request.getPart("photo");
             photo = part.getSubmittedFileName();
@@ -79,16 +68,22 @@ public class AdminChangeProductCommand implements ICommand {
             photo = goodsDAO.getGoodsById(id).get(0).getPhoto();
         }
 
-        if(isCategoryExist(categoryName)){
-            updateGoods(id, name, description, photo, price, getCategoryId(categoryName));
+        if(price >= 0) {
+            if (isCategoryExist(categoryName)) {
+                updateGoods(id, name, description, photo, price, getCategoryId(categoryName));
+            } else {
+                addCategory(categoryName);
+                updateGoods(id, name, description, photo, price, getCategoryId(categoryName));
+            }
+            request.setAttribute("NOTIFICATION", notification);
+            logger.debug("Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
+            response.sendRedirect(request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&NOTIFICATION=" + notification);
         } else {
-            addCategory(categoryName);
-            updateGoods(id, name, description, photo, price, getCategoryId(categoryName));
+            notification = "Price must be higher or equal than 0";
+            request.setAttribute("NOTIFICATION", notification);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_change_product.jsp");
+            dispatcher.forward(request, response);
         }
-
-        request.setAttribute("NOTIFICATION", notification);
-        logger.debug("Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
-        response.sendRedirect(request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&NOTIFICATION=" + notification);
     }
 
     /**
@@ -111,7 +106,7 @@ public class AdminChangeProductCommand implements ICommand {
      * @param price - product price
      * @param categoryId - id of product category
      */
-    private void updateGoods(int id, String name, String description, String photo, double price, int categoryId) throws SQLException, NamingException, ClassNotFoundException {
+    private void updateGoods(int id, String name, String description, String photo, double price, int categoryId) throws SQLException {
         if(goodsDAO.changeGoods(id, name, description, photo, price, categoryId)){
             notification = "Goods changed successful";
         } else {
@@ -123,7 +118,7 @@ public class AdminChangeProductCommand implements ICommand {
      * This method calls addCategory method from the CategoryDAO class, which adds the category to the database.
      * @param name - category name
      */
-    private void addCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
+    private void addCategory(String name) throws SQLException {
         categoryDAO.addCategory(name);
     }
 

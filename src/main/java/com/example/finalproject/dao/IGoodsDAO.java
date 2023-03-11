@@ -2,7 +2,6 @@ package com.example.finalproject.dao;
 
 import com.example.finalproject.models.Goods;
 
-import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -95,8 +94,6 @@ public interface IGoodsDAO {
      */
     List<Goods> sortGoodsByPriceRangeDecrease(double lowerPrice, double higherPrice);
 
-//    List<Goods> sortGoodsByCategory(int id);
-
     /**
      * Sort goods by category
      * @param id goods id
@@ -117,14 +114,14 @@ public interface IGoodsDAO {
      * @param goods "Goods" type object
      * @return the result of successful or unsuccessful ending
      */
-    boolean addGoods(Goods goods) throws SQLException, NamingException, ClassNotFoundException;
+    boolean addGoods(Goods goods) throws SQLException;
 
     /**
      * Removes the goods from database
      * @param id goods id
      * @return the result of successful or unsuccessful ending
      */
-    boolean deleteGoods(int id) throws SQLException, NamingException, ClassNotFoundException;
+    boolean deleteGoods(int id) throws SQLException;
 
     /**
      * Changes the goods in the database
@@ -136,7 +133,7 @@ public interface IGoodsDAO {
      * @param categoryId goods category
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId) throws SQLException;
 
     /**
      * Changes the name of the goods
@@ -144,7 +141,7 @@ public interface IGoodsDAO {
      * @param name goods name
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeGoodsName(int id, String name) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeGoodsName(int id, String name) throws SQLException;
 
     /**
      * Changes the price of the goods
@@ -152,7 +149,7 @@ public interface IGoodsDAO {
      * @param price goods price
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeGoodsPrice(int id, Double price) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeGoodsPrice(int id, Double price) throws SQLException;
 
     /**
      * Changes the photo of the goods
@@ -160,7 +157,7 @@ public interface IGoodsDAO {
      * @param photo goods photo
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeGoodsPhoto(int id, String photo) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeGoodsPhoto(int id, String photo) throws SQLException;
 
     /**
      * Changes the description of the goods
@@ -168,7 +165,7 @@ public interface IGoodsDAO {
      * @param description goods description
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeGoodsDescription(int id, String description) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeGoodsDescription(int id, String description) throws SQLException;
 
     /**
      * Changes the category of the goods
@@ -176,5 +173,12 @@ public interface IGoodsDAO {
      * @param categoryId category id
      * @return the result of successful or unsuccessful ending
      */
-    boolean changeGoodsCategory(int id, int categoryId) throws SQLException, NamingException, ClassNotFoundException;
+    boolean changeGoodsCategory(int id, int categoryId) throws SQLException;
+
+    /**
+     * Returns goods id by name. If the item is not available, 0 is returned.
+     * @param name Goods name
+     * @return goods id
+     */
+    int getGoodsIdByName(String name);
 }

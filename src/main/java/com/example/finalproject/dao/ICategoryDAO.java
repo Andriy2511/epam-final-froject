@@ -2,7 +2,6 @@ package com.example.finalproject.dao;
 
 import com.example.finalproject.models.Category;
 
-import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -33,12 +32,12 @@ public interface ICategoryDAO {
      * @param name name of the category
      * @return list with categories
      */
-    boolean addCategory(String name) throws SQLException, NamingException, ClassNotFoundException;
+    boolean addCategory(String name) throws SQLException;
 
     /**
      * Deletes category with defined name
      * @param name name of the category
      * @return the result of successful or unsuccessful ending
      */
-    boolean deleteCategory(String name) throws SQLException, NamingException, ClassNotFoundException;
+    boolean deleteCategory(String name) throws SQLException;
 }

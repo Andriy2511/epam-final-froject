@@ -100,7 +100,6 @@ public class UserCardCommand implements ICommand {
         cardGoodsList = (List<Goods>) request.getSession().getAttribute("cardGoodsList");
         cardGoodsList.remove(getGoodsById(cardGoodsList, goodsId));
         request.getSession().setAttribute("cardGoodsList", cardGoodsList);
-
     }
 
     /**

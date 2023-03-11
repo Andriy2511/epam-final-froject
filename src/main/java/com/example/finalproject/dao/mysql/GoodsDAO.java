@@ -39,7 +39,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -72,7 +72,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -106,7 +106,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -124,7 +124,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -140,7 +140,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -156,7 +156,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -174,7 +174,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -192,7 +192,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -210,7 +210,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -229,7 +229,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -245,7 +245,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             while (rs.next()){
                 count = rs.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -253,7 +253,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean addGoods(Goods goods) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean addGoods(Goods goods) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try {
@@ -273,7 +273,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean deleteGoods(int id) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean deleteGoods(int id) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try {
@@ -293,7 +293,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean changeGoods(int id, String name, String description, String photo, Double price, int categoryId) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -318,7 +318,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean changeGoodsName(int id, String name) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean changeGoodsName(int id, String name) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -339,7 +339,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean changeGoodsPrice(int id, Double price) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean changeGoodsPrice(int id, Double price) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -360,7 +360,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean changeGoodsPhoto(int id, String photo) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean changeGoodsPhoto(int id, String photo) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -381,7 +381,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean changeGoodsDescription(int id, String description) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean changeGoodsDescription(int id, String description) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -402,7 +402,7 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public boolean changeGoodsCategory(int id, int categoryId) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean changeGoodsCategory(int id, int categoryId) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -420,6 +420,25 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
             connection.close();
         }
         return result;
+    }
+
+    @Override
+    public int getGoodsIdByName(String name) {
+        List<Goods> goodsList = new ArrayList<>();
+        int id = 0;
+        try(Connection connection = JDBCUtils.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SELECT_GOODS_BY_NAME)) {
+            preparedStatement.setString(1, name);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                goodsList.add(mapToEntity(rs));
+            }
+            id = goodsList.get(0).getId();
+        } catch (SQLException | IndexOutOfBoundsException e){
+            id = 0;
+            logger.error(e);
+        }
+        return id;
     }
 
     public static String getCurrentTime(){

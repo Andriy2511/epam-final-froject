@@ -1,8 +1,6 @@
 package com.example.finalproject.dao;
 
-import com.example.finalproject.command.authorization.login.Login;
 import com.example.finalproject.models.User;
-
 import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,24 +11,24 @@ import java.util.List;
 public interface IUserDAO {
     /**
      * Checks if the user exists
-     * @param login user login
+     * @param user user login
      * @return authorization result
      */
-    boolean validate(Login login) throws ClassNotFoundException;
+    boolean validate(User user) throws ClassNotFoundException;
 
     /**
      * Shows user id
-     * @param loginBean user login
+     * @param user user object
      * @return user id
      */
-    int getUserId(Login loginBean) throws NamingException, ClassNotFoundException;
+    int getUserId(User user) throws NamingException, ClassNotFoundException;
 
     /**
      * Creates user
      * @param user object of type "User" that should be added
      * @return the result of successful or unsuccessful ending
      */
-    boolean createUser(User user) throws SQLException, NamingException, ClassNotFoundException;
+    boolean createUser(User user) throws SQLException;
 
     /**
      * Updates name
@@ -38,7 +36,7 @@ public interface IUserDAO {
      * @param name username
      * @return the result of successful or unsuccessful ending
      */
-    boolean updateName(int id, String name) throws SQLException, NamingException, ClassNotFoundException;
+    boolean updateName(int id, String name) throws SQLException;
 
     /**
      * updates surname
@@ -46,7 +44,7 @@ public interface IUserDAO {
      * @param surname user surname
      * @return the result of successful or unsuccessful ending
      */
-    boolean updateSurname(int id, String surname) throws SQLException, NamingException, ClassNotFoundException;
+    boolean updateSurname(int id, String surname) throws SQLException;
 
     /**
      * updates login
@@ -54,7 +52,7 @@ public interface IUserDAO {
      * @param login user login
      * @return the result of successful or unsuccessful ending
      */
-    boolean updateLogin(int id, String login) throws SQLException, NamingException, ClassNotFoundException;
+    boolean updateLogin(int id, String login) throws SQLException;
 
     /**
      * Updates password
@@ -62,7 +60,7 @@ public interface IUserDAO {
      * @param password user password
      * @return the result of successful or unsuccessful ending
      */
-    boolean updatePassword(int id, String password) throws SQLException, NamingException, ClassNotFoundException;
+    boolean updatePassword(int id, String password) throws SQLException;
 
     /**
      * Updates email
@@ -70,7 +68,7 @@ public interface IUserDAO {
      * @param email user email
      * @return the result of successful or unsuccessful ending
      */
-    boolean updateEmail(int id, String email) throws SQLException, NamingException, ClassNotFoundException;
+    boolean updateEmail(int id, String email) throws SQLException;
 
     /**
      * Shows user role id
@@ -90,21 +88,21 @@ public interface IUserDAO {
      * @param user object with type of "User" that should be added
      * @return the result of successful or unsuccessful ending
      */
-    boolean updateUser(User user) throws SQLException, NamingException, ClassNotFoundException;
+    boolean updateUser(User user) throws SQLException;
 
     /**
      * Deletes the user
-     * @param user object with type of "User" that should be added
+     * @param login login of user that should be added
      * @return the result of successful or unsuccessful ending
      */
-    boolean deleteUser(User user) throws SQLException, NamingException, ClassNotFoundException;
+    boolean deleteUser(String login) throws SQLException;
 
     /**
      * Deletes the user by login
      * @param id user id
      * @return the result of successful or unsuccessful ending
      */
-    boolean deleteUserById(int id) throws SQLException, NamingException, ClassNotFoundException;
+    boolean deleteUserById(int id) throws SQLException;
 
     /**
      * Shows the user by login
@@ -166,12 +164,12 @@ public interface IUserDAO {
      * @param id user id
      * @return the result of successful or unsuccessful ending
      */
-    boolean blockUser(int id) throws SQLException, NamingException, ClassNotFoundException;
+    boolean blockUser(int id) throws SQLException;
 
     /**
      * Unblocks the user
      * @param id user id
      * @return the result of successful or unsuccessful ending
      */
-    boolean unblockUser(int id) throws SQLException, NamingException, ClassNotFoundException;
+    boolean unblockUser(int id) throws SQLException;
 }

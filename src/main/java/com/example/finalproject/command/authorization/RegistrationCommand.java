@@ -1,11 +1,9 @@
 package com.example.finalproject.command.authorization;
 
 import com.example.finalproject.command.ICommand;
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.models.User;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -59,11 +57,9 @@ public class RegistrationCommand implements ICommand {
         try {
             boolean successfulRegistration = userDao.createUser(user);
             if(successfulRegistration) {
-                request.setAttribute("NOTIFICATION", "User Registered Successfully!");
                 logger.debug("Forward to tho login/login.jsp, notification User Registered Successfully!");
                 response.sendRedirect("login/login.jsp?NOTIFICATION=User Registered Successfully!");
             } else {
-                request.setAttribute("NOTIFICATION", "User must contain unique login and e-mail address!");
                 logger.debug("Forward to tho register/register.jsp, notification User must contain unique login and e-mail address!");
                 response.sendRedirect("register/register.jsp?NOTIFICATION=User must contain unique login and e-mail address!");
             }

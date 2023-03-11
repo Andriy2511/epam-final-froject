@@ -7,8 +7,6 @@ import com.example.finalproject.models.Category;
 import com.example.finalproject.utils.JDBCUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.naming.NamingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +33,7 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
             while (rs.next()){
                 categoriesList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -52,7 +50,7 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
             while (rs.next()){
                 categoryList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | RuntimeException | NamingException e){
+        } catch (SQLException | RuntimeException  e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -69,7 +67,7 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
             while (rs.next()){
                 categoryList.add(mapToEntity(rs));
             }
-        } catch (SQLException | ClassNotFoundException | NamingException e){
+        } catch (SQLException e){
             logger.error(e);
             e.printStackTrace();
         }
@@ -77,7 +75,7 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
     }
 
     @Override
-    public boolean addCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean addCategory(String name) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{
@@ -97,7 +95,7 @@ public class CategoryDAO extends GenericDAO<Category> implements ICategoryDAO {
     }
 
     @Override
-    public boolean deleteCategory(String name) throws SQLException, NamingException, ClassNotFoundException {
+    public boolean deleteCategory(String name) throws SQLException {
         boolean result = false;
         Connection connection = JDBCUtils.getConnection();
         try{

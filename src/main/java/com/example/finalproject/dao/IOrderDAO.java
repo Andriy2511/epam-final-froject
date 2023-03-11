@@ -2,7 +2,6 @@ package com.example.finalproject.dao;
 
 import com.example.finalproject.models.Order;
 
-import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -88,7 +87,14 @@ public interface IOrderDAO {
      * Adds a new order
      * @param goodsId goods id
      * @param userId user id
+     * @return id of added order
+     */
+    int addNewOrder(int goodsId, int userId) throws SQLException;
+
+    /**
+     * Deletes order by id
+     * @param id order id
      * @return the result of successful or unsuccessful ending
      */
-    boolean addNewOrder(int goodsId, int userId) throws SQLException, NamingException, ClassNotFoundException;
+    boolean deleteOrder(int id) throws SQLException;
 }

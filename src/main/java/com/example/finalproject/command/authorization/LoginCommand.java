@@ -4,7 +4,6 @@ import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
-import com.example.finalproject.command.authorization.login.Login;
 import com.example.finalproject.models.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -46,13 +45,13 @@ public class LoginCommand implements ICommand {
 	 * @param request - HttpServletRequest
 	 * @param response - HttpServletResponse
 	 */
-	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		logger.info("Method authorization is started");
 		String username = request.getParameter("login");
 		String password = request.getParameter("password");
 		HttpSession httpSession = request.getSession();
-		Login login = new Login();
-		login.setUsername(username);
+		User login = new User();
+		login.setLogin(username);
 		login.setPassword(password);
 		try {
 			boolean loginSuccessful = userDao.validate(login);
@@ -60,14 +59,14 @@ public class LoginCommand implements ICommand {
 				if(!isUserBlocked(username)) {
 					User user = userDao.readUserByLogin(username).get(0);
 					if (roleDAO.getAdminId() == getUserRole(username)) {
-						httpSession.setAttribute("id", userDao.getUserId(login));
+						httpSession.setAttribute("id", userDao.getUserId(user));
 						httpSession.setAttribute("roleId", user.getRoleId());
 						httpSession.setAttribute("user", user);
 						httpSession.setAttribute("userRole", "admin");
 						logger.debug("Redirection to the {}", request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin");
 						response.sendRedirect(request.getContextPath()+"/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
 					} else if (roleDAO.getUserId() == getUserRole(username)) {
-						httpSession.setAttribute("id", userDao.getUserId(login));
+						httpSession.setAttribute("id", userDao.getUserId(user));
 						httpSession.setAttribute("roleId", user.getRoleId());
 						httpSession.setAttribute("user", user);
 						httpSession.setAttribute("userRole", "user");
@@ -83,20 +82,19 @@ public class LoginCommand implements ICommand {
 			} else {
 				writeNotification(request, response, "Invalid login or password!");
 			}
-		} catch (ClassNotFoundException | NamingException e) {
+		} catch (ClassNotFoundException |NamingException  e) {
 			logger.error(e);
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * This method sends redirect to login.jsp page and records the notification as a parameter
+	 * This method sends redirect to the login.jsp page and records the notification as a parameter
 	 * @param request - HttpServletRequest
 	 * @param response - HttpServletResponse
 	 * @param notification - the notification that will be sent to the user
 	 */
-	private void writeNotification(HttpServletRequest request, HttpServletResponse response, String notification) throws ServletException, IOException {
-//		request.setAttribute("NOTIFICATION", notification);
+	private void writeNotification(HttpServletRequest request, HttpServletResponse response, String notification) throws IOException {
 		logger.debug("Forward to the login/login.jsp, notification {}", notification);
 		response.sendRedirect("login/login.jsp" + "?NOTIFICATION=" + notification);
 	}

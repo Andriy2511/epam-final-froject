@@ -5,7 +5,6 @@ import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IGoodsDAO;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
-import com.example.finalproject.dao.mysql.GoodsDAO;
 import com.example.finalproject.models.Goods;
 import com.example.finalproject.pagination.Pagination;
 import jakarta.servlet.RequestDispatcher;
@@ -76,7 +75,7 @@ public class AdminProductCommand implements ICommand {
                     dispatcher.forward(request, response);
                     break;
             }
-        } catch (SQLException | NamingException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             logger.error(e);
             e.printStackTrace();
         }
@@ -102,7 +101,7 @@ public class AdminProductCommand implements ICommand {
      * If product can't be deleted the method sends message about it.
      * @param request - HttpServletRequest
      */
-    private void deleteGoods(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
+    private void deleteGoods(HttpServletRequest request) throws SQLException, ClassNotFoundException {
         logger.info("The method deleteGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         if(!goodsDAO.deleteGoods(goodsId)){
@@ -115,7 +114,7 @@ public class AdminProductCommand implements ICommand {
      * @param request - HttpServletRequest
      * @param response - HttpServletResponse
      */
-    private void showGoods(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
+    private void showGoods(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         logger.info("The method showGoods is started");
         int countOfGoods;
         countOfGoods = goodsDAO.showCountOfGoods();

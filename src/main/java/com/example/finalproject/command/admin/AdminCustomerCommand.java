@@ -83,6 +83,7 @@ public class AdminCustomerCommand implements ICommand {
      * @param request - HttpServletRequest
      */
     private void blockUser(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
+        logger.info("The blockUser method is started");
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.blockUser(userId);
     }
@@ -142,7 +143,7 @@ public class AdminCustomerCommand implements ICommand {
      * @param countOfUsers - count of users
      * @param statusBlocked - user block status
      */
-    private void formListOfUserByStatus(HttpServletRequest request, HttpServletResponse response, int countOfUsers, boolean statusBlocked) throws ServletException, IOException {
+    private void formListOfUserByStatus(HttpServletRequest request, HttpServletResponse response, int countOfUsers, boolean statusBlocked) throws IOException {
         startPage = Pagination.pagination(request, countOfUsers, startPage, recordsPerPage);
         request.setAttribute("noOfPages", startPage);
         userList = userDAO.showLimitUsersByBlockedStatus((startPage-1)*recordsPerPage, recordsPerPage, statusBlocked);
@@ -160,9 +161,6 @@ public class AdminCustomerCommand implements ICommand {
         logger.info("The sendUserList method is started");
         request.getSession().setAttribute("userList", userList);
         logger.debug("Forward to tho admin_customer_list.jsp");
-        System.out.println(action);
-        System.out.println(listParam);
-        System.out.println(startPage);
         response.sendRedirect(request.getContextPath() +
                 "/admin/admin_customer_list.jsp?action=" + action + "&list=" + listParam +
                 "&" + "noOfPages=" + startPage);

@@ -57,7 +57,7 @@ public class CatalogCommand implements ICommand {
      * @param request HttpServletRequest
      * @param response HttpServletResponse
      */
-    private void showGoodsList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException, ClassNotFoundException {
+    private void showGoodsList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("Method showGoodsList is started");
         if(request.getParameter("action") != null)
             action = request.getParameter("action");
@@ -115,10 +115,9 @@ public class CatalogCommand implements ICommand {
      * @param request HttpServletRequest
      * @param response HttpServletResponse
      */
-    private void buyNow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, NamingException, ClassNotFoundException {
+    private void buyNow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         logger.info("Method buyNow is started");
         if(isUserRole(request)) {
-            System.out.println("true");
             int goodsId = Integer.parseInt(request.getParameter("goodsId"));
             orderDAO.addNewOrder(goodsId, (Integer) request.getSession().getAttribute("id"));
             showGoods(request, response);
