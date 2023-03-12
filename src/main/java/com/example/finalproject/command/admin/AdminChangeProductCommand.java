@@ -75,11 +75,13 @@ public class AdminChangeProductCommand implements ICommand {
                 addCategory(categoryName);
                 updateGoods(id, name, description, photo, price, getCategoryId(categoryName));
             }
-            request.setAttribute("NOTIFICATION", notification);
             logger.debug("Forward to /FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
+            logger.info("Notification is {}", notification);
             response.sendRedirect(request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&NOTIFICATION=" + notification);
         } else {
             notification = "Price must be higher or equal than 0";
+            logger.debug("Forward to the admin/admin_change_product.jsp");
+            logger.info("Notification is {}, \nprice = {}", notification, price);
             request.setAttribute("NOTIFICATION", notification);
             RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_change_product.jsp");
             dispatcher.forward(request, response);

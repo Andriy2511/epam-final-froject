@@ -40,7 +40,6 @@ public class AdminProductCommand implements ICommand {
         roleDAO = daoFactory.getRoleDAO();
         goodsDAO = daoFactory.getGoodsDAO();
         listParam = "";
-        notification = "";
     }
 
     @Override
@@ -57,6 +56,11 @@ public class AdminProductCommand implements ICommand {
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("The showList changeOrderStatus is started");
         String action = request.getParameter("action");
+        if(request.getParameter("NOTIFICATION") != null){
+            notification = request.getParameter("NOTIFICATION");
+        } else {
+            notification = "";
+        }
         try {
             switch (action){
                 case "showGoodsList":
