@@ -50,6 +50,8 @@ public class AdminChangeProductCommand implements ICommand {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String categoryName = request.getParameter("category");
+        if(categoryName == null)
+            categoryName = "Other category";
         try {
             id = Integer.parseInt(request.getParameter("goodsId"));
             price = Double.parseDouble(request.getParameter("price"));
@@ -109,7 +111,7 @@ public class AdminChangeProductCommand implements ICommand {
      * @param categoryId - id of product category
      */
     private void updateGoods(int id, String name, String description, String photo, double price, int categoryId) throws SQLException {
-        if(goodsDAO.changeGoods(id, name, description, photo, price, categoryId)){
+        if(name!=null && name.length() > 3 && goodsDAO.changeGoods(id, name, description, photo, price, categoryId)){
             notification = "Goods changed successful";
         } else {
             notification = "Goods must contain unique name!";

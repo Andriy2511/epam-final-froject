@@ -51,6 +51,8 @@ public class AddProductCommand implements ICommand {
         String description = request.getParameter("description");
         String photo = "without photo";
         String categoryName = request.getParameter("category");
+        if(categoryName == null)
+            categoryName = "Other category";
         try {
             price = Double.parseDouble(request.getParameter("price"));
         } catch (NumberFormatException e) {
@@ -93,6 +95,11 @@ public class AddProductCommand implements ICommand {
     private void addPhoto(Part part, String photo, HttpServletRequest request) throws IOException {
         String path = PathBuilder.buildImagePath(request, photo);
         part.write(path);
+        //TODO
+        File file = new File(path);
+        System.out.println(file.isFile());
+        System.out.println(file.exists());
+        System.out.println(file.getName());
     }
 
     /**
@@ -106,7 +113,7 @@ public class AddProductCommand implements ICommand {
      */
     private void addGoods(String name, String description, String photo, double price, String categoryName) throws SQLException{
         Goods goods = new Goods(name, description, photo, price, getCategoryId(categoryName));
-        if(goodsDAO.addGoods(goods)){
+        if(name!=null && name.length() > 3 && goodsDAO.addGoods(goods)){
             notification = "Goods added successful";
         } else {
             notification = "Goods must contain unique name!";

@@ -35,8 +35,9 @@
     <c:forEach var="goods" items="${goodsList}">
     <div class="col-md-3 my-3">
         <div class="card w-100">
-            <img class="card-img-top" height="270px" width="100%" src="${pageContext.request.contextPath}/image/<c:out value="${goods.getPhoto()}" />"
-                 alt="Card image">
+<%--            <img class="card-img-top" height="270px" width="100%" src="${pageContext.request.contextPath}/image/<c:out value="${goods.getPhoto()}" />"--%>
+<%--                 alt="Card image">--%>
+            <tf:image imgSrc="${goods.getPhoto()}" imgClass="card-img-top" imgHeight="270px" imgWidth="100%" imgAlt="Without photo" />
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <h6 class="price"><fmt:message key="locale.Name" />: <c:out value="${goods.getName()}" /></h6>

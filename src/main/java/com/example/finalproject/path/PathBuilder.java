@@ -29,7 +29,7 @@ public class PathBuilder {
                 break;
             }
         }
-        path += "finalproject" + separator + "src" + separator + "main" + separator + "webapp" + separator + "image" + separator + photo;
+        path += "finalProject" + separator + "src" + separator + "main" + separator + "webapp" + separator + "image" + separator + photo;
         return path;
     }
 }
