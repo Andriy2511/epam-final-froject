@@ -15,9 +15,9 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
 </head>
-
 </head>
 <body>
+<tf:set_background_image image="composition-black-friday-shopping-cart-with-copy-space.jpg"></tf:set_background_image>
 <header>
     <jsp:include page="../common/header.jsp"></jsp:include>
 </header>
@@ -28,7 +28,7 @@
         <hr>
         <hr>
         <br>
-        <table class="table table-bordered">
+        <table class="table table-bordered bg-warning">
             <thead>
             <tr>
                 <th><fmt:message key="locale.Id" /></th>

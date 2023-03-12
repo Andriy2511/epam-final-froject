@@ -15,8 +15,8 @@
           crossorigin="anonymous">
 </head>
 
-</head>
 <body>
+<body class="bg-light">
 <header>
     <jsp:include page="../admin/admin_header.jsp"></jsp:include>
 </header>
@@ -66,5 +66,6 @@
     </div>
 </div>
 <jsp:include page="../common/footer.jsp"></jsp:include>
+</body>
 </body>
 </html>

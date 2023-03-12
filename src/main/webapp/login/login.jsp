@@ -14,6 +14,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<body class="bg-light">
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
 		<h1><fmt:message key="locale.LoginForm" /></h1>
@@ -39,5 +40,6 @@
 
 	</div>
 	<jsp:include page="../common/footer.jsp"></jsp:include>
+</body>
 </body>
 </html>

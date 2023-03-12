@@ -18,7 +18,7 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp"></jsp:include>
-
+<tf:set_background_image image="shopping-carts-facing-each-other.jpg"></tf:set_background_image>
 <div class="container">
 <div class="card-header my-3"><fmt:message key="locale.AllProducts" /></div>
     <div class="footer-copyright text-center py-3">

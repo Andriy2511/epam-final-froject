@@ -17,12 +17,11 @@
           crossorigin="anonymous">
 </head>
 
-</head>
 <body>
+<body class="bg-light">
 <header>
     <jsp:include page="../admin/admin_header.jsp"></jsp:include>
 </header>
-
 <div class="row">
     <div class="container">
         <h3 class="text-center"><fmt:message key="locale.ListOfUsers" /></h3>
@@ -74,5 +73,6 @@
     </div>
 </div>
 <jsp:include page="../common/footer.jsp"></jsp:include>
+</body>
 </body>
 </html>

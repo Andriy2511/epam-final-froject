@@ -15,9 +15,8 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 </head>
-
-</head>
 <body>
+<body class="bg-light">
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="container">
 	<h2><fmt:message key="locale.UserRegisterForm" /></h2>
