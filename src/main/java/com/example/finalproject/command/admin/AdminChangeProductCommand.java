@@ -81,7 +81,7 @@ public class AdminChangeProductCommand implements ICommand {
             logger.info("Notification is {}", notification);
             response.sendRedirect(request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&NOTIFICATION=" + notification);
         } else {
-            notification = "Price must be higher or equal than 0";
+            notification = "locale.MessageNegativePrice";
             logger.debug("Forward to the admin/admin_change_product.jsp");
             logger.info("Notification is {}, \nprice = {}", notification, price);
             request.setAttribute("NOTIFICATION", notification);
@@ -112,9 +112,9 @@ public class AdminChangeProductCommand implements ICommand {
      */
     private void updateGoods(int id, String name, String description, String photo, double price, int categoryId) throws SQLException {
         if(name!=null && name.length() > 3 && goodsDAO.changeGoods(id, name, description, photo, price, categoryId)){
-            notification = "Goods changed successful";
+            notification = "locale.MessageGoodsChangedSuccessful";
         } else {
-            notification = "Goods must contain unique name!";
+            notification = "locale.MessageGoodsAddedUnsuccessful";
         }
     }
 

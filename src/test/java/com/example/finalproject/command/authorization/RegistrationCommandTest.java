@@ -58,7 +58,7 @@ public class RegistrationCommandTest {
 
         servlet.execute(request, response);
 
-        verify(response, times(1)).sendRedirect(eq("login/login.jsp?NOTIFICATION=User Registered Successfully!"));
+        verify(response, times(1)).sendRedirect(eq("login/login.jsp?NOTIFICATION=locale.RegistrationSuccessful"));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class RegistrationCommandTest {
 
         servlet.execute(request, response);
 
-        verify(response, times(1)).sendRedirect(eq("register/register.jsp?NOTIFICATION=User must contain unique login and e-mail address!"));
+        verify(response, times(1)).sendRedirect(eq("register/register.jsp?NOTIFICATION=locale.RegistrationUnsuccessful"));
     }
 
     private void setTestUser(String name, String surname, String login, String password, boolean statusBlocked, int roleId, String email) throws SQLException {

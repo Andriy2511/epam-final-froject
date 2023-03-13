@@ -78,7 +78,7 @@ public class AddProductCommand implements ICommand {
             logger.debug("Redirect to admin_add_product.jsp");
             response.sendRedirect("admin/admin_add_product.jsp?NOTIFICATION=" + notification);
         } else {
-            notification = "Price must be higher or equal than 0";
+            notification = "locale.MessageNegativePrice";
             request.setAttribute("NOTIFICATION", notification);
             logger.debug("Forward to admin_add_product.jsp, notification {}", notification);
             RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_add_product.jsp");
@@ -113,10 +113,11 @@ public class AddProductCommand implements ICommand {
      */
     private void addGoods(String name, String description, String photo, double price, String categoryName) throws SQLException{
         Goods goods = new Goods(name, description, photo, price, getCategoryId(categoryName));
+        logger.info("Goods is {}", goods);
         if(name!=null && name.length() > 3 && goodsDAO.addGoods(goods)){
-            notification = "Goods added successful";
+            notification = "locale.MessageGoodsAddedSuccessful";
         } else {
-            notification = "Goods must contain unique name!";
+            notification = "locale.MessageGoodsAddedUnsuccessful";
         }
     }
 

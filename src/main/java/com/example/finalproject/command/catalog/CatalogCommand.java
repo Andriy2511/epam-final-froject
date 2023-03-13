@@ -105,7 +105,7 @@ public class CatalogCommand implements ICommand {
             showGoods(request, response);
         } else {
             logger.debug("Forward to the login/login.jsp, notification: You have to log in to purchase products");
-            response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=You have to log in to purchase products");
+            response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=locale.NeededRegistration");
         }
     }
 
@@ -123,7 +123,7 @@ public class CatalogCommand implements ICommand {
             showGoods(request, response);
         } else {
             logger.debug("Forward to the login/login.jsp, notification: You have to log in to purchase products");
-            response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=You have to log in to purchase products");
+            response.sendRedirect(request.getContextPath() + "/login/login.jsp?NOTIFICATION=locale.NeededRegistration");
         }
     }
 

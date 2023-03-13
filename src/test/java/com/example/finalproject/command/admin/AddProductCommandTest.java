@@ -57,7 +57,7 @@ public class AddProductCommandTest {
         final HttpServletRequest request = mock(HttpServletRequest.class, RETURNS_DEEP_STUBS);
         final HttpServletResponse response = mock(HttpServletResponse.class);
 
-        String errorMessage= "Goods must contain unique name!";
+        String errorMessage= "locale.MessageGoodsAddedUnsuccessful";
 
         when(request.getParameter("name")).thenReturn("testGoods");
         when(request.getParameter("description")).thenReturn("testGoods");

@@ -109,7 +109,7 @@ public class AdminProductCommand implements ICommand {
         logger.info("The method deleteGoods is started");
         int goodsId = Integer.parseInt(request.getParameter("goodsId"));
         if(!goodsDAO.deleteGoods(goodsId)){
-            notification = "This product cannot be deleted because the user has already placed an order for it";
+            notification = "locale.MessageCannotDeleteProduct";
         }
     }
 

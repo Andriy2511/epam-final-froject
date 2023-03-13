@@ -58,10 +58,10 @@ public class RegistrationCommand implements ICommand {
             boolean successfulRegistration = userDao.createUser(user);
             if(successfulRegistration) {
                 logger.debug("Forward to tho login/login.jsp, notification User Registered Successfully!");
-                response.sendRedirect("login/login.jsp?NOTIFICATION=User Registered Successfully!");
+                response.sendRedirect("login/login.jsp?NOTIFICATION=locale.RegistrationSuccessful");
             } else {
                 logger.debug("Forward to tho register/register.jsp, notification User must contain unique login and e-mail address!");
-                response.sendRedirect("register/register.jsp?NOTIFICATION=User must contain unique login and e-mail address!");
+                response.sendRedirect("register/register.jsp?NOTIFICATION=locale.RegistrationUnsuccessful");
             }
         } catch (Exception e) {
             logger.error(e);

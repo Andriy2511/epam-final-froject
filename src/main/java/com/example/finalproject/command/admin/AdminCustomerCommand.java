@@ -82,7 +82,7 @@ public class AdminCustomerCommand implements ICommand {
      * The method for blocking users
      * @param request - HttpServletRequest
      */
-    private void blockUser(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
+    private void blockUser(HttpServletRequest request) throws SQLException {
         logger.info("The blockUser method is started");
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.blockUser(userId);
@@ -92,7 +92,7 @@ public class AdminCustomerCommand implements ICommand {
      * The method for unblocking users
      * @param request - HttpServletRequest
      */
-    private void unblockUser(HttpServletRequest request) throws SQLException, NamingException, ClassNotFoundException {
+    private void unblockUser(HttpServletRequest request) throws SQLException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         userDAO.unblockUser(userId);
     }

@@ -2,6 +2,7 @@ package com.example.finalproject.command.admin;
 
 import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.*;
+import com.example.finalproject.locale.InternationalizationMessage;
 import com.example.finalproject.models.Order;
 import com.example.finalproject.pagination.Pagination;
 import jakarta.servlet.RequestDispatcher;
@@ -95,7 +96,7 @@ public class AdminOrderCommand implements ICommand {
         if(orderName.equals("registered")){
             orderStatusDAO.changeOrderStatus(orderId, orderDAO.selectOrderIdByName(updatedStatus));
         } else {
-            notification = "You cannot change status for paid or canceled order";
+            notification = "locale.MessageCannotChangeOrderStatus";
         }
     }
 

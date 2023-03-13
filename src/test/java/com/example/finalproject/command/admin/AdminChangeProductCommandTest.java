@@ -39,7 +39,7 @@ public class AdminChangeProductCommandTest {
         final ICommand servlet = new AdminChangeProductCommand();
         final HttpServletRequest request = mock(HttpServletRequest.class, RETURNS_DEEP_STUBS);
         final HttpServletResponse response = mock(HttpServletResponse.class);
-        String message = "Goods changed successful";
+        String message = "locale.MessageGoodsChangedSuccessful";
 
         when(request.getParameter("goodsId")).thenReturn(String.valueOf(goodsDAO.getGoodsIdByName("testGoods")));
         when(request.getParameter("name")).thenReturn("testGoods");
@@ -57,7 +57,7 @@ public class AdminChangeProductCommandTest {
         final ICommand servlet = new AdminChangeProductCommand();
         final HttpServletRequest request = mock(HttpServletRequest.class, RETURNS_DEEP_STUBS);
         final HttpServletResponse response = mock(HttpServletResponse.class);
-        String message = "Goods must contain unique name!";
+        String message = "locale.MessageGoodsAddedUnsuccessful";
 
         when(request.getParameter("goodsId")).thenReturn(String.valueOf(goodsDAO.getGoodsIdByName("testGoods2")));
         when(request.getParameter("name")).thenReturn("testGoods");

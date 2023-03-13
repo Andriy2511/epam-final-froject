@@ -51,7 +51,7 @@ public class AuthorizationCommandAdminFilter implements Filter {
                     if (!req.getRequestURI().endsWith("login.jsp")) {
                         isRedirectedToLoginPage = true;
                         logger.info("Calling method Redirect.redirectToLoginPage");
-                        Redirect.redirectToLoginPage(req, res, "Log in as admin to get access to this page");
+                        Redirect.redirectToLoginPage(req, res, "locale.LogInAsAdmin");
                     }
                 }
             }

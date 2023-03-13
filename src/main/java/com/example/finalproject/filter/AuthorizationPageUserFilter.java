@@ -42,7 +42,7 @@ public class AuthorizationPageUserFilter implements Filter {
                 if(!req.getRequestURI().endsWith("login.jsp")) {
                     isRedirectedToLoginPage = true;
                     logger.info("User role is {}. Calling method Redirect.redirectToLoginPage", userRole);
-                    Redirect.redirectToLoginPage(req, res, "Log in as user to get access to this page");
+                    Redirect.redirectToLoginPage(req, res, "locale.LogInAsUser");
                 }
             }
         }

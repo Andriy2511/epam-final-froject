@@ -77,10 +77,10 @@ public class LoginCommand implements ICommand {
 						response.sendRedirect("login/login.jsp");
 					}
 				} else {
-					writeNotification(request, response, "Account were blocked by admin");
+					writeNotification(request, response, "locale.MessageAccountBlocked");
 				}
 			} else {
-				writeNotification(request, response, "Invalid login or password!");
+				writeNotification(request, response, "locale.MessageInvalidLogin");
 			}
 		} catch (ClassNotFoundException |NamingException  e) {
 			logger.error(e);

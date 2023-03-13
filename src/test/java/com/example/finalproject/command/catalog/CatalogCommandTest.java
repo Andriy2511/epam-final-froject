@@ -108,7 +108,7 @@ public class CatalogCommandTest {
         verify(session, atLeast(1)).getAttribute("userRole");
         verify(session, never()).setAttribute(eq("cardGoodsList"), anyList());
         verify(session, never()).setAttribute(eq("goodsList"), anyList());
-        verify(response).sendRedirect(request.getContextPath()+"/login/login.jsp?NOTIFICATION=You have to log in to purchase products");
+        verify(response).sendRedirect(request.getContextPath()+"/login/login.jsp?NOTIFICATION=locale.NeededRegistration");
     }
     @Test
     public void testBuyNowSuccessfully() throws ServletException, SQLException, NamingException, IOException, ClassNotFoundException {
@@ -142,7 +142,7 @@ public class CatalogCommandTest {
         verify(session, atLeast(1)).getAttribute("userRole");
         verify(session, never()).setAttribute(eq("cardGoodsList"), anyList());
         verify(session, never()).setAttribute(eq("goodsList"), anyList());
-        verify(response).sendRedirect(request.getContextPath()+"/login/login.jsp?NOTIFICATION=You have to log in to purchase products");
+        verify(response).sendRedirect(request.getContextPath()+"/login/login.jsp?NOTIFICATION=locale.NeededRegistration");
     }
     @Test
     public void testShowCard() throws ServletException, SQLException, NamingException, IOException, ClassNotFoundException {
