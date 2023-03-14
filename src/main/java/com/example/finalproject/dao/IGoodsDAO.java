@@ -190,4 +190,6 @@ public interface IGoodsDAO {
      * @return goods id
      */
     int getGoodsIdByName(String name);
+
+    int getCountOfGoodsByCategory(String categoryName);
 }

@@ -466,6 +466,23 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
         return id;
     }
 
+    @Override
+    public int getCountOfGoodsByCategory(String categoryName) {
+        int countOfGoods = 0;
+        try(Connection connection = JDBCUtils.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SELECT_COUNT_OF_GOODS_BY_CATEGORY_NAME)) {
+            preparedStatement.setString(1, categoryName);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                countOfGoods = rs.getInt(1);
+            }
+        } catch (SQLException | IndexOutOfBoundsException e){
+            countOfGoods = 0;
+            logger.error(e);
+        }
+        return countOfGoods;
+    }
+
     public static String getCurrentTime(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();

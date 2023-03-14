@@ -71,6 +71,7 @@ public interface DBQuery {
     String UPDATE_GOODS_CATEGORY = "UPDATE goods SET categories_id = ? WHERE id = ?";
     String DELETE_GOODS_BY_ID = "DELETE FROM goods WHERE id = ?";
     String DELETE_GOODS_BY_NAME = "DELETE FROM goods WHERE name = ?";
+    String SELECT_COUNT_OF_GOODS_BY_CATEGORY_NAME = "SELECT COUNT('Count') FROM goods WHERE categories_id = (SELECT id FROM categories WHERE name = ?)";
 
     //Orders status
     String INSERT_STATUS = "INSERT INTO orders_status (name) VALUES (?)";

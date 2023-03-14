@@ -18,8 +18,10 @@ public class Pagination {
      */
     public static int pagination(HttpServletRequest request, int numberOfRecords, int startPage, int recordsPerPage) {
         int numberOfPages = (int) Math.ceil(numberOfRecords * 1.0 / recordsPerPage);
-        if(startPage > numberOfPages && startPage > 1)
-            startPage--;
+        if(startPage > numberOfPages && startPage > 1) {
+            while (startPage > numberOfPages && startPage > 1)
+                startPage--;
+        }
         try {
             if(request.getParameter("page") != null){
                 if(request.getParameter("page").equals("next")){

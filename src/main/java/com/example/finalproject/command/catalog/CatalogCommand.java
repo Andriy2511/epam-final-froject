@@ -147,6 +147,11 @@ public class CatalogCommand implements ICommand {
         countOfGoods = goodsDAO.showCountOfGoods();
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
         goodsList = sortList(request, response, (startPage-1)*recordsPerPage, recordsPerPage);
+        if (request.getParameter("sort") != null && request.getParameter("sort").equals("searchByCategory")){
+            countOfGoods = goodsDAO.getCountOfGoodsByCategory(getCategoryName(request));
+            startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
+            goodsList = sortList(request, response, (startPage-1)*recordsPerPage, recordsPerPage);
+        }
         logger.debug("sendGoodsList");
         sendGoodsList(request, response, goodsList);
     }
@@ -169,7 +174,7 @@ public class CatalogCommand implements ICommand {
         sortingMethod.put("sortByName", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByNameGrowth(s, r) : goodsDAO.sortGoodsByNameDecrease(s, r));
         sortingMethod.put("sortByPrice", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByPriceGrowth(s, r) : goodsDAO.sortGoodsByPriceDecrease(s, r));
         sortingMethod.put("sortByNovelty", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByPublicationDateGrowth(s, r) : goodsDAO.sortGoodsByPublicationDateDecrease(s, r));
-        sortingMethod.put("sortByCategory", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByCategoryGrowth(getCategoryName(request), s, r) : goodsDAO.sortGoodsByCategoryDecrease(getCategoryName(request), s, r));
+        sortingMethod.put("searchByCategory", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByCategoryGrowth(getCategoryName(request), s, r) : goodsDAO.sortGoodsByCategoryDecrease(getCategoryName(request), s, r));
         sortingMethod.put("default", (s, r) -> goodsDAO.showLimitGoods(s, r));
         if (sortingMethod.containsKey(lastMenu)) {
             goodsList = sortingMethod.get(lastMenu).apply(startPage, recordsPerPage);
