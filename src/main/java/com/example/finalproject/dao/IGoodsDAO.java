@@ -44,7 +44,7 @@ public interface IGoodsDAO {
      * Sort goods by name by descending list
      * @return list with goods
      */
-    List<Goods> sortGoodsByNameDecrease();
+    List<Goods> sortGoodsByNameDecrease(int from, int numberOfRecords);
 
 //    List<Goods> sortGoodsByPriceGrowth();
 
@@ -60,13 +60,13 @@ public interface IGoodsDAO {
      * Sort the goods by price by the descending list
      * @return list with goods
      */
-    List<Goods> sortGoodsByPriceDecrease();
+    List<Goods> sortGoodsByPriceDecrease(int from, int numberOfRecords);
 
     /**
      * Sort the goods by the date of publication by the growing list
      * @return list with goods
      */
-    List<Goods> sortGoodsByPublicationDateGrowth();
+    List<Goods> sortGoodsByPublicationDateGrowth(int from, int numberOfRecords);
 
 //    List<Goods> sortGoodsByPublicationDateDecrease();
 
@@ -95,13 +95,22 @@ public interface IGoodsDAO {
     List<Goods> sortGoodsByPriceRangeDecrease(double lowerPrice, double higherPrice);
 
     /**
-     * Sort goods by category
-     * @param id goods id
+     * Sorts goods by category in growing rate
+     * @param categoryName goods id
      * @param from initial entry
      * @param numberOfRecords the last entry
      * @return list with goods
      */
-    List<Goods> sortGoodsByCategory(int id, int from, int numberOfRecords);
+    List<Goods> sortGoodsByCategoryGrowth(String categoryName, int from, int numberOfRecords);
+
+    /**
+     * Sorts goods by category in descending order
+     * @param categoryName goods id
+     * @param from initial entry
+     * @param numberOfRecords the last entry
+     * @return list with goods
+     */
+    List<Goods> sortGoodsByCategoryDecrease(String categoryName, int from, int numberOfRecords);
 
     /**
      * Counts the quantity of goods

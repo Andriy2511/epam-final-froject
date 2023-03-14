@@ -98,10 +98,12 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public List<Goods> sortGoodsByNameDecrease(){
+    public List<Goods> sortGoodsByNameDecrease(int from, int numberOfRecords){
         List<Goods> goodsList = new ArrayList<>();
         try(Connection connection = JDBCUtils.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SORT_BY_NAME_DECREASE)) {
+            preparedStatement.setInt(1, from);
+            preparedStatement.setInt(2, numberOfRecords);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
@@ -132,10 +134,12 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public List<Goods> sortGoodsByPriceDecrease(){
+    public List<Goods> sortGoodsByPriceDecrease(int from, int numberOfRecords){
         List<Goods> goodsList = new ArrayList<>();
         try(Connection connection = JDBCUtils.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SORT_BY_PRICE_DECREASE)) {
+            preparedStatement.setInt(1, from);
+            preparedStatement.setInt(2, numberOfRecords);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
@@ -148,10 +152,12 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public List<Goods> sortGoodsByPublicationDateGrowth(){
+    public List<Goods> sortGoodsByPublicationDateGrowth(int from, int numberOfRecords){
         List<Goods> goodsList = new ArrayList<>();
         try(Connection connection = JDBCUtils.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SORT_BY_PUBLICATION_DATE_GROWTH)) {
+            preparedStatement.setInt(1, from);
+            preparedStatement.setInt(2, numberOfRecords);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
                 goodsList.add(mapToEntity(rs));
@@ -218,11 +224,30 @@ public class GoodsDAO extends GenericDAO<Goods> implements IGoodsDAO {
     }
 
     @Override
-    public List<Goods> sortGoodsByCategory(int id, int from, int numberOfRecords){
+    public List<Goods> sortGoodsByCategoryGrowth(String categoryName, int from, int numberOfRecords){
         List<Goods> goodsList = new ArrayList<>();
         try(Connection connection = JDBCUtils.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SORT_BY_CATEGORY)) {
-            preparedStatement.setInt(1, id);
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SORT_BY_CATEGORY_GROWTH)) {
+            preparedStatement.setString(1, categoryName);
+            preparedStatement.setInt(2, from);
+            preparedStatement.setInt(3, numberOfRecords);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                goodsList.add(mapToEntity(rs));
+            }
+        } catch (SQLException e){
+            logger.error(e);
+            e.printStackTrace();
+        }
+        return goodsList;
+    }
+
+    @Override
+    public List<Goods> sortGoodsByCategoryDecrease(String categoryName, int from, int numberOfRecords){
+        List<Goods> goodsList = new ArrayList<>();
+        try(Connection connection = JDBCUtils.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DBQuery.SORT_BY_CATEGORY_DECREASE)) {
+            preparedStatement.setString(1, categoryName);
             preparedStatement.setInt(2, from);
             preparedStatement.setInt(3, numberOfRecords);
             ResultSet rs = preparedStatement.executeQuery();

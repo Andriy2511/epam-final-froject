@@ -100,12 +100,13 @@ public interface DBQuery {
 
     //Catalog
     String SORT_BY_NAME_GROWTH = "SELECT * FROM goods ORDER BY name ASC LIMIT ?, ?";
-    String SORT_BY_NAME_DECREASE = "SELECT * FROM goods ORDER BY name DESC";
+    String SORT_BY_NAME_DECREASE = "SELECT * FROM goods ORDER BY name DESC LIMIT ?, ?";
     String SORT_BY_PRICE_GROWTH = "SELECT * FROM goods ORDER BY price ASC LIMIT ?, ?";
-    String SORT_BY_PRICE_DECREASE = "SELECT * FROM goods ORDER BY price DESC";
-    String SORT_BY_PUBLICATION_DATE_GROWTH = "SELECT * FROM goods ORDER BY publication_date ASC";
+    String SORT_BY_PRICE_DECREASE = "SELECT * FROM goods ORDER BY price DESC  LIMIT ?, ?";
+    String SORT_BY_PUBLICATION_DATE_GROWTH = "SELECT * FROM goods ORDER BY publication_date ASC LIMIT ?, ?";
     String SORT_BY_PUBLICATION_DATE_DECREASE = "SELECT * FROM goods ORDER BY publication_date DESC LIMIT ?, ?";
-    String SORT_BY_PRICE_RANGE_GROWTH = "SELECT * FROM goods WHERE price >= ? AND price <= ? ORDER BY price ASC";
-    String SORT_BY_PRICE_RANGE_DECREASE = "SELECT * FROM goods WHERE price >= ? AND price <= ? ORDER BY price DESC";
-    String SORT_BY_CATEGORY = "SELECT * FROM goods WHERE categories_id = ? LIMIT ?, ?";
+    String SORT_BY_PRICE_RANGE_GROWTH = "SELECT * FROM goods WHERE price >= ? AND price <= ? ORDER BY price ASC LIMIT ?, ?";
+    String SORT_BY_PRICE_RANGE_DECREASE = "SELECT * FROM goods WHERE price >= ? AND price <= ? ORDER BY price DESC LIMIT ?, ?";
+    String SORT_BY_CATEGORY_GROWTH = "SELECT * FROM goods WHERE categories_id = (SELECT id FROM categories WHERE name = ?) order by name ASC LIMIT ?, ?;";
+    String SORT_BY_CATEGORY_DECREASE = "SELECT * FROM goods WHERE categories_id = (SELECT id FROM categories WHERE name = ?) order by name DESC LIMIT ?, ?;";
 }

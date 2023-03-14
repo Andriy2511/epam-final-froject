@@ -76,7 +76,7 @@ public class CatalogCommandTest {
 
         catalogCommand.execute(request, response);
 
-        verify(request, times(1)).getSession();
+        verify(request, times(2)).getSession();
         verify(request.getSession(), times(1)).setAttribute(eq("goodsList"), anyList());
         verify(response).sendRedirect("catalog_goods/catalog.jsp");
     }

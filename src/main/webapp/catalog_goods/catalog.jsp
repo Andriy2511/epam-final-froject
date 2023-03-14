@@ -30,7 +30,12 @@
            class="btn btn-light"><fmt:message key="locale.SortByNovelty" /></a>
         <a href="<%=request.getContextPath()%>/FrontController?command=CATALOG_COMMAND&action=showGoodsList&sort=default"
            class="btn btn-light"><fmt:message key="locale.DefaultOrder" /></a>
+        <tf:arrows></tf:arrows>
     </div>
+    <form name="category" action="<%=request.getContextPath()%>/FrontController?command=CATALOG_COMMAND&action=showGoodsList&sort=sortByCategory" method="post">
+        <input type="text" id="categoryName" name="categoryName" placeholder="Search by category">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 <div class="row">
     <c:forEach var="goods" items="${goodsList}">
     <div class="col-md-3 my-3">

@@ -15,8 +15,8 @@ import org.apache.logging.log4j.Logger;
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.BiFunction;
 
 /**
  * The CatalogCommand class implements ICommand interface and responsible for catalog managing.
@@ -165,25 +165,20 @@ public class CatalogCommand implements ICommand {
         if (request.getParameter("sort") != null){
             lastMenu = request.getParameter("sort");
         }
-        switch (lastMenu){
-            case "sortByName":
-                goodsList = goodsDAO.sortGoodsByNameGrowth(startPage, recordsPerPage);
-                break;
-            case "sortByPrice":
-                goodsList = goodsDAO.sortGoodsByPriceGrowth(startPage, recordsPerPage);
-                break;
-            case "sortByNovelty":
-                goodsList = goodsDAO.sortGoodsByPublicationDateDecrease(startPage, recordsPerPage);
-                break;
-            case "default":
-                goodsList = goodsDAO.showLimitGoods(startPage, recordsPerPage);
-                break;
-            default:
-                logger.debug("Case default, lastMenu {}, Forward to the catalog_goods/catalog.jsp", lastMenu);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("catalog_goods/catalog.jsp");
-                dispatcher.forward(request, response);
-                break;
+        Map<String, BiFunction<Integer, Integer, List<Goods>>> sortingMethod = new HashMap<>();
+        sortingMethod.put("sortByName", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByNameGrowth(s, r) : goodsDAO.sortGoodsByNameDecrease(s, r));
+        sortingMethod.put("sortByPrice", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByPriceGrowth(s, r) : goodsDAO.sortGoodsByPriceDecrease(s, r));
+        sortingMethod.put("sortByNovelty", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByPublicationDateGrowth(s, r) : goodsDAO.sortGoodsByPublicationDateDecrease(s, r));
+        sortingMethod.put("sortByCategory", (s, r) -> getSortedParameter(request).equals("ASC") ? goodsDAO.sortGoodsByCategoryGrowth(getCategoryName(request), s, r) : goodsDAO.sortGoodsByCategoryDecrease(getCategoryName(request), s, r));
+        sortingMethod.put("default", (s, r) -> goodsDAO.showLimitGoods(s, r));
+        if (sortingMethod.containsKey(lastMenu)) {
+            goodsList = sortingMethod.get(lastMenu).apply(startPage, recordsPerPage);
+        } else {
+            logger.debug("Case default, lastMenu {}, Forward to the catalog_goods/catalog.jsp", lastMenu);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("catalog_goods/catalog.jsp");
+            dispatcher.forward(request, response);
         }
+        logger.info("Sorted parameter = {}",getSortedParameter(request));
         return goodsList;
     }
 
@@ -199,5 +194,46 @@ public class CatalogCommand implements ICommand {
         request.getSession().setAttribute("goodsList", goodsList);
         logger.debug("Send redirect to the catalog_goods/catalog.jsp");
         response.sendRedirect("catalog_goods/catalog.jsp");
+    }
+
+    /**
+     * Gets the category name parameter, then writes it to the session. If the parameter is null, writes an empty category
+     * @param request HttpServletRequest
+     * @return category name
+     */
+    private String getCategoryName(HttpServletRequest request){
+        String categoryName = request.getParameter("categoryName");
+        if(categoryName != null)
+            request.getSession().setAttribute("categoryName" , categoryName);
+        try {
+            categoryName = (String) request.getSession().getAttribute("categoryName");
+        } catch (ClassCastException | NullPointerException e){
+            logger.error(e);
+            categoryName = "";
+        }
+
+        return categoryName;
+    }
+
+    /**
+     * Gets the sort parameter and sets it to the session
+     * @param request HttpServletRequest
+     * @return ASC or DESC parameters
+     */
+    private String getSortedParameter(HttpServletRequest request){
+        logger.info("Method getSortedParameter is started");
+        String sortedParameter = "ASC";
+        String sortOrder = request.getParameter("sortOrder");
+        if (sortOrder != null)
+            request.getSession().setAttribute("sortOrder", sortOrder);
+        try {
+            if(request.getSession().getAttribute("sortOrder") != null) {
+                sortedParameter = (String) request.getSession().getAttribute("sortOrder");
+            }
+        } catch (ClassCastException | NullPointerException e){
+            logger.error("Error in getSortedParameter method, message: ", e);
+        }
+        logger.info("Sorted parameter = {}", sortedParameter);
+        return sortedParameter;
     }
 }
