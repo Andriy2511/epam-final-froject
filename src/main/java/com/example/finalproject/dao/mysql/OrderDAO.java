@@ -216,7 +216,6 @@ public class OrderDAO extends GenericDAO<Order> implements IOrderDAO {
             }
             connection.commit();
         } catch (SQLException e){
-            System.out.println("exception");
             e.printStackTrace();
             logger.error(e);
             connection.rollback();

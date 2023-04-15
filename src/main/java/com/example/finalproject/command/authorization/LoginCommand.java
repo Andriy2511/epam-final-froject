@@ -1,10 +1,13 @@
 package com.example.finalproject.command.authorization;
 
+import com.example.finalproject.captcha.Captcha;
 import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.models.User;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
+
 
 /**
  * The LoginCommand class is responsible for authentication and authorization.
@@ -46,43 +50,24 @@ public class LoginCommand implements ICommand {
 	 * @param response - HttpServletResponse
 	 */
 	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		logger.info("Method authorization is started");
 		String username = request.getParameter("login");
 		String password = request.getParameter("password");
-		HttpSession httpSession = request.getSession();
-		User login = new User();
-		login.setLogin(username);
-		login.setPassword(password);
+		User user = buildUser(username, password);
 		try {
-			boolean loginSuccessful = userDao.validate(login);
-			if (loginSuccessful) {
-				if(!isUserBlocked(username)) {
-					User user = userDao.readUserByLogin(username).get(0);
-					if (roleDAO.getAdminId() == getUserRole(username)) {
-						httpSession.setAttribute("id", userDao.getUserId(user));
-						httpSession.setAttribute("roleId", user.getRoleId());
-						httpSession.setAttribute("user", user);
-						httpSession.setAttribute("userRole", "admin");
-						logger.debug("Redirection to the {}", request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin");
-						response.sendRedirect(request.getContextPath()+"/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
-					} else if (roleDAO.getUserId() == getUserRole(username)) {
-						httpSession.setAttribute("id", userDao.getUserId(user));
-						httpSession.setAttribute("roleId", user.getRoleId());
-						httpSession.setAttribute("user", user);
-						httpSession.setAttribute("userRole", "user");
-						logger.debug("Redirection to the {}", request.getContextPath() + "/FrontController?command=CATALOG_COMMAND&action=showGoodsList, role user");
-						response.sendRedirect(request.getContextPath() + "/FrontController?command=CATALOG_COMMAND&action=showGoodsList");
+			if(Captcha.isCaptchaPassed(request)) {
+				if (userDao.validate(user)) {
+					if (!isUserBlocked(username)) {
+						redirectUser(request, response, user);
 					} else {
-						logger.debug("Redirection to login/login.jsp");
-						response.sendRedirect("login/login.jsp");
+						writeNotification(request, response, "locale.MessageAccountBlocked");
 					}
 				} else {
-					writeNotification(request, response, "locale.MessageAccountBlocked");
+					writeNotification(request, response, "locale.MessageInvalidLogin");
 				}
 			} else {
-				writeNotification(request, response, "locale.MessageInvalidLogin");
+				writeNotification(request, response, "locale.MessageCaptchaNotPassed");
 			}
-		} catch (ClassNotFoundException |NamingException  e) {
+		} catch (ClassNotFoundException | NamingException e) {
 			logger.error(e);
 			e.printStackTrace();
 		}
@@ -111,11 +96,53 @@ public class LoginCommand implements ICommand {
 
 	/**
 	 * This method gets user id by login
-	 * @param login - user login
-	 * @return - an integer value that indicates the role of the user
+	 * @param login user login
+	 * @return an integer value that indicates the role of the user
 	 */
 	private int getUserRole(String login){
 		User user = userDao.readUserByLogin(login).get(0);
 		return user.getRoleId();
+	}
+
+	/**
+	 * Builds a User object from the given HttpServletRequest
+	 *
+	 * @param username Users name
+	 * @param password Users password
+	 * @return a new User object containing the login and password
+	 */
+	private User buildUser(String username, String password) {
+		User user = new User();
+		user.setLogin(username);
+		user.setPassword(password);
+		logger.info("User is {}", user);
+		return user;
+	}
+
+	/**
+	 * Redirects the user to the appropriate page based on their role.
+	 *
+	 * @param request HttpServletRequest
+	 * @param response HttpServletRequest
+	 * @param user the role of the user, either "admin" or "user"
+	 */
+	private void redirectUser(HttpServletRequest request, HttpServletResponse response, User user) throws IOException, NamingException, ClassNotFoundException {
+		HttpSession session = request.getSession();
+		int roleId = getUserRole(user.getLogin());
+		session.setAttribute("id", userDao.getUserId(user));
+		session.setAttribute("roleId", roleId);
+		session.setAttribute("user", user);
+		if (roleDAO.getAdminId() == roleId) {
+			session.setAttribute("userRole", "admin");
+			logger.debug("Redirection to the {}", request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList, role admin");
+			response.sendRedirect(request.getContextPath() + "/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList");
+		} else if (roleDAO.getUserId() == roleId) {
+			session.setAttribute("userRole", "user");
+			logger.debug("Redirection to the {}", request.getContextPath() + "/FrontController?command=CATALOG_COMMAND&action=showGoodsList, role user");
+			response.sendRedirect(request.getContextPath() + "/FrontController?command=CATALOG_COMMAND&action=showGoodsList");
+		} else {
+			logger.debug("Redirection to login/login.jsp");
+			response.sendRedirect("login/login.jsp");
+		}
 	}
 }

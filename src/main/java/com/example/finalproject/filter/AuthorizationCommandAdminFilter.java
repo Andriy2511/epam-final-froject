@@ -17,7 +17,7 @@ import java.util.List;
  */
 @WebFilter(filterName = "AuthorizationCommandAdminFilter")
 public class AuthorizationCommandAdminFilter implements Filter {
-    private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
+    private static final Logger logger = LogManager.getLogger(AuthorizationCommandAdminFilter .class);
     List<String> adminListCommand = new ArrayList<>();
     public void init(FilterConfig config) {
         adminListCommand = new ArrayList<>();

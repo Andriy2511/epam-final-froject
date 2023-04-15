@@ -57,6 +57,11 @@
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
+    <filter-mapping>
+        <filter-name>CacheControlFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <jsp-config>
         <taglib>
             <taglib-uri>customtags</taglib-uri>

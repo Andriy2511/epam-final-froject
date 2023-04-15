@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 @WebFilter(filterName = "AuthorizationPageUserFilter")
 public class AuthorizationPageUserFilter implements Filter {
-    private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
+    private static final Logger logger = LogManager.getLogger(AuthorizationPageUserFilter.class);
     public void init(FilterConfig config) {
     }
 

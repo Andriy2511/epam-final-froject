@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 @WebFilter(filterName = "EncodingFilter")
 public class EncodingFilter implements Filter {
-    private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
+    private static final Logger logger = LogManager.getLogger(EncodingFilter.class);
     public void init(FilterConfig config) {
     }
 

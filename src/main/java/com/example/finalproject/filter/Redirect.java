@@ -14,7 +14,7 @@ import java.io.IOException;
  * The Redirect class is responsible for redirecting to the login.jsp page
  */
 public class Redirect {
-    private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
+    private static final Logger logger = LogManager.getLogger(Redirect.class);
 
     /**
      * Gets user's role from the session

@@ -12,6 +12,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <body class="bg-light">
@@ -36,9 +37,10 @@
 			</div>
 
 			<button type="submit" class="btn btn-primary"><fmt:message key="locale.Submit" /></button>
+			<div class="g-recaptcha" data-sitekey="6Lca-40lAAAAAGvyd6usIfmju465yQkLF0cqWYg-" style="overflow: hidden;"></div>
 		</form>
-
 	</div>
+
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </body>

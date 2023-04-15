@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
  */
 @WebFilter(filterName = "LocaleFilter")
 public class LocaleFilter implements Filter {
-    private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
+    private static final Logger logger = LogManager.getLogger(LocaleFilter.class);
     public void init(FilterConfig config) {
     }
 
