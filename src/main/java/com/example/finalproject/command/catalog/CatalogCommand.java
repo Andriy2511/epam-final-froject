@@ -1,7 +1,6 @@
 package com.example.finalproject.command.catalog;
 
 import com.example.finalproject.command.ICommand;
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.*;
 import com.example.finalproject.models.Goods;
 import com.example.finalproject.pagination.Pagination;
@@ -78,7 +77,7 @@ public class CatalogCommand implements ICommand {
                         RequestDispatcher dispatcher = request.getRequestDispatcher("user/card_page.jsp");
                         dispatcher.forward(request, response);
                         break;
-                }
+                    }
                 default:
                     RequestDispatcher dispatcher = request.getRequestDispatcher("catalog_goods/catalog.jsp");
                     dispatcher.forward(request, response);

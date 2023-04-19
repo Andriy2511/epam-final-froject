@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="ctg" uri="customtags"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tf" %>
 <fmt:setLocale value= "${sessionScope.lang}"/>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <fmt:setBundle basename="locale" />
 <html>
 <head>
@@ -40,9 +40,8 @@
     <c:forEach var="goods" items="${goodsList}">
     <div class="col-md-3 my-3">
         <div class="card w-100">
-<%--            <img class="card-img-top" height="270px" width="100%" src="${pageContext.request.contextPath}/image/<c:out value="${goods.getPhoto()}" />"--%>
-<%--                 alt="Card image">--%>
             <tf:image imgSrc="${goods.getPhoto()}" imgClass="card-img-top" imgHeight="270px" imgWidth="100%" imgAlt="${goods.getPhoto()}" />
+<%--            <img class="card-img-top" height="270px" width="100%" src="${pageContext.request.contextPath}/image/<c:out value="${goods.getPhoto()}" />" alt="Card image">--%>
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <h6 class="price"><fmt:message key="locale.Name" />: <c:out value="${goods.getName()}" /></h6>
