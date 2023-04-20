@@ -2,7 +2,6 @@ package com.example.finalproject.command.admin;
 
 import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.*;
-import com.example.finalproject.locale.InternationalizationMessage;
 import com.example.finalproject.models.Order;
 import com.example.finalproject.pagination.Pagination;
 import jakarta.servlet.RequestDispatcher;
@@ -20,26 +19,19 @@ import java.util.List;
  * The AdminOrderCommand class is responsible for managing orders
  */
 public class AdminOrderCommand implements ICommand {
-    DAOFactory daoFactory;
-    IUserDAO userDAO;
-    IRoleDAO roleDAO;
-    IOrderDAO orderDAO;
-    IOrderStatusDAO orderStatusDAO;
-    int startPage = 1;
-    int recordsPerPage = 5;
-    String listParam;
-    String lastMenu;
-    List<Order> orderList;
-    String notification;
-    String action;
+    private IOrderDAO orderDAO;
+    private IOrderStatusDAO orderStatusDAO;
+    private int startPage = 1;
+    private String listParam;
+    private String lastMenu;
+    private String notification;
+    private String action;
     private static final Logger logger = LogManager.getLogger(AdminOrderCommand.class);
 
     public AdminOrderCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
-        roleDAO = daoFactory.getRoleDAO();
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         orderDAO = daoFactory.getOrderDAO();
         orderStatusDAO = daoFactory.getOrderStatusDAO();
-        userDAO = daoFactory.getUserDAO();
         listParam = "";
         notification = "";
         action = "";
@@ -66,14 +58,11 @@ public class AdminOrderCommand implements ICommand {
                 showOrder(request, response);
                 break;
             case "paid":
-                changeOrderStatus(request);
+                case "canceled":
+                    changeOrderStatus(request);
                 showOrder(request, response);
                 break;
-            case "canceled":
-                changeOrderStatus(request);
-                showOrder(request, response);
-                break;
-            default:
+                default:
                 RequestDispatcher dispatcher = request.getRequestDispatcher("admin/admin_order_list.jsp");
                 dispatcher.forward(request, response);
                 break;
@@ -139,9 +128,10 @@ public class AdminOrderCommand implements ICommand {
     private void formList(HttpServletRequest request, HttpServletResponse response, String listParam, String orderStatus) throws IOException {
         changeStartPageIfChangeMenu(listParam);
         int countOfOrders = orderDAO.showCountOfOrders(orderStatus);
+        int recordsPerPage = 5;
         startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
         request.setAttribute("noOfPages", startPage);
-        orderList = orderDAO.showLimitOrders((startPage-1)*recordsPerPage, recordsPerPage, orderStatus);
+        List<Order> orderList = orderDAO.showLimitOrders((startPage - 1) * recordsPerPage, recordsPerPage, orderStatus);
         sendOrderList(request, response, orderList);
     }
     /**

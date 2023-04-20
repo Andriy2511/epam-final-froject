@@ -1,7 +1,5 @@
 package com.example.finalproject.models;
 
-import com.example.finalproject.dao.DAOFactory;
-
 import java.util.Objects;
 
 public class Order {

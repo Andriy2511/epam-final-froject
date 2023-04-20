@@ -1,20 +1,16 @@
 package com.example.finalproject.command.logout;
 
 import com.example.finalproject.command.ICommand;
-import com.example.finalproject.command.user.UserCardCommand;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
 
 import static org.mockito.Mockito.*;
-
 
 public class LogOutCommandTest {
     @Test

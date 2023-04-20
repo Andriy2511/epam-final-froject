@@ -6,8 +6,6 @@ import com.example.finalproject.models.Order;
 import com.example.finalproject.utils.JDBCUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.naming.NamingException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

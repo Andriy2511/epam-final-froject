@@ -6,11 +6,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.junit.jupiter.api.Test;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
-
 import static org.mockito.Mockito.*;
 
 public class LanguageCommandTest {

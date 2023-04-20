@@ -9,7 +9,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.junit.jupiter.api.*;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,14 +21,14 @@ public class AdminChangeProductCommandTest {
     private static final ICategoryDAO categoryDAO = DAOFactory.getDaoFactory("MYSQL").getCategoryDAO();
     private static final Goods testGoods = new Goods();
     @BeforeEach
-    public void setTestProducts() throws SQLException, NamingException, ClassNotFoundException {
+    public void setTestProducts() throws SQLException {
         categoryDAO.addCategory("testCategory");
         int categoryId = categoryDAO.showCategoryByName("testCategory").get(0).getId();
         addTestGoods("testGoods", "testGoods", "testGoods", 100, categoryId);
         addTestGoods("testGoods2", "testGoods2", "testGoods2", 120, categoryId);
     }
     @AfterEach
-    public void deleteTestEntity() throws SQLException, NamingException, ClassNotFoundException {
+    public void deleteTestEntity() throws SQLException {
         goodsDAO.deleteGoods(goodsDAO.getGoodsIdByName("testGoods"));
         goodsDAO.deleteGoods(goodsDAO.getGoodsIdByName("testGoods2"));
         categoryDAO.deleteCategory("testCategory");

@@ -13,11 +13,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Answers;
 import org.mockito.Mock;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
-
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.when;
 

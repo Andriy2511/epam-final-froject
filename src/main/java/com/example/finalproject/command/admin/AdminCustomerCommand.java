@@ -2,7 +2,6 @@ package com.example.finalproject.command.admin;
 
 import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
-import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.models.User;
 import com.example.finalproject.pagination.Pagination;
@@ -20,21 +19,18 @@ import java.util.List;
  * AdminCustomerCommand class is designed to manage users. This class is responsible for blocking/unblocking user and showing the list of users.
  */
 public class AdminCustomerCommand implements ICommand {
-    DAOFactory daoFactory;
-    IUserDAO userDAO;
-    IRoleDAO roleDAO;
-    int startPage = 1;
-    int recordsPerPage = 5;
-    String listParam;
-    String lastMenu;
-    List<User> userList;
-    String action;
+    private IUserDAO userDAO;
+    private int startPage = 1;
+    private int recordsPerPage = 5;
+    private String listParam;
+    private String lastMenu;
+    private List<User> userList;
+    private String action;
     private static final Logger logger = LogManager.getLogger(AdminCustomerCommand.class);
 
     public AdminCustomerCommand() {
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         userDAO = daoFactory.getUserDAO();
-        roleDAO = daoFactory.getRoleDAO();
         listParam = "";
         action = "";
     }
@@ -50,7 +46,7 @@ public class AdminCustomerCommand implements ICommand {
      * @param request - HttpServletRequest
      * @param response - HttpServletResponse
      */
-    private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NamingException, ClassNotFoundException {
+    private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("The showList method is started");
         action = request.getParameter("action");
         try {

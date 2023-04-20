@@ -23,7 +23,7 @@
 <div class="container col-md-5">
 	<div class="card">
 		<div class="card-body">
-			<form action="<%=request.getContextPath()%>/FrontController?command=ADMIN_ADD_PRODUCT" method="post" enctype="multipart/form-data">
+			<form action="${pageContext.request.contextPath}/FrontController?command=ADMIN_ADD_PRODUCT" method="post" enctype="multipart/form-data">
 				<caption>
 					<h2>
 						<fmt:message key="locale.AddProduct" />

@@ -11,13 +11,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.junit.jupiter.api.*;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class AdminProductCommandTest {
@@ -26,7 +23,7 @@ public class AdminProductCommandTest {
     private static final Goods testGoods = new Goods();
     ICommand servlet = new AdminProductCommand();
     @BeforeEach
-    public void setTestProducts() throws SQLException, NamingException, ClassNotFoundException {
+    public void setTestProducts() throws SQLException {
         categoryDAO.addCategory("testCategory");
         int categoryId = categoryDAO.showCategoryByName("testCategory").get(0).getId();
         addTestGoods("testGoods", "testGoods", "testGoods", 100, categoryId);
@@ -34,7 +31,7 @@ public class AdminProductCommandTest {
     }
 
     @AfterEach
-    public void deleteTestEntity() throws SQLException, NamingException, ClassNotFoundException {
+    public void deleteTestEntity() throws SQLException {
         goodsDAO.deleteGoods(goodsDAO.getGoodsIdByName("testGoods"));
         goodsDAO.deleteGoods(goodsDAO.getGoodsIdByName("testGoods2"));
         categoryDAO.deleteCategory("testCategory");

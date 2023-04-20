@@ -27,11 +27,11 @@
         <h3 class="text-center"><fmt:message key="locale.ListOfUsers" /></h3>
         <hr>
         <div class="container text-left">
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=fullList"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=fullList"
                class="btn btn-success"><fmt:message key="locale.ShowListOfUsers" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=blockedList"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=blockedList"
                class="btn btn-success"><fmt:message key="locale.ShowBlockedUsers" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=unblockedList"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&list=unblockedList"
                class="btn btn-success"><fmt:message key="locale.ShowUnblockedUsers" /></a>
 
         </div>
@@ -57,16 +57,16 @@
                     <td><c:out value="${user.login}" /></td>
                     <td><c:out value="${user.email}" /></td>
                     <td><c:out value="${user.statusBlocked}" /></td>
-                    <td><a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=block&userId=<c:out value='${user.id}'/>"><fmt:message key="locale.Block" /></a>
-                        <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=unblock&userId=<c:out value='${user.id}'/>"><fmt:message key="locale.Unblock" /></a></td>
+                    <td><a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=block&userId=<c:out value='${user.id}'/>"><fmt:message key="locale.Block" /></a>
+                        <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=unblock&userId=<c:out value='${user.id}'/>"><fmt:message key="locale.Unblock" /></a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
         <div>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&page=previous"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&page=previous"
                class="btn btn-primary">Previous</a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&page=next"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_CUSTOMER_CONTROLLER&action=showList&page=next"
                class="btn btn-success">Next</a>
 
 

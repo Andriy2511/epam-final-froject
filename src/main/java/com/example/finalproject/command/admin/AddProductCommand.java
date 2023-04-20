@@ -18,14 +18,13 @@ import java.sql.SQLException;
  * @author Andrii Sirko
  */
 public class AddProductCommand implements ICommand {
-    DAOFactory daoFactory;
-    IGoodsDAO goodsDAO;
-    ICategoryDAO categoryDAO;
-    String notification;
+    private IGoodsDAO goodsDAO;
+    private ICategoryDAO categoryDAO;
+    private String notification;
     private static final Logger logger = LogManager.getLogger(AddProductCommand.class);
 
     public AddProductCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         goodsDAO = daoFactory.getGoodsDAO();
         categoryDAO = daoFactory.getCategoryDAO();
     }
@@ -95,11 +94,6 @@ public class AddProductCommand implements ICommand {
     private void addPhoto(Part part, String photo, HttpServletRequest request) throws IOException {
         String path = PathBuilder.buildImagePath(request, photo);
         part.write(path);
-        //TODO
-        File file = new File(path);
-        System.out.println(file.isFile());
-        System.out.println(file.exists());
-        System.out.println(file.getName());
     }
 
     /**

@@ -19,7 +19,7 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
 		<h1><fmt:message key="locale.LoginForm" /></h1>
-		<form action="<%=request.getContextPath()%>/FrontController?command=LOGIN_CONTROLLER" method="post">
+		<form action="${pageContext.request.contextPath}/FrontController?command=LOGIN_CONTROLLER" method="post">
 			<div class="form-group">
 				<label for="login"><fmt:message key="locale.UserName" />:</label> <input type="text"
 					class="form-control" id="login" placeholder="Login"
@@ -40,7 +40,6 @@
 			<div class="g-recaptcha" data-sitekey="6Lca-40lAAAAAGvyd6usIfmju465yQkLF0cqWYg-" style="overflow: hidden;"></div>
 		</form>
 	</div>
-
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </body>

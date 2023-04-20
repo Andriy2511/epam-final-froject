@@ -44,8 +44,8 @@
           <td><c:out value="${goods.getName()}" /></td>
           <td><c:out value="${goods.getPrice()}" /></td>
           <td><ctg:info-category categoryId="${goods.getCategoryId()}"/></td>
-          <td><a href="<%=request.getContextPath()%>/FrontController?command=USER_CARD_COMMAND&action=confirm&goodsId=<c:out value='${goods.id}'/>" class="btn btn-info"><fmt:message key="locale.ConfirmOrder" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=USER_CARD_COMMAND&action=delete&goodsId=<c:out value='${goods.id}'/> " class="btn btn-danger"><fmt:message key="locale.Delete" /></a></td>
+          <td><a href="${pageContext.request.contextPath}/FrontController?command=USER_CARD_COMMAND&action=confirm&goodsId=<c:out value='${goods.id}'/>" class="btn btn-info"><fmt:message key="locale.ConfirmOrder" /></a>
+            <a href="${pageContext.request.contextPath}/FrontController?command=USER_CARD_COMMAND&action=delete&goodsId=<c:out value='${goods.id}'/> " class="btn btn-danger"><fmt:message key="locale.Delete" /></a></td>
         </tr>
       </c:forEach>
       </tbody>

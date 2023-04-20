@@ -1,7 +1,6 @@
 package com.example.finalproject.pagination;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * The pagination class is responsible for changing the starting page in the list

@@ -6,15 +6,12 @@ import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IRoleDAO;
 import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.models.User;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,14 +21,12 @@ import java.sql.SQLException;
  * The LoginCommand class is responsible for authentication and authorization.
  */
 public class LoginCommand implements ICommand {
-
-	DAOFactory daoFactory;
-	IUserDAO userDao;
-	IRoleDAO roleDAO;
+	private IUserDAO userDao;
+	private IRoleDAO roleDAO;
 	private static final Logger logger = LogManager.getLogger(LoginCommand.class);
 
 	public LoginCommand(){
-		daoFactory = DAOFactory.getDaoFactory("MYSQL");
+		DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
 		userDao = daoFactory.getUserDAO();
 		roleDAO = daoFactory.getRoleDAO();
 	}
@@ -59,13 +54,13 @@ public class LoginCommand implements ICommand {
 					if (!isUserBlocked(username)) {
 						redirectUser(request, response, user);
 					} else {
-						writeNotification(request, response, "locale.MessageAccountBlocked");
+						writeNotification(response, "locale.MessageAccountBlocked");
 					}
 				} else {
-					writeNotification(request, response, "locale.MessageInvalidLogin");
+					writeNotification(response, "locale.MessageInvalidLogin");
 				}
 			} else {
-				writeNotification(request, response, "locale.MessageCaptchaNotPassed");
+				writeNotification(response, "locale.MessageCaptchaNotPassed");
 			}
 		} catch (ClassNotFoundException | NamingException e) {
 			logger.error(e);
@@ -75,11 +70,10 @@ public class LoginCommand implements ICommand {
 
 	/**
 	 * This method sends redirect to the login.jsp page and records the notification as a parameter
-	 * @param request - HttpServletRequest
 	 * @param response - HttpServletResponse
 	 * @param notification - the notification that will be sent to the user
 	 */
-	private void writeNotification(HttpServletRequest request, HttpServletResponse response, String notification) throws IOException {
+	private void writeNotification(HttpServletResponse response, String notification) throws IOException {
 		logger.debug("Forward to the login/login.jsp, notification {}", notification);
 		response.sendRedirect("login/login.jsp" + "?NOTIFICATION=" + notification);
 	}

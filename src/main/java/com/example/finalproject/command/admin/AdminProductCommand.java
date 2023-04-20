@@ -3,8 +3,6 @@ package com.example.finalproject.command.admin;
 import com.example.finalproject.command.ICommand;
 import com.example.finalproject.dao.DAOFactory;
 import com.example.finalproject.dao.IGoodsDAO;
-import com.example.finalproject.dao.IRoleDAO;
-import com.example.finalproject.dao.IUserDAO;
 import com.example.finalproject.models.Goods;
 import com.example.finalproject.pagination.Pagination;
 import jakarta.servlet.RequestDispatcher;
@@ -13,8 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -23,23 +19,14 @@ import java.util.List;
  * This class is responsible for managing existing products.
  */
 public class AdminProductCommand implements ICommand {
-    DAOFactory daoFactory;
-    IUserDAO userDAO;
-    IRoleDAO roleDAO;
-    IGoodsDAO goodsDAO;
+    private IGoodsDAO goodsDAO;
     private static final Logger logger = LogManager.getLogger(AddProductCommand.class);
-    int startPage = 1;
-    int recordsPerPage = 5;
-    String listParam;
-    List<Goods> goodsList;
-    String notification;
+    private int startPage = 1;
+    private String notification;
 
     public AdminProductCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
-        userDAO = daoFactory.getUserDAO();
-        roleDAO = daoFactory.getRoleDAO();
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         goodsDAO = daoFactory.getGoodsDAO();
-        listParam = "";
     }
 
     @Override
@@ -122,8 +109,9 @@ public class AdminProductCommand implements ICommand {
         logger.info("The method showGoods is started");
         int countOfGoods;
         countOfGoods = goodsDAO.showCountOfGoods();
+        int recordsPerPage = 5;
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-        goodsList = goodsDAO.showLimitGoods((startPage-1)*recordsPerPage, recordsPerPage);
+        List<Goods> goodsList = goodsDAO.showLimitGoods((startPage - 1) * recordsPerPage, recordsPerPage);
         sendGoodsList(request, response, goodsList);
     }
 

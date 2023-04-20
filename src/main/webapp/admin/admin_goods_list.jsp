@@ -47,16 +47,16 @@
                     <td><c:out value="${goods.getPrice()}" /></td>
                     <td><ctg:info-category categoryId="${goods.getCategoryId()}"/></td>
                     <td><c:out value="${goods.getPublicationTime()}" /></td>
-                    <td><a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=change&goodsId=<c:out value='${goods.id}'/>" class="btn btn-info"><fmt:message key="locale.Change" /></a>
-                        <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=delete&goodsId=<c:out value='${goods.id}'/> " class="btn btn-danger"><fmt:message key="locale.Delete" /></a></td>
+                    <td><a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=change&goodsId=<c:out value='${goods.id}'/>" class="btn btn-info"><fmt:message key="locale.Change" /></a>
+                        <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=delete&goodsId=<c:out value='${goods.id}'/> " class="btn btn-danger"><fmt:message key="locale.Delete" /></a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
         <div>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&page=previous"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&page=previous"
                class="btn btn-primary"><fmt:message key="locale.Previous" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&page=next"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_PRODUCT_CONTROLLER&action=showGoodsList&page=next"
                class="btn btn-success"><fmt:message key="locale.Next" /></a>
         </div>
         <br>

@@ -50,9 +50,9 @@
             </tbody>
         </table>
         <div>
-            <a href="<%=request.getContextPath()%>/FrontController?command=USER_ORDER_COMMAND&page=previous"
+            <a href="${pageContext.request.contextPath}/FrontController?command=USER_ORDER_COMMAND&page=previous"
                class="btn btn-primary"><fmt:message key="locale.Previous" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=USER_ORDER_COMMAND&page=next"
+            <a href="${pageContext.request.contextPath}/FrontController?command=USER_ORDER_COMMAND&page=next"
                class="btn btn-success"><fmt:message key="locale.Next" /></a>
         </div>
         <div class="alert alert-success center" role="alert">

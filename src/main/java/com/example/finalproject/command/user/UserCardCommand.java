@@ -1,10 +1,8 @@
 package com.example.finalproject.command.user;
 
 import com.example.finalproject.command.ICommand;
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.*;
 import com.example.finalproject.models.Goods;
-import com.example.finalproject.pagination.Pagination;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,24 +20,14 @@ import java.util.List;
  * UserCardCommand class implements ICommand interface and is responsible for adding orders to the card.
  */
 public class UserCardCommand implements ICommand {
-
-    DAOFactory daoFactory;
-    IUserDAO userDAO;
-    IRoleDAO roleDAO;
-    IGoodsDAO goodsDAO;
-    IOrderDAO orderDAO;
-    String listParam;
+    private IOrderDAO orderDAO;
     private static final Logger logger = LogManager.getLogger(UserCardCommand.class);
     List<Goods> cardGoodsList;
 
     public UserCardCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
-        userDAO = daoFactory.getUserDAO();
-        roleDAO = daoFactory.getRoleDAO();
-        goodsDAO = daoFactory.getGoodsDAO();
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         orderDAO = daoFactory.getOrderDAO();
         cardGoodsList = new ArrayList<>();
-        listParam = "";
     }
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {

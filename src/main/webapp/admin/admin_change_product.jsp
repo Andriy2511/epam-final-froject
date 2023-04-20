@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <div class="panel panel-info">
                     <div class="panel-body">
-                        <form role="form" action="<%=request.getContextPath()%>/FrontController?command=ADMIN_CHANGE_PRODUCT&goodsId=<c:out value='${goods.getId()}'/>"
+                        <form role="form" action="${pageContext.request.contextPath}/FrontController?command=ADMIN_CHANGE_PRODUCT&goodsId=<c:out value='${goods.getId()}'/>"
                               method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label><fmt:message key="locale.EnterName" /></label> <input class="form-control" type="text" name="name" value="<c:out value="${goods.getName()}" />" />

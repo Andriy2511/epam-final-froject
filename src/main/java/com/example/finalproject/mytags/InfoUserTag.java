@@ -16,7 +16,7 @@ public class InfoUserTag extends TagSupport {
     private static final Logger logger = LogManager.getLogger(InfoUserTag.class);
     private int userId;
     @Override
-    public int doStartTag() throws JspException {
+    public int doStartTag() {
         JspWriter jspWriter = pageContext.getOut();
         try {
             jspWriter.print(getUserNameById());

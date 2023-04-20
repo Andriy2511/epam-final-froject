@@ -49,15 +49,4 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
-
-    <tag>
-        <name>notification</name>
-        <tag-class>com.example.finalproject.mytags.NotificationTag</tag-class>
-        <body-content>empty</body-content>
-        <attribute>
-            <name>notification</name>
-            <required>true</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-    </tag>
 </taglib>

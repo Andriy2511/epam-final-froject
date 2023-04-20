@@ -1,7 +1,6 @@
 package com.example.finalproject.command.user;
 
 import com.example.finalproject.command.ICommand;
-import com.example.finalproject.command.admin.AddProductCommand;
 import com.example.finalproject.dao.*;
 import com.example.finalproject.models.Order;
 import com.example.finalproject.pagination.Pagination;
@@ -11,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,22 +18,14 @@ import java.util.List;
  * The UserOrderCommand class implements the ICommand interface and is responsible for viewing orders by users. The user can view his orders and their status.
  */
 public class UserOrderCommand implements ICommand {
-    DAOFactory daoFactory;
-    IUserDAO userDAO;
-    IRoleDAO roleDAO;
-    IOrderDAO orderDAO;
-    IOrderStatusDAO orderStatusDAO;
-    int startPage = 1;
-    int recordsPerPage = 5;
+    private IOrderDAO orderDAO;
+    private int startPage = 1;
     private static final Logger logger = LogManager.getLogger(UserOrderCommand.class);
     List<Order> orderList;
 
     public UserOrderCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
-        roleDAO = daoFactory.getRoleDAO();
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         orderDAO = daoFactory.getOrderDAO();
-        orderStatusDAO = daoFactory.getOrderStatusDAO();
-        userDAO = daoFactory.getUserDAO();
     }
 
     @Override
@@ -52,9 +42,10 @@ public class UserOrderCommand implements ICommand {
         logger.info("Method showList is started");
         int countOfOrders;
         countOfOrders = orderDAO.showCountOfOrdersByUserId((Integer) request.getSession().getAttribute("id"));
+        int recordsPerPage = 5;
         startPage = Pagination.pagination(request, countOfOrders, startPage, recordsPerPage);
         request.setAttribute("noOfPages", startPage);
-        orderList = orderDAO.showLimitOrdersByUser((startPage-1)*recordsPerPage, recordsPerPage, (Integer) request.getSession().getAttribute("id"));
+        orderList = orderDAO.showLimitOrdersByUser((startPage-1)* recordsPerPage, recordsPerPage, (Integer) request.getSession().getAttribute("id"));
         sendOrderList(request, response, orderList);
     }
 

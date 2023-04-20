@@ -19,14 +19,13 @@ import java.sql.SQLException;
  * This class response for changing product
  */
 public class AdminChangeProductCommand implements ICommand {
-    DAOFactory daoFactory;
-    IGoodsDAO goodsDAO;
-    ICategoryDAO categoryDAO;
+    private IGoodsDAO goodsDAO;
+    private ICategoryDAO categoryDAO;
     String notification;
     private static final Logger logger = LogManager.getLogger(AdminChangeProductCommand.class);
 
     public AdminChangeProductCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         goodsDAO = daoFactory.getGoodsDAO();
         categoryDAO = daoFactory.getCategoryDAO();
     }

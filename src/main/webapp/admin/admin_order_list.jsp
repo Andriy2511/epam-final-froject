@@ -26,11 +26,11 @@
         <hr>
         <hr>
         <div class="container text-left">
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&list=registeredList"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&list=registeredList"
                class="btn btn-success"><fmt:message key="locale.ShowRegisteredOrders" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&list=paidList"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&list=paidList"
                class="btn btn-success"><fmt:message key="locale.ShowPaidOrders" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&list=canceledList"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&list=canceledList"
                class="btn btn-success"><fmt:message key="locale.ShowCanceledOrders" /></a>
         </div>
         <br>
@@ -51,16 +51,16 @@
                     <td><ctg:info-user userId="${order.getUserId()}"/></td>
                     <td><ctg:info-goods goodsId="${order.getGoodsId()}"/></td>
                     <td><ctg:info-order-status orderStatusId="${order.getOrderStatusId()}"/></td>
-                    <td><a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=paid&orderId=<c:out value='${order.id}'/>" class="btn btn-info"><fmt:message key="locale.Paid" /></a>
-                        <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=canceled&orderId=<c:out value='${order.id}'/> " class="btn btn-danger"><fmt:message key="locale.Canceled" /></a></td>
+                    <td><a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=paid&orderId=<c:out value='${order.id}'/>" class="btn btn-info"><fmt:message key="locale.Paid" /></a>
+                        <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=canceled&orderId=<c:out value='${order.id}'/> " class="btn btn-danger"><fmt:message key="locale.Canceled" /></a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
         <div>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&page=previous"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&page=previous"
                class="btn btn-primary"><fmt:message key="locale.Previous" /></a>
-            <a href="<%=request.getContextPath()%>/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&page=next"
+            <a href="${pageContext.request.contextPath}/FrontController?command=ADMIN_ORDER_CONTROLLER&action=showList&page=next"
                class="btn btn-success"><fmt:message key="locale.Next" /></a>
         </div>
         <div class="alert alert-success center" role="alert">

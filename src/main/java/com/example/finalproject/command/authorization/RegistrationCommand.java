@@ -17,13 +17,11 @@ import java.sql.SQLException;
  * The RegistrationCommand class implements the ICommand interface and is responsible for registration.
  */
 public class RegistrationCommand implements ICommand {
-
-    DAOFactory daoFactory;
-    IUserDAO userDao;
+    private IUserDAO userDao;
     private static final Logger logger = LogManager.getLogger(RegistrationCommand.class);
 
     public RegistrationCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         userDao = daoFactory.getUserDAO();
     }
 

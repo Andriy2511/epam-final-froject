@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -21,23 +20,16 @@ import java.util.function.BiFunction;
  * The CatalogCommand class implements ICommand interface and responsible for catalog managing.
  */
 public class CatalogCommand implements ICommand {
-    DAOFactory daoFactory;
-    IUserDAO userDAO;
-    IRoleDAO roleDAO;
-    IGoodsDAO goodsDAO;
-    IOrderDAO orderDAO;
-    int startPage = 1;
-    int recordsPerPage = 8;
-    String lastMenu;
-    List<Goods> goodsList;
-    List<Goods> cardGoodsList;
-    String action;
+    private IGoodsDAO goodsDAO;
+    private IOrderDAO orderDAO;
+    private int startPage = 1;
+    private String lastMenu;
+    private List<Goods> cardGoodsList;
+    private String action;
     private static final Logger logger = LogManager.getLogger(CatalogCommand.class);
 
     public CatalogCommand(){
-        daoFactory = DAOFactory.getDaoFactory("MYSQL");
-        userDAO = daoFactory.getUserDAO();
-        roleDAO = daoFactory.getRoleDAO();
+        DAOFactory daoFactory = DAOFactory.getDaoFactory("MYSQL");
         goodsDAO = daoFactory.getGoodsDAO();
         orderDAO = daoFactory.getOrderDAO();
         cardGoodsList = new ArrayList<>();
@@ -144,12 +136,13 @@ public class CatalogCommand implements ICommand {
         logger.info("Method show Goods is started");
         int countOfGoods;
         countOfGoods = goodsDAO.showCountOfGoods();
+        int recordsPerPage = 8;
         startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-        goodsList = sortList(request, response, (startPage-1)*recordsPerPage, recordsPerPage);
+        List<Goods> goodsList = sortList(request, response, (startPage - 1) * recordsPerPage, recordsPerPage);
         if (request.getParameter("sort") != null && request.getParameter("sort").equals("searchByCategory")){
             countOfGoods = goodsDAO.getCountOfGoodsByCategory(getCategoryName(request));
             startPage = Pagination.pagination(request, countOfGoods, startPage, recordsPerPage);
-            goodsList = sortList(request, response, (startPage-1)*recordsPerPage, recordsPerPage);
+            goodsList = sortList(request, response, (startPage-1)* recordsPerPage, recordsPerPage);
         }
         logger.debug("sendGoodsList");
         sendGoodsList(request, response, goodsList);

@@ -15,11 +15,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Answers;
 import org.mockito.Mock;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -119,7 +117,7 @@ public class AdminOrderCommandTest {
         orderStatusDAO.addNewOrderStatus("canceled");
     }
 
-    private void addTestOrder(int goodsId, int userId, int orderStatusId) throws SQLException, NamingException, ClassNotFoundException {
+    private void addTestOrder(int goodsId, int userId, int orderStatusId) throws SQLException {
         testOrder.setGoodsId(goodsId);
         testOrder.setUserId(userId);
         testOrder.setOrderStatusId(orderStatusId);

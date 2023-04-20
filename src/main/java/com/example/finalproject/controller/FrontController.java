@@ -7,7 +7,6 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.SQLException;
