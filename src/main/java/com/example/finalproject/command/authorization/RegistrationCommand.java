@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 
 /**
  * The RegistrationCommand class implements the ICommand interface and is responsible for registration.
@@ -45,25 +46,49 @@ public class RegistrationCommand implements ICommand {
         String password = request.getParameter("password");
         String email = request.getParameter("email");
 
-        User user = new User();
-        user.setName(name);
-        user.setSurname(surname);
-        user.setLogin(login);
-        user.setPassword(password);
-        user.setEmail(email);
+        if (checkNotNull(name, surname, login, password, email)) {
+            User user = new User();
+            user.setName(name);
+            user.setSurname(surname);
+            user.setLogin(login);
+            user.setPassword(password);
+            user.setEmail(email);
 
-        try {
-            boolean successfulRegistration = userDao.createUser(user);
-            if(successfulRegistration) {
-                logger.debug("Forward to tho login/login.jsp, notification User Registered Successfully!");
-                response.sendRedirect("login/login.jsp?NOTIFICATION=locale.RegistrationSuccessful");
-            } else {
-                logger.debug("Forward to tho register/register.jsp, notification User must contain unique login and e-mail address!");
-                response.sendRedirect("register/register.jsp?NOTIFICATION=locale.RegistrationUnsuccessful");
+            try {
+                boolean successfulRegistration = userDao.createUser(user);
+                if (successfulRegistration) {
+                    logger.debug("Forward to tho login/login.jsp, notification User Registered Successfully!");
+                    response.sendRedirect("login/login.jsp?NOTIFICATION=locale.RegistrationSuccessful");
+                } else {
+                    logger.debug("Forward to tho register/register.jsp, notification User must contain unique login and e-mail address!");
+                    response.sendRedirect("register/register.jsp?NOTIFICATION=locale.RegistrationUnsuccessful");
+                }
+            } catch (IOException | SQLException e) {
+                logger.error(e);
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            logger.error(e);
-            e.printStackTrace();
+        } else {
+            try {
+                response.sendRedirect("register/register.jsp");
+            } catch (IOException e) {
+                logger.error(e);
+                e.printStackTrace();
+            }
         }
+    }
+
+    /**
+     * The method takes an arbitrary number of Object arguments, which it then checks for null using Objects.isNull().
+     * If at least one of the arguments is null, the method returns false, otherwise it returns true.
+     * @param objects Object arguments
+     * @return True if all objects are not null, false otherwise
+     */
+    private boolean checkNotNull(Object... objects) {
+        for (Object obj : objects) {
+            if (Objects.isNull(obj)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

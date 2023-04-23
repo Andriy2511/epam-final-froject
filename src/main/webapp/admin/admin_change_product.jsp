@@ -36,10 +36,10 @@
                         <form role="form" action="${pageContext.request.contextPath}/FrontController?command=ADMIN_CHANGE_PRODUCT&goodsId=<c:out value='${goods.getId()}'/>"
                               method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label><fmt:message key="locale.EnterName" /></label> <input class="form-control" type="text" name="name" value="<c:out value="${goods.getName()}" />" />
+                                <label><fmt:message key="locale.EnterName" /></label> <input class="form-control" type="text" name="name" required="required" value="<c:out value="${goods.getName()}" /> " />
                             </div>
                             <div class="form-group">
-                                <label><fmt:message key="locale.Description" /></label> <input class="form-control" type="text" style="min-height: 100px;" name="description" value="<c:out value="${goods.getDescription()}"/>" />
+                                <label><fmt:message key="locale.Description" /></label> <input class="form-control" type="text" style="min-height: 100px;" name="description" required="required" value="<c:out value="${goods.getDescription()}"/>" />
                             </div>
                             <div class="form-group">
                                 <label>Photo</label> <input class="form-control" type="text" name="photoName" value="<c:out value="${goods.getPhoto()}"/>" />
@@ -51,11 +51,11 @@
                             </div>
 
                             <div class="form-group">
-                                <label><fmt:message key="locale.Price" /></label> <input class="form-control" type="number" min="0" step=".01" name="price" value="<c:out value="${goods.getPrice()}"/>" />
+                                <label><fmt:message key="locale.Price" /></label> <input class="form-control" type="number" min="0" step=".01" name="price" required="required" value="<c:out value="${goods.getPrice()}"/>" />
                             </div>
 
                             <div class="form-group">
-                                <label><fmt:message key="locale.Category" /></label> <input class="form-control" type="text" name="category" value="<ctg:info-category categoryId="${goods.getCategoryId()}"/>" />
+                                <label><fmt:message key="locale.Category" /></label> <input class="form-control" type="text" name="category" required="required" value="<ctg:info-category categoryId="${goods.getCategoryId()}"/>" />
                             </div>
 
                             <div class="alert alert-success center" role="alert">

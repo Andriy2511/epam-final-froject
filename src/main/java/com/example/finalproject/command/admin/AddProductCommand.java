@@ -45,10 +45,14 @@ public class AddProductCommand implements ICommand {
 
     private void addProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {
         logger.info("The showList addProduct is started");
-        double price = 0;
+        double price;
         String name = request.getParameter("name");
+        if(name == null)
+            name = "Without name";
         String description = request.getParameter("description");
-        String photo = "without photo";
+        if(description == null)
+            name = "Without description";
+        String photo = "Without photo";
         String categoryName = request.getParameter("category");
         if(categoryName == null)
             categoryName = "Other category";
@@ -57,7 +61,7 @@ public class AddProductCommand implements ICommand {
         } catch (NumberFormatException e) {
             logger.error(e);
             e.printStackTrace();
-            response.sendRedirect("admin/admin_add_product.jsp");
+            price = 0;
         }
 
         if(request.getPart("photo").getSize() > 0) {

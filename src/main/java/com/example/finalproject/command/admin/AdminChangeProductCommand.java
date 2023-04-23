@@ -43,11 +43,15 @@ public class AdminChangeProductCommand implements ICommand {
      */
     private void changeProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         logger.info("Method changeProduct");
-        double price = 0;
+        double price;
         int id = 0;
         String photo;
         String name = request.getParameter("name");
+        if(name == null)
+            name = "Without name";
         String description = request.getParameter("description");
+        if(description == null)
+            name = "Without description";
         String categoryName = request.getParameter("category");
         if(categoryName == null)
             categoryName = "Other category";
@@ -57,8 +61,7 @@ public class AdminChangeProductCommand implements ICommand {
         } catch (NumberFormatException e) {
             logger.error(e);
             e.printStackTrace();
-            logger.debug("Forwarding to admin_change_product.jsp after exception");
-            response.sendRedirect("admin/admin_change_product.jsp");
+            price = 0;
         }
 
         if(request.getPart("photo").getSize() > 0){

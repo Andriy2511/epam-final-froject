@@ -51,11 +51,11 @@ public class InternationalizationMessageTest {
         String localeMessage = "locale.Name";
         HttpSession session = mock(HttpSession.class);
         when(request.getSession()).thenReturn(session);
-        when(request.getSession().getAttribute("lang")).thenReturn(null);
+        when(request.getSession().getAttribute("lang")).thenReturn("en");
 
         String message = InternationalizationMessage.printMessage(request, localeMessage);
 
-        Assertions.assertEquals("locale.Name", message);
+        Assertions.assertEquals("Name", message);
         verify(request.getSession(), times(1)).getAttribute("lang");
     }
 }

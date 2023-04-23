@@ -47,8 +47,8 @@ public class LoginCommand implements ICommand {
 	private void authenticate(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String username = request.getParameter("login");
 		String password = request.getParameter("password");
-		User user = buildUser(username, password);
 		try {
+			User user = buildUser(username, password);
 			if(Captcha.isCaptchaPassed(request)) {
 				if (userDao.validate(user)) {
 					if (!isUserBlocked(username)) {
@@ -62,7 +62,7 @@ public class LoginCommand implements ICommand {
 			} else {
 				writeNotification(response, "locale.MessageCaptchaNotPassed");
 			}
-		} catch (ClassNotFoundException | NamingException e) {
+		} catch (ClassNotFoundException | NamingException | NullPointerException e) {
 			logger.error(e);
 			e.printStackTrace();
 		}

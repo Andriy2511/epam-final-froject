@@ -30,11 +30,11 @@
 					</h2>
 				</caption>
 				<fieldset class="form-group">
-					<label><fmt:message key="locale.Name" /></label> <input type="text" class="form-control" name="name" required="required" minlength="3">
+					<label><fmt:message key="locale.Name" /></label> <input type="text" class="form-control" name="name" required="required">
 				</fieldset>
 
 				<fieldset class="form-group">
-					<label><fmt:message key="locale.Description" /></label> <input type="text" class="form-control" name="description" minlength="5">
+					<label><fmt:message key="locale.Description" /></label> <input type="text" class="form-control" name="description">
 				</fieldset>
 
 				<fieldset class="form-group">
